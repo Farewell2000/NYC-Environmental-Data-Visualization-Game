@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>NYC Data Exploration Game</title>
+    <link rel="stylesheet" href="css/main.css">
+    <!-- Add additional CSS files -->
+    <link rel="stylesheet" href="css/components/map.css">
+    <link rel="stylesheet" href="css/components/filter-panel.css">
+    <link rel="stylesheet" href="css/components/dialogue.css">
+    <link rel="stylesheet" href="css/components/task-panel.css">
+    <link rel="stylesheet" href="css/components/chat.css">
+</head>
+<body>
+    <div class="game-container">
+        <!-- Left Side: Map & Controls -->
+        <div class="left-panel">
+            <div class="filter-panel" id="filter-panel"></div>
+            <div class="map-container">
+                <div id="map"></div>
+                <div id="legend" class="legend"></div>
+            </div>
+        </div>
+        
+        <!-- Right Side: Game Elements -->
+        <div class="right-panel">
+            <div class="dialogue-window" id="dialogue-window">
+                <div class="avatar-container">
+                    <img src="assets/avatars/cartoon-avatar.png" alt="Game Avatar" id="game-avatar">
+                </div>
+                <div class="dialogue-text" id="dialogue-text"></div>
+            </div>
+            
+            <div class="task-panel" id="task-panel">
+                <h2>Current Task</h2>
+                <div id="task-description"></div>
+                <div id="task-progress"></div>
+            </div>
+            
+            <div class="chat-container">
+                <div id="chat-history"></div>
+                <div class="chat-input-area">
+                    <input type="text" id="chat-input" placeholder="Ask a question about the data...">
+                    <button id="chat-submit">Send</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="js/main.js" type="module"></script>
+</body>
+</html>
