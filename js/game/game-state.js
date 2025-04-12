@@ -79,47 +79,64 @@ export class GameState {
     }
 
     setCurrentTask(taskId) {
-        if (this._taskLookup[taskId]) {
-            // Ensure task exists and is not a future task (unless it's the very first one)
-            const taskIndex = this.state.allTasks.findIndex(t => t.id === taskId);
-            const isCompleted = this.isTaskCompleted(taskId);
-            let isAllowed = false;
-
-            if (taskIndex === 0) { // First task is always selectable initially
-                isAllowed = true;
-            } else if (isCompleted) { // Past tasks are selectable
-                isAllowed = true;
-            } else {
-                 // Check if the *previous* task is completed to allow selection
-                 const previousTaskIndex = taskIndex - 1;
-                 if (previousTaskIndex >= 0) {
-                     const previousTaskId = this.state.allTasks[previousTaskIndex].id;
-                     if (this.isTaskCompleted(previousTaskId)) {
-                         isAllowed = true;
-                     }
-                 }
-            }
-
-
-            if (isAllowed) {
-                 console.log(`[GameState] Setting current task to: ${taskId}`);
-                this.state.currentTaskId = taskId;
-                // Optionally reset map state related to the previous task if needed
-                // this.state.mapState.selectedYear = null;
-                // this.state.mapState.selectedNoiseType = null;
-                return true; // Indicate success
-            } else {
-                console.warn(`[GameState] Cannot set task ${taskId} as current. It might be a future task whose prerequisite is not met.`);
-                return false; // Indicate failure
-            }
+        // Use the centralized isTaskSelectable method to check if the task can be set as current
+        if (this.isTaskSelectable(taskId)) { 
+            console.log(`[GameState] Setting current task to: ${taskId}`);
+            this.state.currentTaskId = taskId;
+            // Optionally reset map state related to the previous task if needed
+            // this.state.mapState.selectedYear = null;
+            // this.state.mapState.selectedNoiseType = null;
+            return true; // Indicate success
         } else {
-            console.error(`[GameState] Attempted to set non-existent task ID: ${taskId}`);
+            // If task is not selectable (either doesn't exist or prerequisite not met)
+            console.warn(`[GameState] Cannot set task ${taskId} as current. It is not selectable.`);
             return false; // Indicate failure
         }
     }
 
     isTaskCompleted(taskId) {
         return this.state.completedTaskIds.has(taskId);
+    }
+
+    /**
+     * Checks if a task is currently selectable by the user.
+     * A task is selectable if:
+     * - It's the first task in the list.
+     * - It has already been completed.
+     * - The task immediately preceding it has been completed.
+     * @param {string} taskId The ID of the task to check.
+     * @returns {boolean} True if the task is selectable, false otherwise.
+     */
+    isTaskSelectable(taskId) {
+        if (!this._taskLookup[taskId]) {
+            console.warn(`[GameState] isTaskSelectable called with non-existent task ID: ${taskId}`);
+            return false; // Cannot select a non-existent task
+        }
+
+        const taskIndex = this.state.allTasks.findIndex(t => t.id === taskId);
+        const isCompleted = this.isTaskCompleted(taskId);
+
+        // Rule 1: First task is always selectable
+        if (taskIndex === 0) {
+            return true;
+        }
+
+        // Rule 2: Completed tasks are always selectable
+        if (isCompleted) {
+            return true;
+        }
+
+        // Rule 3: A non-completed task is selectable only if the previous task is completed
+        const previousTaskIndex = taskIndex - 1;
+        if (previousTaskIndex >= 0) {
+            const previousTaskId = this.state.allTasks[previousTaskIndex].id;
+            if (this.isTaskCompleted(previousTaskId)) {
+                return true;
+            }
+        }
+
+        // If none of the above conditions are met, the task is not selectable (it's a future task)
+        return false;
     }
 
     getNextTaskId(taskId) {

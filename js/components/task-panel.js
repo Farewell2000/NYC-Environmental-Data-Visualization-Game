@@ -29,28 +29,8 @@ export class TaskPanel {
 
             const isCurrent = task.id === currentTaskId;
             const isCompleted = this.gameState.isTaskCompleted(task.id);
-            const isPast = !isCurrent && isCompleted;
-            let isFuture = false;
-
-            // Determine if the task is in the future
-            if (!isCurrent && !isCompleted) {
-                 if (index === 0 && !currentTaskId) { // Special case for the very first task before any is set
-                     isFuture = false;
-                 } else {
-                    const firstTaskIndex = allTasks.findIndex(t => t.id === currentTaskId);
-                    if (firstTaskIndex === -1 && index > 0) { // If no current task set, all but the first are future
-                         isFuture = true;
-                    } else if (index > firstTaskIndex) {
-                        // More accurately, check if the *previous* task is completed
-                        if (index > 0) {
-                           const previousTaskId = allTasks[index - 1].id;
-                           if (!this.gameState.isTaskCompleted(previousTaskId)) {
-                               isFuture = true;
-                           }
-                        }
-                    }
-                 }
-            }
+            const isSelectable = this.gameState.isTaskSelectable(task.id);
+            const isFuture = !isSelectable && !isCompleted; // A task is future if it's not selectable and not completed
 
             taskCard.innerHTML = `
                 <h4>${task.title || 'Untitled Task'}</h4>
@@ -75,17 +55,31 @@ export class TaskPanel {
                  statusElement.textContent = 'Status: Available';
             }
 
-            // Add click listener only if not a future task
-            if (!isFuture) {
-                taskCard.addEventListener('click', () => {
+            // Add click listener only if the task is selectable
+            if (isSelectable) {
+                // Remove previous listener if exists (important for re-renders)
+                if(taskCard.clickHandler) {
+                    taskCard.removeEventListener('click', taskCard.clickHandler);
+                }
+                const newListener = () => {
                     console.log(`[TaskPanel] Task card clicked: ${task.id}`);
                     if (this.onTaskSelectCallback) {
                         this.onTaskSelectCallback(task.id);
                     }
-                });
+                };
+                taskCard.addEventListener('click', newListener);
+                taskCard.clickHandler = newListener; // Store reference to remove later
             } else {
-                 taskCard.style.opacity = '0.6';
-                 taskCard.style.cursor = 'not-allowed';
+                // Task is not selectable (future/locked)
+                taskCard.classList.add('future', 'disabled');
+                statusElement.textContent = 'Status: Locked';
+                taskCard.style.opacity = '0.6';
+                taskCard.style.cursor = 'not-allowed';
+                // Ensure no click listener is attached
+                if(taskCard.clickHandler) {
+                    taskCard.removeEventListener('click', taskCard.clickHandler);
+                    taskCard.clickHandler = null;
+                }
             }
 
             this.container.appendChild(taskCard);
@@ -108,6 +102,7 @@ export class TaskPanel {
 
         const isCompleted = this.gameState.isTaskCompleted(taskId);
         const statusElement = taskCard.querySelector('.task-card-status');
+        const isSelectable = this.gameState.isTaskSelectable(taskId);
 
          // Reset classes potentially added before
          taskCard.classList.remove('current', 'completed', 'future', 'disabled');
@@ -128,30 +123,13 @@ export class TaskPanel {
              statusElement.textContent = 'Status: Available';
         }
 
-        // Re-evaluate click listener - remove if future, add if not
-        // Find the task's index
-        const allTasks = this.gameState.getAllTasks();
-        const taskIndex = allTasks.findIndex(t => t.id === taskId);
-        let isFuture = false;
-         if (taskIndex > 0 && !isCompleted && taskId !== this.gameState.getCurrentTaskId()) {
-            const previousTaskId = allTasks[taskIndex - 1].id;
-            if (!this.gameState.isTaskCompleted(previousTaskId)) {
-                 isFuture = true;
-            }
+        // Handle click listener and styles based on selectability
+        if (taskCard.clickHandler) {
+            taskCard.removeEventListener('click', taskCard.clickHandler);
+            taskCard.clickHandler = null; // Clear old reference
         }
 
-        // Remove existing listener before potentially adding a new one
-        const oldListener = taskCard.clickHandler; // Assumes we store it, let's refactor
-        if (oldListener) {
-            taskCard.removeEventListener('click', oldListener);
-        }
-
-        if (isFuture) {
-            taskCard.classList.add('future', 'disabled');
-             statusElement.textContent = 'Status: Locked';
-             taskCard.style.opacity = '0.6';
-             taskCard.style.cursor = 'not-allowed';
-        } else {
+        if (isSelectable) {
              const newListener = () => {
                 console.log(`[TaskPanel] Task card clicked: ${taskId}`);
                 if (this.onTaskSelectCallback) {
@@ -160,10 +138,20 @@ export class TaskPanel {
             };
             taskCard.addEventListener('click', newListener);
             taskCard.clickHandler = newListener; // Store the listener reference
+        } else {
+            // If not selectable AND not completed, it's locked/future
+            if (!isCompleted) { 
+                taskCard.classList.add('future', 'disabled');
+                statusElement.textContent = 'Status: Locked';
+                taskCard.style.opacity = '0.6';
+                taskCard.style.cursor = 'not-allowed';
+            }
+            // Otherwise, it might be completed (handled above) or unselectable for another reason
+            // (which shouldn't happen with current logic, but good to be robust)
         }
     }
 
-     // Method to refresh the entire panel based on current game state
+    // Method to refresh the entire panel based on current game state
     refresh() {
         this.renderTasks();
     }

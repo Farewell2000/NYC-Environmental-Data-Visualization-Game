@@ -52,8 +52,8 @@ document.addEventListener('DOMContentLoaded', async () => {
         // Initialize components
         console.log("Initializing components...");
 
-        // Initialize map
-        const map = new MapComponent('map', 1280, 720);
+        // Initialize map (no width/height needed for Leaflet)
+        const map = new MapComponent('map');
         map.initialize();
 
         // Initialize filter panel

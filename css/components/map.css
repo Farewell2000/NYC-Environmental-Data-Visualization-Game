@@ -6,17 +6,34 @@
     background-color: #f8f9fa;
     box-shadow: var(--box-shadow);
     margin-top: 20px;
+    display: flex;
+    flex-direction: column;
 }
 
 #map {
-    width: 100%;
-    height: 100%;
+    flex-grow: 1;
     min-height: 400px;
+    border-radius: inherit;
+}
+
+.leaflet-control-container {
+    z-index: 1000;
+}
+
+.leaflet-overlay-pane svg {
+    position: absolute;
+}
+
+.leaflet-overlay-pane path,
+.leaflet-overlay-pane circle {
+    pointer-events: auto;
+    cursor: pointer;
 }
 
 .borough {
     transition: all 0.3s;
     cursor: pointer;
+    fill-opacity: 0.7;
 }
 
 .borough:hover {
