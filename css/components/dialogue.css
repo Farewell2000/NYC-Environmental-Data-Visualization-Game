@@ -1,28 +1,42 @@
+/* Dialogue window positioning and styling */
 .dialogue-window {
-    background-color: white;
+    position: absolute; /* Position relative to its nearest positioned ancestor (map-container) */
+    bottom: 20px; /* Distance from the bottom edge of the map container */
+    left: 50%; /* Start at the horizontal center */
+    transform: translateX(-50%); /* Shift left by half its own width to truly center */
+    width: 60%; /* Adjust width as needed */
+    max-width: 500px; /* Maximum width */
+    background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent white background */
     border-radius: var(--border-radius);
     box-shadow: var(--box-shadow);
     padding: 15px;
-    margin-bottom: 20px;
     display: flex;
     align-items: flex-start;
-    transition: transform 0.3s, box-shadow 0.3s;
-    min-height: 120px;
+    z-index: 1001; /* Ensure it's above map layers but potentially below other controls */
+    opacity: 0; /* Start hidden */
+    visibility: hidden; /* Start hidden */
+    transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out, transform 0.3s ease-in-out;
+    /* Removed margin-bottom as positioning is now absolute */
+    /* min-height: 120px; -- let content define height */
 }
 
+/* Make visible and slide up slightly when active */
 .dialogue-window.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(-5px); /* Center and slight upward move */
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
-    transform: translateY(-3px);
+    /* Removed transform: translateY(-3px); from original active style */
 }
 
 .avatar-container {
-    flex: 0 0 70px;
+    flex: 0 0 60px; /* Slightly smaller avatar */
     margin-right: 15px;
 }
 
 .avatar-container img {
-    width: 70px;
-    height: 70px;
+    width: 60px;
+    height: 60px;
     border-radius: 50%;
     object-fit: cover;
     border: 3px solid var(--primary-color);
@@ -30,25 +44,25 @@
 
 .dialogue-text {
     flex: 1;
-    font-size: 16px;
-    line-height: 1.5;
+    font-size: 15px; /* Slightly smaller text */
+    line-height: 1.4;
     position: relative;
     padding: 10px;
     background-color: var(--light-bg);
     border-radius: 10px;
-    min-height: 80px;
+    min-height: 60px; /* Adjust min-height */
 }
 
 .dialogue-text:after {
     content: '';
     position: absolute;
     left: -10px;
-    top: 20px;
+    top: 15px; /* Adjust position */
     width: 0;
     height: 0;
-    border-top: 10px solid transparent;
-    border-bottom: 10px solid transparent;
-    border-right: 10px solid var(--light-bg);
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+    border-right: 8px solid var(--light-bg);
 }
 
 /* Animation for typing effect */

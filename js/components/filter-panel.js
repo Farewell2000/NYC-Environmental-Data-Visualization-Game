@@ -3,8 +3,10 @@ export class FilterPanel {
         this.container = document.getElementById(containerId);
         this.filters = [];
         this.onFilterChangeCallbacks = [];
+        this.filterDefinitions = {}; // Store filter configs by name/type
+        this.activeFilterSetName = null; // Track which set of filters is active
     }
-    
+
     initialize() {
         // Create basic filter structure
         this.container.innerHTML = `
@@ -14,32 +16,63 @@ export class FilterPanel {
             </div>
             <div id="filter-controls"></div>
         `;
-        
+
         document.getElementById('reset-filters').addEventListener('click', () => this.resetFilters());
         return this;
     }
-    
+
     addFilter(filterConfig) {
         filterConfig.id = `filter-${this.filters.length}-${filterConfig.field}`;
-        filterConfig.currentValue = filterConfig.defaultValue || ''; 
-            
+        filterConfig.currentValue = filterConfig.defaultValue || '';
+
         this.filters.push(filterConfig);
         this.renderFilter(filterConfig);
         return this;
     }
-    
-    renderFilter(filterConfig) {
+
+    addFilterDefinition(setName, filterConfig) {
+        if (!this.filterDefinitions[setName]) {
+            this.filterDefinitions[setName] = [];
+        }
+        filterConfig.id = `filter-${setName}-${filterConfig.field}`;
+        filterConfig.currentValue = filterConfig.defaultValue || '';
+        this.filterDefinitions[setName].push(filterConfig);
+        return this;
+    }
+
+    setActiveFilterSet(setName) {
+        this.activeFilterSetName = setName;
+        this.filters = this.filterDefinitions[setName] || []; // Use the stored definition
+        this.renderActiveFilters();
+        this.notifyFilterChange(); // Notify with initial state of the new filter set
+        return this;
+    }
+
+    renderActiveFilters() {
         const filterControls = document.getElementById('filter-controls');
+        filterControls.innerHTML = ''; // Clear existing controls
+
+        if (!this.filters || this.filters.length === 0) {
+            filterControls.textContent = 'No filters available for this task.';
+            return;
+        }
+
+        this.filters.forEach(filterConfig => {
+            this.renderFilter(filterConfig, filterControls);
+        });
+    }
+
+    renderFilter(filterConfig, parentContainer) {
         const filterContainer = document.createElement('div');
         filterContainer.className = 'filter-item';
-        
+
         const label = document.createElement('label');
         label.htmlFor = filterConfig.id;
         label.textContent = filterConfig.label;
         filterContainer.appendChild(label);
-        
+
         let control;
-        
+
         if (filterConfig.type === 'dropdown') {
             control = this.createDropdown(filterConfig);
         } else {
@@ -47,22 +80,22 @@ export class FilterPanel {
             control.textContent = 'Unsupported filter type';
             console.warn("Unsupported filter type added:", filterConfig.type);
         }
-        
+
         filterContainer.appendChild(control);
-        filterControls.appendChild(filterContainer);
+        parentContainer.appendChild(filterContainer); // Append to the provided container
     }
-    
+
     createDropdown(config) {
         const select = document.createElement('select');
         select.id = config.id;
-        
+
         if (!config.defaultValue) {
             const defaultOption = document.createElement('option');
             defaultOption.value = '';
             defaultOption.textContent = 'Select...';
             select.appendChild(defaultOption);
         }
-        
+
         config.options.forEach(option => {
             const optionEl = document.createElement('option');
             optionEl.value = option.value;
@@ -72,25 +105,25 @@ export class FilterPanel {
             }
             select.appendChild(optionEl);
         });
-        
+
         select.addEventListener('change', () => {
             config.currentValue = select.value;
             this.notifyFilterChange();
         });
-        
+
         return select;
     }
-    
+
     onFilterChange(callback) {
         this.onFilterChangeCallbacks.push(callback);
         return this;
     }
-    
+
     notifyFilterChange() {
         const filterState = this.getFilterState();
         this.onFilterChangeCallbacks.forEach(callback => callback(filterState));
     }
-    
+
     getFilterState() {
         return this.filters.map(f => ({
             field: f.field,
@@ -99,19 +132,21 @@ export class FilterPanel {
             type: f.type
         }));
     }
-    
+
     resetFilters() {
+        if (!this.filters) return; // Check if filters exist for the active set
+
         this.filters.forEach(filter => {
-            filter.currentValue = filter.defaultValue || ''; 
-                
+            filter.currentValue = filter.defaultValue || '';
+
             const element = document.getElementById(filter.id);
             if (element && element.tagName === 'SELECT') {
-                 element.value = filter.currentValue;
+                element.value = filter.currentValue;
             } else if (element) {
                 console.warn("Trying to reset non-dropdown filter element:", element);
             }
         });
-        
+
         this.notifyFilterChange();
     }
 }
