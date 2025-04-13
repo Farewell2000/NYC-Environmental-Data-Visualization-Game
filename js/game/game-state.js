@@ -197,4 +197,14 @@ export class GameState {
         }
     }
 
+    // Method to clear chat history for a specific task
+    clearChatHistoryForTask(taskId) {
+        if (this.state.chatHistories.hasOwnProperty(taskId)) {
+            this.state.chatHistories[taskId] = [];
+            console.log(`[GameState] Cleared chat history for task ${taskId}.`);
+        } else {
+            console.warn(`[GameState] Attempted to clear chat history for non-existent task ID: ${taskId}`);
+        }
+    }
+
 }

@@ -44,7 +44,6 @@ export class FilterPanel {
         this.activeFilterSetName = setName;
         this.filters = this.filterDefinitions[setName] || []; // Use the stored definition
         this.renderActiveFilters();
-        this.notifyFilterChange(); // Notify with initial state of the new filter set
         return this;
     }
 
@@ -108,7 +107,7 @@ export class FilterPanel {
 
         select.addEventListener('change', () => {
             config.currentValue = select.value;
-            this.notifyFilterChange();
+            this.notifyFilterChange(config.field, select.value);
         });
 
         return select;
@@ -119,34 +118,27 @@ export class FilterPanel {
         return this;
     }
 
-    notifyFilterChange() {
-        const filterState = this.getFilterState();
-        this.onFilterChangeCallbacks.forEach(callback => callback(filterState));
-    }
-
-    getFilterState() {
-        return this.filters.map(f => ({
-            field: f.field,
-            value: f.currentValue,
-            operator: f.operator || '=',
-            type: f.type
-        }));
+    notifyFilterChange(field, value) {
+        console.log(`[FilterPanel] Notifying change: Set=${this.activeFilterSetName}, Field=${field}, Value=${value}`);
+        this.onFilterChangeCallbacks.forEach(callback => callback(this.activeFilterSetName, field, value));
     }
 
     resetFilters() {
         if (!this.filters) return; // Check if filters exist for the active set
 
         this.filters.forEach(filter => {
-            filter.currentValue = filter.defaultValue || '';
+            const previousValue = filter.currentValue;
+            const resetValue = filter.defaultValue || '';
+            filter.currentValue = resetValue;
 
             const element = document.getElementById(filter.id);
             if (element && element.tagName === 'SELECT') {
                 element.value = filter.currentValue;
-            } else if (element) {
-                console.warn("Trying to reset non-dropdown filter element:", element);
+            }
+
+            if (previousValue !== resetValue) {
+                this.notifyFilterChange(filter.field, filter.currentValue);
             }
         });
-
-        this.notifyFilterChange();
     }
 }

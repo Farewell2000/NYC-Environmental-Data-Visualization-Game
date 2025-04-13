@@ -6,8 +6,8 @@ import { TaskPanel } from './components/task-panel.js';
 import { Chatbot } from './components/chatbot.js';
 import { GameState } from './game/game-state.js';
 import { loadData } from './utils/data-loader.js';
-import { getTreeDialogue, getBoroughDialogue } from './game/dialogues.js';
 import { ALL_TASKS } from './game/tasks.js';
+import { getCharacterDialogue } from './utils/api-client.js';
 
 // Wait for DOM to be ready
 document.addEventListener('DOMContentLoaded', async () => {
@@ -125,6 +125,20 @@ document.addEventListener('DOMContentLoaded', async () => {
         // Initialize chat
         const chatbot = new Chatbot('chat-history', 'chat-input', 'chat-submit', gameState);
 
+        // Function to apply timed highlight to map
+        const applyMapHighlight = () => {
+            // const mapElement = document.getElementById('map');
+            const mapContainerElement = document.querySelector('.map-container'); // Select container
+            if (mapContainerElement) {
+                console.log("[main] Applying map highlight to .map-container"); // DEBUG
+                mapContainerElement.classList.add('map-highlight');
+                // Remove the class after the animation finishes (1.2s * 2 iterations = 2.4s)
+                setTimeout(() => {
+                    mapContainerElement.classList.remove('map-highlight');
+                }, 2400); // Adjusted timeout to match CSS animation duration (1.2s * 2)
+            }
+        };
+
         // Function to activate a task
         async function activateTask(taskId) {
             console.log(`[main] Activating task: ${taskId}`);
@@ -150,7 +164,15 @@ document.addEventListener('DOMContentLoaded', async () => {
             const history = gameState.getChatHistory(taskId);
             chatbot.loadHistory(history);
 
-            // 4. Update Map Visualization
+            // 4. Display initial dialogue in Chatbot if it exists and history is empty
+            if (task.initialDialogue && (!history || history.length === 0)) {
+                // Add to display
+                chatbot.addMessage('bot', task.initialDialogue);
+                // Add to stored state
+                gameState.addChatMessageToCurrentTask('bot', task.initialDialogue);
+            }
+
+            // 5. Update Map Visualization
             map.clearAllLayers(); // Clear previous task's layers
             map.setBoroughData(boroughData) // Always show boroughs
                .loadGeoJson(boroughGeoJson);
@@ -172,49 +194,40 @@ document.addEventListener('DOMContentLoaded', async () => {
                 legend.update(noiseLegend);
                 gameState.updateState({ mapState: { selectedNoiseType: noiseType }});
             }
-
-            // 5. Display initial dialogue for the task (if any)
-            if (task.initialDialogue) {
-                await dialogue.speak(task.initialDialogue);
-            }
              console.log(`[main] Task ${taskId} activated.`);
-        }
-
-        // Function to handle task completion
-        async function handleTaskCompletion(taskId) {
-            console.log(`[main] Checking completion for task: ${taskId}`);
-            const task = gameState.getTaskById(taskId);
-            if (!task || gameState.isTaskCompleted(taskId)) {
-                console.log(`[main] Task ${taskId} not found or already completed.`);
-                return; // Already completed or doesn't exist
-            }
-
-            // Check completion condition (now based on gameState, possibly chat history)
-            const isComplete = task.checkCompletion(gameState); // Removed map/filterPanel args
-            if (isComplete) {
-                console.log(`[main] Task ${taskId} condition met! Completing...`);
-                const { completed, nextTaskId } = gameState.completeTask(taskId);
-
-                if (completed) {
-                     await dialogue.speak(task.completionDialogue || "Task Complete!");
-
-                    // Update the completed task card visually
-                    taskPanel.updateTaskCard(taskId);
-
-                    // Update (unlock) the next task card visually, if there is one
-                    if (nextTaskId) {
-                        console.log(`[main] Unlocking next task card: ${nextTaskId}`);
-                        taskPanel.updateTaskCard(nextTaskId);
-                    }
-                    // No automatic activation of the next task
-                }
-            } else {
-                console.log(`[main] Task ${taskId} condition not met.`);
-            }
         }
 
         // Connect components
         console.log("Connecting components...");
+
+        // --- Initial Highlighting --- START
+        const taskPanelElement = document.getElementById('task-panel');
+        const chatbotAreaElement = document.getElementById('chatbot-area');
+        const chatInputElement = document.getElementById('chat-input');
+
+        if (taskPanelElement && chatbotAreaElement && chatInputElement) {
+            console.log("[main] Found elements for initial highlight:", { taskPanelElement, chatbotAreaElement }); // DEBUG
+            taskPanelElement.classList.add('component-highlight');
+            chatbotAreaElement.classList.add('component-highlight');
+
+            const handleFirstInputFocus = () => {
+                console.log("[main] First chat input focus detected.");
+                taskPanelElement.classList.remove('component-highlight');
+                chatbotAreaElement.classList.remove('component-highlight');
+                applyMapHighlight(); // Apply the timed highlight to the map
+                // Remove the listener after it runs once
+                chatInputElement.removeEventListener('focus', handleFirstInputFocus);
+            };
+
+            chatInputElement.addEventListener('focus', handleFirstInputFocus);
+        } else { // DEBUG
+            console.error("[main] Could not find one or more elements for initial highlight:", { // DEBUG
+                taskPanelExists: !!taskPanelElement, // DEBUG
+                chatbotAreaExists: !!chatbotAreaElement, // DEBUG
+                chatInputExists: !!chatInputElement // DEBUG
+            }); // DEBUG
+        }
+        // --- Initial Highlighting --- END
 
         // When a task is selected in the panel, activate it
         taskPanel.onTaskSelect(taskId => {
@@ -227,10 +240,6 @@ document.addEventListener('DOMContentLoaded', async () => {
         });
 
         // Map interactions: Display info/dialogue, DO NOT trigger completion
-        map.onBoroughHover((borough, data) => {
-            // Can add hover effects or info display if needed
-        });
-
         map.onBoroughClick((borough, data) => {
             const currentTaskId = gameState.getCurrentTaskId();
             const task = currentTaskId ? gameState.getTaskById(currentTaskId) : null;
@@ -239,107 +248,100 @@ document.addEventListener('DOMContentLoaded', async () => {
 
             // If the current task is the noise task, show borough dialogue
             if (task && task.dataType === 'noise') {
-                const boroughDialogue = getBoroughDialogue(borough);
-                dialogue.speak(boroughDialogue);
+                // Moved dialogue logic directly here
+                const boroughDialogueText = `You've selected ${borough}. Check the noise complaint data. What patterns do you observe?`;
+                dialogue.speak(boroughDialogueText);
             }
-            // Removed handleTaskCompletion call from here
+            // Removed old completion checking logic
         });
 
         // Add tree click handler
-        map.onTreeClick(treeData => {
+        map.onTreeClick(async treeData => {
             const currentTaskId = gameState.getCurrentTaskId();
             const task = currentTaskId ? gameState.getTaskById(currentTaskId) : null;
+            // Displaying tree info might be better suited for a tooltip or a dedicated panel
+            console.log("Tree clicked:", treeData); // Keep log for debugging
 
-             // Only show tree dialogue if the current task is a tree task
-             if (task && task.dataType === 'tree') {
-                console.log("[main] Tree clicked during tree task, showing dialogue:", treeData);
-                const treeDialogue = getTreeDialogue(treeData);
-                dialogue.speak(treeDialogue);
-             }
-        });
+            // Show tree dialogue if it's a tree task using the /character endpoint
+            if (task && task.dataType === 'tree') {
+                try {
+                    // Prepare data for the /character endpoint
+                    const requestData = {
+                        //taskId: currentTaskId, // Backend seems to infer task based on properties?
+                        treeProperties: {
+                            status: treeData.status,
+                            spc_common: treeData.spc_common,
+                            latitude: treeData.latitude,
+                            longitude: treeData.longitude,
+                        }
+                    };
+                    console.log("[main] Sending to /character via api-client:", requestData);
+                    // Use the api-client
+                    const result = await getCharacterDialogue(currentTaskId, requestData.treeProperties);
+                    console.log("[main] /character response:", result);
 
-        // Filter panel changes need to update map
-        filterPanel.onFilterChange(filters => {
-            const currentTaskId = gameState.getCurrentTaskId();
-            const task = currentTaskId ? gameState.getTaskById(currentTaskId) : null;
-
-            if (task) {
-                if (task.dataType === 'tree' && filters.some(f => f.field === 'year')) {
-                    const yearFilter = filters.find(f => f.field === 'year');
-                    const year = yearFilter ? yearFilter.value : (gameState.state.mapState.selectedYear || '2015');
-                    console.log(`[main] Year filter changed to: ${year}`);
-                    gameState.updateState({ mapState: { selectedYear: year } }); // Update game state
-                    const newTreeData = treeDataByYear[year] || [];
-                    map.setData('tree', newTreeData); // Update map data
-                    map.setActiveDataset('tree'); // Re-render tree points
-
-                } else if (task.dataType === 'noise' && filters.some(f => f.field === 'noiseType')) {
-                    const noiseFilter = filters.find(f => f.field === 'noiseType');
-                    const noiseType = noiseFilter ? noiseFilter.value : (gameState.state.mapState.selectedNoiseType || 'All');
-                    console.log(`[main] Noise type filter changed to: ${noiseType}`);
-                    gameState.updateState({ mapState: { selectedNoiseType: noiseType } }); // Update game state
-                    
-                    // Filter the noise data *before* sending it to the map for choropleth
-                    let filteredNoiseData = noiseData;
-                    if (noiseType !== 'All') {
-                        filteredNoiseData = noiseData.filter(item => item['Complaint Type'] === noiseType);
+                    if (result && result.message) {
+                        dialogue.speak(result.message);
+                    } else {
+                        console.warn("[main] Received empty or invalid response from /character.");
+                        dialogue.speak("Hmm, I don't have specific info for this tree right now.");
                     }
-                    map.setData('noise', filteredNoiseData); // Update map data
-                    map.setActiveDataset('noise'); // Re-render choropleth
-                    
-                    // Check completion *only* if noise type is 'All', relevant for the task
-                    if (noiseType === 'All') {
-                        // Maybe trigger check completion here IF the task requires 'All'? 
-                        // handleTaskCompletion(currentTaskId); // Decided against this, completion via chat.
-                    }
+                } catch (error) {
+                    console.error("[main] Error calling /character endpoint:", error);
+                    dialogue.speak("Sorry, I couldn't fetch the details for this tree.");
                 }
             }
         });
 
-        // Chat interactions: Handle responses and check completion
-        chatbot.onMessage(userMessage => {
-            const currentTaskId = gameState.getCurrentTaskId();
-            const task = currentTaskId ? gameState.getTaskById(currentTaskId) : null;
+        // Filter panel interactions
+        filterPanel.onFilterChange((filterSetName, field, value) => {
+            console.log(`[main] Filter changed: Set='${filterSetName}', Field='${field}', Value='${value}'`);
+            const currentTask = gameState.getTaskById(gameState.getCurrentTaskId());
 
-            let botResponse = "Hmm, I'm not sure how to respond to that."; // Default response
-
-            if (task && task.handleChat) {
-                 // Get task-specific response (or default if handleChat returns nothing useful)
-                 const taskResponse = task.handleChat(userMessage, gameState);
-                 if (taskResponse) {
-                     botResponse = taskResponse;
-                 }
-            }
-
-            // Send the bot response
-            chatbot.respondToUser(botResponse);
-
-            // ALWAYS check for completion after a user message is sent and processed
-            if (currentTaskId) {
-                 handleTaskCompletion(currentTaskId);
+            if (currentTask && filterSetName === 'tree' && field === 'year') {
+                const year = value;
+                const currentTreeData = treeDataByYear[year] || [];
+                gameState.updateState({ mapState: { selectedYear: year } });
+                map.setData('tree', currentTreeData); // Update map data
+                // map.setFilteredData(currentTreeData); // Update map visualization
+            } else if (currentTask && filterSetName === 'noise' && field === 'noiseType') {
+                const noiseType = value;
+                gameState.updateState({ mapState: { selectedNoiseType: noiseType } });
+                // The map component handles filtering noise data internally for choropleth based on type
+                // We just need to trigger an update
+                map.updateNoiseChoropleth(noiseType);
             }
         });
 
-        // Initial setup
-        console.log("Performing initial setup...");
-        dialogue.setAvatar('assets/avatars/cartoon-avatar.png');
-        taskPanel.renderTasks(); // Initial render
-        const firstTaskId = gameState.getCurrentTaskId();
-        if (firstTaskId) {
-            console.log(`Activating first task: ${firstTaskId}`);
-            activateTask(firstTaskId);
+        // Chatbot interactions
+        chatbot.registerTaskCompleteListener((completedTaskId, nextTaskId) => {
+            console.log(`[main] Task completion event received for task ${completedTaskId}. Next task: ${nextTaskId}`);
+            taskPanel.updateTaskCard(completedTaskId); // Mark the completed task card
+            if (nextTaskId) {
+                taskPanel.updateTaskCard(nextTaskId); // Make the next task card selectable
+            }
+            // Focus back on chat input for follow-up conversation
+            chatbot.inputElement.focus();
+        });
+
+        // Final setup
+        console.log("Initializing first task...");
+        // Activate the initial task (first one in the list)
+        const initialTaskId = gameState.getCurrentTaskId();
+        if (initialTaskId) {
+            activateTask(initialTaskId);
         } else {
-            console.warn("No initial task found!");
+            console.error("[main] No initial task found!");
         }
 
-        // Introduce the game
-        /* await dialogue.speak(dialogues.introduction); */ // This line is removed as dialogues.introduction no longer exists
-        
-        console.log("Application initialized.");
+        // Initial rendering of the task panel after gameState is initialized
+        taskPanel.renderTasks(); // Ensure panel shows initial state correctly
+
+        console.log("Application setup complete.");
 
     } catch (error) {
-        console.error("Initialization failed:", error);
+        console.error("Error during application initialization:", error);
         // Display a user-friendly error message on the page
-        document.body.innerHTML = `<div style="color: red; padding: 20px;">Error initializing application: ${error.message}. Please check the console for details.</div>`;
+        document.body.innerHTML = `<div style="color: red; padding: 20px;">Failed to initialize the application: ${error.message}. Please check the console for details.</div>`;
     }
 });

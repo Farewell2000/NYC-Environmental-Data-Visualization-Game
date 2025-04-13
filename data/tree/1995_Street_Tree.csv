@@ -17,14 +17,11 @@ address,status,borough,longitude,latitude,spc_common,spc_latin
 82-046 PETTIT PL,Good,Queens,-73.882897,40.744805,"maple, norway",acer platanoides
 375 PARK AV,Good,Manhattan,-73.972797,40.758807,"elm, american",ulmus americana
 3349 PERRY AV,Good,Bronx,-73.874567,40.878481,japanese pagoda tree,sophora japonica
-40 CLYMER ST,Poor,Brooklyn,-73.967209,40.704378,unknown dead trees,unknown dead trees 
 1280 E 100 ST,Fair,Brooklyn,-73.891393,40.638934,london planetree,platanus acerifolia
 97-010 69 AV,Fair,Queens,-73.851776,40.717524,"maple, sugar",acer saccharum
 150-015 78 RD,Fair,Queens,-73.813409,40.720724,"oak, pin",quercus palustris
 384 VINELAND AV,Fair,Staten Island,-74.190977,40.544965,"pear, callery",pyrus calleryana
-157-038 19 AV,Fair,Queens,-73.80482,40.781241,unknown live trees,unknown live trees 
 836 E 147 ST,Fair,Bronx,-73.905934,40.810636,"pear, callery",pyrus calleryana
-1224 77 ST,Poor,Brooklyn,-74.010283,40.620138,unknown dead trees,unknown dead trees 
 101-010 157 AV,Fair,Queens,-73.833167,40.663597,"maple, norway",acer platanoides
 48-033 188 ST,Fair,Queens,-73.790129,40.748102,"linden, little leaf",tilia cordata
 243-011 ALAMEDA AV,Poor,Queens,-73.742115,40.764277,"maple, norway",acer platanoides
@@ -35,7 +32,6 @@ address,status,borough,longitude,latitude,spc_common,spc_latin
 3239 CLEARVIEW EXWY,Poor,Queens,-73.790574,40.787987,"maple, norway",acer platanoides
 76 HART BLVD,Fair,Staten Island,-74.100686,40.633744,london planetree,platanus acerifolia
 1409 LELAND AV,Poor,Bronx,-73.864152,40.835658,"maple, sugar",acer saccharum
-1539 COMMONWLTH AV,Poor,Bronx,-73.869174,40.838656,unknown stump,unknown stump 
 60-012 56 AV,Fair,Queens,-73.90592,40.725187,"maple, norway",acer platanoides
 107-041 111 ST,Fair,Queens,-73.829586,40.681584,"ash, green",fraxinus pennsylvanica
 1036 PARK AV,Fair,Manhattan,-73.957253,40.780108,"linden, little leaf",tilia cordata
@@ -46,7 +42,6 @@ address,status,borough,longitude,latitude,spc_common,spc_latin
 163 RYE AV,Good,Staten Island,-74.174704,40.546345,"oak, northern red",quercus rubra
 257-017 149 AV,Good,Queens,-73.731639,40.652922,ginkgo,ginkgo biloba
 61-012 231 ST,Fair,Queens,-73.747431,40.750942,"oak, northern red",quercus rubra
-249 LEXINGTON AVE,Poor,Manhattan,-73.979422,40.746816,unknown stump,unknown stump 
 96 CRANFORD ST,Fair,Staten Island,-74.138888,40.55167,"linden, little leaf",tilia cordata
 140-035 BURDEN CRES,Fair,Queens,-73.815875,40.711291,"oak, pin",quercus palustris
 934 CALHOUN AV,Good,Bronx,-73.827411,40.829313,"maple, sugar",acer saccharum
@@ -65,7 +60,6 @@ address,status,borough,longitude,latitude,spc_common,spc_latin
 262 SANILAC ST,Good,Staten Island,-74.102038,40.575021,"maple, norway",acer platanoides
 103-055 100 ST,Fair,Queens,-73.840685,40.68217,tree of heaven,ailanthus altissima
 23 ELKHART ST,Good,Staten Island,-74.151588,40.564483,honeylocust,gleditsia triacanthos
-32-020 86 ST,Fair,Queens,-73.881953,40.757621,unknown live trees,unknown live trees 
 1037 WILLOW BROOK RD,Poor,Staten Island,-74.138575,40.603207,planting site,planting site
 157-004 27 AV,Fair,Queens,-73.806827,40.772981,"pear, callery",pyrus calleryana
 61-027 59 DR,Fair,Queens,-73.90283,40.717919,london planetree,platanus acerifolia
@@ -124,7 +118,6 @@ address,status,borough,longitude,latitude,spc_common,spc_latin
 175 GUYON AV,Good,Staten Island,-74.124495,40.563078,"oak, english",quercus robur
 53-034 194 ST,Fair,Queens,-73.784286,40.746467,"maple, red",acer rubrum
 955 RENSSELAER AV,Good,Staten Island,-74.206444,40.537613,"maple, silver",acer saccharinum
-560 POWELL ST,Poor,Brooklyn,-73.901575,40.660428,unknown dead trees,unknown dead trees 
 1655 PUTNAM AV,Fair,Queens,-73.907558,40.699363,"ash, green",fraxinus pennsylvanica
 1363 65 ST,Fair,Brooklyn,-74.000136,40.625148,london planetree,platanus acerifolia
 82-020 LANGDALE ST,Fair,Queens,-73.70096,40.742622,ginkgo,ginkgo biloba
@@ -181,7 +174,6 @@ address,status,borough,longitude,latitude,spc_common,spc_latin
 312 FT WASHINGTON AV,Fair,Manhattan,-73.940425,40.845599,"elm, american",ulmus americana
 190 NORFOLK ST,Fair,Manhattan,-73.985525,40.721968,ginkgo,ginkgo biloba
 25-066 99 ST,Poor,Queens,-73.870556,40.763035,london planetree,platanus acerifolia
-85-051 102 ST,Poor,Queens,-73.846137,40.696848,unknown dead trees,unknown dead trees 
 1150 E 29 ST,Fair,Brooklyn,-73.94719,40.623058,"oak, pin",quercus palustris
 94 CHESTER AV,Fair,Staten Island,-74.182215,40.521448,"maple, red",acer rubrum
 39-015 21 ST,Fair,Queens,-73.940223,40.756294,honeylocust,gleditsia triacanthos
@@ -239,7 +231,6 @@ address,status,borough,longitude,latitude,spc_common,spc_latin
 132 STERLING PL,Fair,Brooklyn,-73.973943,40.677179,"zelkova, japanese",zelkova serrata
 433 E 56 ST,Fair,Manhattan,-73.962662,40.757323,honeylocust,gleditsia triacanthos
 44 E SCRANTON AV,Good,Staten Island,-74.159113,40.554609,london planetree,platanus acerifolia
-32-061 32 AV,Poor,Queens,-73.925723,40.760197,unknown stump,unknown stump
 248-020 89 AV,Fair,Queens,-73.71808,40.726907,"maple, sycamore",acer pseudoplatanus
 1527 56 ST,Fair,Brooklyn,-73.991191,40.628084,"pear, callery",pyrus calleryana
 1133 FIFTH AV,Good,Manhattan,-73.956489,40.786912,ginkgo,ginkgo biloba
@@ -252,12 +243,10 @@ address,status,borough,longitude,latitude,spc_common,spc_latin
 3155 SANDS PL,Fair,Bronx,-73.827543,40.851162,"maple, silver",acer saccharinum
 185-059 80 RD,Fair,Queens,-73.781773,40.728105,london planetree,platanus acerifolia
 4207 CLARENDON RD,Fair,Brooklyn,-73.937208,40.643954,london planetree,platanus acerifolia
-104-016 124 ST,Poor,Queens,-73.819968,40.6874,unknown stump,unknown stump
 219 RAMONA AV,Fair,Staten Island,-74.193104,40.539811,sweetgum,liquidambar styraciflua
 126 FRANKLIN ST,Good,Manhattan,-74.006465,40.71907,apple,malus pumila
 130-050 228 ST,Poor,Queens,-73.739709,40.681191,"maple, silver",acer saccharinum
 450 RICHMOND HILL RD,Fair,Staten Island,-74.154845,40.58185,tree of heaven,ailanthus altissima
-30-016 50 ST,Poor,Queens,-73.907354,40.759697,unknown stump,unknown stump
 214-013 40 AV,Fair,Queens,-73.770099,40.764466,"pear, callery",pyrus calleryana
 83-042 246 LA,Fair,Queens,-73.721436,40.735628,"maple, norway",acer platanoides
 2336 KNAPP ST,Fair,Brooklyn,-73.933247,40.595891,"maple, norway",acer platanoides
@@ -292,12 +281,10 @@ address,status,borough,longitude,latitude,spc_common,spc_latin
 101-003 97 AV,Fair,Queens,-73.842413,40.687207,"ash, green",fraxinus pennsylvanica
 170 RAMAPO AV,Good,Staten Island,-74.207788,40.540288,"maple, silver",acer saccharinum
 301 LEFFERTS AV,Good,Brooklyn,-73.951311,40.662322,ginkgo,ginkgo biloba
-384 PACIFIC ST,Good,Brooklyn,-73.985292,40.686306,unknown live trees,unknown live trees 
 1921 E 21 ST,Fair,Brooklyn,-73.951581,40.605878,"maple, norway",acer platanoides
 4650 FIELDSTON RD,Poor,Bronx,-73.904868,40.89452,horsechestnut,aesculus hippocastanum
 136 E 59 ST,Good,Manhattan,-73.968163,40.762216,"pear, callery",pyrus calleryana
 156 LANGHAM ST,Good,Brooklyn,-73.940963,40.579362,london planetree,platanus acerifolia
-137-002 137 AV,Good,Queens,-73.76772,40.673055,unknown live trees,unknown live trees 
 140-020 184 ST,Fair,Queens,-73.760143,40.67185,"pear, callery",pyrus calleryana
 3256 RADIO DR,Fair,Bronx,-73.818955,40.843693,"maple, silver",acer saccharinum
 340 STEWART AV,Fair,Staten Island,-74.14527,40.615833,"pear, callery",pyrus calleryana
@@ -317,7 +304,6 @@ address,status,borough,longitude,latitude,spc_common,spc_latin
 82-061 257 ST,Fair,Queens,-73.711996,40.739361,"maple, norway",acer platanoides
 34-022 35 ST,Good,Queens,-73.924344,40.757817,"elm, chinese",ulmus parvifolia
 228 CITY BLVD,Fair,Staten Island,-74.103721,40.624611,sassafras,sassafras albidum
-11-038 129 ST,Good,Queens,-73.839247,40.786922,unknown live trees,unknown live trees 
 153 ST NICHOLAS AV,Fair,Brooklyn,-73.916889,40.704719,"maple, red",acer rubrum
 116-004 INWOOD ST,Fair,Queens,-73.796349,40.681517,london planetree,platanus acerifolia
 163-019 83 ST,Fair,Queens,-73.847537,40.651073,"maple, norway",acer platanoides
@@ -341,7 +327,6 @@ address,status,borough,longitude,latitude,spc_common,spc_latin
 642 TYSENS LA,Fair,Staten Island,-74.113665,40.562277,"oak, pin",quercus palustris
 157-067 9 AV,Fair,Queens,-73.802445,40.793355,"maple, silver",acer saccharinum
 2627 E 22 ST,Good,Brooklyn,-73.94726,40.58805,london planetree,platanus acerifolia
-246 W BROADWAY,Fair,Manhattan,-74.005808,40.719872,unknown live trees,unknown live trees 
 341 59 ST,Fair,Brooklyn,-74.018908,40.642149,london planetree,platanus acerifolia
 43-057 UNION ST,Fair,Queens,-73.820593,40.753663,"oak, northern red",quercus rubra
 192 KIRSHON AV,Fair,Staten Island,-74.164407,40.61468,"maple, silver",acer saccharinum
@@ -356,10 +341,8 @@ address,status,borough,longitude,latitude,spc_common,spc_latin
 71 GRAND AV,Good,Staten Island,-74.099894,40.616318,"maple, silver",acer saccharinum
 87 WINDHAM LOOP,Fair,Staten Island,-74.16145,40.577777,"ash, green",fraxinus pennsylvanica
 157-056 10 AV,Fair,Queens,-73.802813,40.792664,"linden, little leaf",tilia cordata
-116-009 103 AV,Poor,Queens,-73.827451,40.687261,unknown stump,unknown stump
 750 FAILLE ST,Fair,Bronx,-73.886704,40.815384,"maple, sycamore",acer pseudoplatanus
 152-028 ROOSEVELT AV,Fair,Queens,-73.812258,40.764087,"linden, little leaf",tilia cordata
-73-000 QUEENS BLVD,Fair,Queens,-73.890701,40.739298,unknown live trees,unknown live trees 
 197-020 115 AV,Fair,Queens,-73.756252,40.697337,"oak, pin",quercus palustris
 69-004 173 ST,Good,Queens,-73.796768,40.732706,"maple, norway",acer platanoides
 1814 E 33 ST,Fair,Brooklyn,-73.936871,40.611357,"maple, norway",acer platanoides
@@ -369,10 +352,8 @@ address,status,borough,longitude,latitude,spc_common,spc_latin
 357 CLERMONT AV,Fair,Brooklyn,-73.96958,40.686741,london planetree,platanus acerifolia
 55-010 39 AV,Fair,Queens,-73.907915,40.748565,"maple, silver",acer saccharinum
 433 DE KALB AV,Fair,Brooklyn,-73.960093,40.69037,"oak, pin",quercus palustris
-140 VANCORTLANDT AV W,Fair,Bronx,-73.894507,40.885475,unknown live trees,unknown live trees 
 242-009 NORTH CONDUIT BLVD,Fair,Queens,-73.735765,40.66658,"maple, norway",acer platanoides
 121-009 85 AV,Poor,Queens,-73.830015,40.703328,"maple, sycamore",acer pseudoplatanus
-2764 WHITMAN DR,Fair,Brooklyn,-73.911487,40.604712,unknown live trees,unknown live trees 
 1150 BRIGHTON BEACH AV,Fair,Brooklyn,-73.955717,40.577642,london planetree,platanus acerifolia
 235 E 80 ST,Good,Manhattan,-73.956009,40.774634,"cherry, cornelian",cornus mas
 136 BEACH AV,Good,Staten Island,-74.119374,40.570957,"maple, silver",acer saccharinum
@@ -394,7 +375,6 @@ address,status,borough,longitude,latitude,spc_common,spc_latin
 61-021 182 ST,Fair,Queens,-73.79174,40.73877,"linden, little leaf",tilia cordata
 17 VANDAM ST,Fair,Brooklyn,-73.936804,40.725449,"maple, sugar",acer saccharum
 197-020 58 AV,Fair,Queens,-73.77932,40.744851,london planetree,platanus acerifolia
-377 WOODBINE ST,Fair,Brooklyn,-73.911543,40.697824,unknown live trees,unknown live trees 
 23 RIDGECREST AV,Fair,Staten Island,-74.154077,40.535239,"maple, red",acer rubrum
 83 GRANT AV,Fair,Brooklyn,-73.868594,40.688992,"maple, norway",acer platanoides
 5835 KINGS HWY,Good,Brooklyn,-73.922651,40.653026,"maple, sugar",acer saccharum
@@ -404,7 +384,6 @@ address,status,borough,longitude,latitude,spc_common,spc_latin
 4510 SNYDER AV,Fair,Brooklyn,-73.934911,40.649818,"linden, little leaf",tilia cordata
 301 BERTRAM AV,Good,Staten Island,-74.177689,40.528088,"maple, red",acer rubrum
 64 RYAN PL,Fair,Staten Island,-74.166663,40.527559,"pear, callery",pyrus calleryana
-91-050 195 ST,Good,Queens,-73.765705,40.712369,unknown live trees,unknown live trees 
 117-004 85 AV,Fair,Queens,-73.833868,40.702359,"maple, norway",acer platanoides
 111-021 111 AV,Fair,Queens,-73.827917,40.67863,"maple, norway",acer platanoides
 1138 63 ST,Fair,Brooklyn,-74.003857,40.629283,honeylocust,gleditsia triacanthos
@@ -420,7 +399,6 @@ address,status,borough,longitude,latitude,spc_common,spc_latin
 141-040 70 RD,Poor,Queens,-73.823905,40.728338,"maple, norway",acer platanoides
 40 WASHINGTON SQ W,Poor,Manhattan,-73.999592,40.731037,honeylocust,gleditsia triacanthos
 53 E 126 ST,Poor,Manhattan,-73.939808,40.806262,planting site,planting site
-3320 FOSTER AV,Fair,Brooklyn,-73.945143,40.6388,unknown live trees,unknown live trees 
 56-020 206 ST,Good,Queens,-73.771957,40.748295,"maple, norway",acer platanoides
 256-001 JAMAICA AV,Fair,Queens,-73.708559,40.727638,"maple, norway",acer platanoides
 40 W 84 ST,Good,Manhattan,-73.971431,40.784453,honeylocust,gleditsia triacanthos
@@ -435,7 +413,6 @@ address,status,borough,longitude,latitude,spc_common,spc_latin
 108 FT GREENE PL,Good,Brooklyn,-73.976441,40.686359,ginkgo,ginkgo biloba
 221-034 58 AV,Fair,Queens,-73.756403,40.751185,london planetree,platanus acerifolia
 76-012 35 AV,Fair,Queens,-73.890137,40.751213,"maple, norway",acer platanoides
-402 B 145 ST,Fair,Queens,-73.776502,40.662727,unknown live trees,unknown live trees 
 6825 BLISS TER,Fair,Brooklyn,-74.031945,40.637881,"maple, norway",acer platanoides
 459 Avenue T,Fair,Brooklyn,-73.968146,40.599841,london planetree,platanus acerifolia
 530 55 ST,Fair,Brooklyn,-74.012545,40.641891,"spruce, colorado",picea pungens
@@ -501,7 +478,6 @@ address,status,borough,longitude,latitude,spc_common,spc_latin
 14-038 30 AV,Poor,Queens,-73.929084,40.77048,london planetree,platanus acerifolia
 2488 HOFFMAN ST,Good,Bronx,-73.886521,40.857932,honeylocust,gleditsia triacanthos
 78 DECKER AV,Fair,Staten Island,-74.134625,40.630479,"maple, red",acer rubrum
-161 CONVENT AV,Poor,Manhattan,-73.950701,40.818621,unknown stump,unknown stump 
 243 MOUNT EDEN PKWY,Fair,Bronx,-73.907758,40.842703,"maple, sugar",acer saccharum
 116-032 232 ST,Fair,Queens,-73.72915,40.692921,"ash, green",fraxinus pennsylvanica
 2237 KINGSLAND AV,Fair,Bronx,-73.839092,40.858222,"maple, sugar",acer saccharum
@@ -588,7 +564,6 @@ address,status,borough,longitude,latitude,spc_common,spc_latin
 355 FILLMORE ST,Poor,Staten Island,-74.099974,40.643085,"maple, sugar",acer saccharum
 31-048 102 ST,Fair,Queens,-73.867072,40.760321,"ash, green",fraxinus pennsylvanica
 32-019 47 ST,Fair,Queens,-73.91377,40.755906,"linden, little leaf",tilia cordata
-13-008 NEW HAVEN AV,Good,Queens,-73.747219,40.597509,unknown live trees,unknown live trees 
 175 S 4 ST,Fair,Brooklyn,-73.961164,40.711255,"zelkova, japanese",zelkova serrata
 81-007 102 AV,Fair,Queens,-73.85738,40.680254,"linden, little leaf",tilia cordata
 2276 3 AV,Fair,Manhattan,-73.936415,40.80288,london planetree,platanus acerifolia
@@ -598,7 +573,6 @@ address,status,borough,longitude,latitude,spc_common,spc_latin
 1058 CAULDWELL AV,Fair,Bronx,-73.905611,40.826317,honeylocust,gleditsia triacanthos
 3152 SCHLEY AV,Good,Bronx,-73.815737,40.82656,"pear, callery",pyrus calleryana
 60-062 PUTNAM AV,Poor,Queens,-73.898335,40.706169,"maple, sugar",acer saccharum
-14 E 82 ST,Good,Manhattan,-73.961562,40.778635,unknown live trees,unknown live trees 
 77 BARROW ST,Poor,Manhattan,-74.005846,40.731634,"linden, little leaf",tilia cordata
 844 NEW LOTS AV,Fair,Brooklyn,-73.879688,40.667688,"pear, callery",pyrus calleryana
 255-056 147 DR,Fair,Queens,-73.732946,40.655769,"ash, green",fraxinus pennsylvanica
@@ -607,7 +581,6 @@ address,status,borough,longitude,latitude,spc_common,spc_latin
 1043 79 ST,Fair,Brooklyn,-74.015456,40.621441,"maple, red",acer rubrum
 199-003 26 AV,Fair,Queens,-73.792676,40.773802,"maple, norway",acer platanoides
 116 ST MARKS PL,Fair,Manhattan,-73.984109,40.727095,"linden, little leaf",tilia cordata
-1820 FLUSHING AV,Poor,Queens,-73.909542,40.717677,unknown dead trees,unknown dead trees 
 1450 E 105 ST,Fair,Brooklyn,-73.884582,40.638458,london planetree,platanus acerifolia
 104-025 115 ST,Fair,Queens,-73.827451,40.685158,london planetree,platanus acerifolia
 100-025 205 ST,Poor,Queens,-73.754791,40.711186,"maple, norway",acer platanoides
@@ -632,7 +605,6 @@ address,status,borough,longitude,latitude,spc_common,spc_latin
 683 NEREID AV,Fair,Bronx,-73.854917,40.898692,"linden, little leaf",tilia cordata
 112 SHOTWELL AV,Fair,Staten Island,-74.181625,40.554018,"maple, norway",acer platanoides
 3178 BAISLEY AV,Good,Bronx,-73.822226,40.837195,sweetgum,liquidambar styraciflua
-615 W 183 ST,Poor,Manhattan,-73.933322,40.850698,unknown dead trees,unknown dead trees 
 2414 E 28 ST,Fair,Brooklyn,-73.942496,40.593263,"maple, norway",acer platanoides
 244-019 138 AV,Fair,Queens,-73.733208,40.667071,"maple, norway",acer platanoides
 721 E 85 ST,Poor,Brooklyn,-73.911105,40.639199,london planetree,platanus acerifolia
@@ -640,7 +612,6 @@ address,status,borough,longitude,latitude,spc_common,spc_latin
 48-053 GLENWOOD AV,Fair,Queens,-73.729933,40.769202,"maple, norway",acer platanoides
 8 E 93 ST,Fair,Manhattan,-73.956872,40.785857,"oak, willow",quercus phellos
 2837 GUNTHER AV,Poor,Bronx,-73.837655,40.867655,"ash, green",fraxinus pennsylvanica
-104-004 210 ST,Fair,Queens,-73.74881,40.7111,unknown live trees,unknown live trees 
 58-061 61 ST,Poor,Queens,-73.903605,40.719973,"maple, sugar",acer saccharum
 2416 KINGSLAND AV,Poor,Bronx,-73.838995,40.861142,london planetree,platanus acerifolia
 111 RAMONA AV,Fair,Staten Island,-74.189346,40.540855,sweetgum,liquidambar styraciflua
@@ -658,7 +629,6 @@ address,status,borough,longitude,latitude,spc_common,spc_latin
 129-014 135 AV,Fair,Queens,-73.810666,40.668697,"maple, red",acer rubrum
 207 ROBINSON AV,Fair,Staten Island,-74.153121,40.539059,honeylocust,gleditsia triacanthos
 230 WEST END AVE,Good,Manhattan,-73.98523,40.778776,ginkgo,ginkgo biloba
-42-012 MURRAY ST,Poor,Queens,-73.812112,40.760813,unknown stump,unknown stump
 94-025 211 ST,Fair,Queens,-73.749619,40.715904,"maple, silver",acer saccharinum
 429 55 ST,Good,Brooklyn,-74.01483,40.643271,london planetree,platanus acerifolia
 101-049 125 ST,Poor,Queens,-73.820441,40.690413,planting site,planting site
@@ -716,7 +686,6 @@ address,status,borough,longitude,latitude,spc_common,spc_latin
 2844 OCEAN PKWY,Fair,Brooklyn,-73.967452,40.581017,"ash, green",fraxinus pennsylvanica
 279 BEDFORD AV,Good,Staten Island,-74.101257,40.578424,london planetree,platanus acerifolia
 83-029 LITTLE NK PKWY,Good,Queens,-73.714323,40.737171,"oak, pin",quercus palustris
-2440 TIEBOUT AV,Poor,Bronx,-73.895547,40.860244,unknown dead trees,unknown dead trees 
 77 BAY 34 ST,Good,Brooklyn,-73.992471,40.59858,london planetree,platanus acerifolia
 69-014 181 ST,Fair,Queens,-73.790065,40.733192,"maple, norway",acer platanoides
 140-014 161 ST,Fair,Queens,-73.774706,40.669948,london planetree,platanus acerifolia
@@ -809,7 +778,6 @@ address,status,borough,longitude,latitude,spc_common,spc_latin
 32-023 90 ST,Good,Queens,-73.878226,40.75797,"elm, american",ulmus americana
 61-076 77 PL,Fair,Queens,-73.88044,40.72243,"maple, norway",acer platanoides
 746 BARLOW AV,Fair,Staten Island,-74.173143,40.556605,"maple, silver",acer saccharinum
-32-049 60 ST,Poor,Queens,-73.902221,40.754867,unknown stump,unknown stump
 178 ALVERSON AV,Good,Staten Island,-74.209168,40.551028,"maple, red",acer rubrum
 842 MACON ST,Fair,Brooklyn,-73.917128,40.684816,london planetree,platanus acerifolia
 432 CLIFTON AV,Fair,Staten Island,-74.075546,40.610355,"pear, callery",pyrus calleryana
@@ -819,7 +787,6 @@ address,status,borough,longitude,latitude,spc_common,spc_latin
 85 HOLLEY AV,Good,Staten Island,-74.152843,40.54562,"cherry, black",prunus serotina
 33-035 E 208 ST,Fair,Bronx,-73.882644,40.880209,"maple, norway",acer platanoides
 87-083 98 ST,Fair,Queens,-73.84681,40.692889,"ash, green",fraxinus pennsylvanica
-256-004 HILLSIDE AV,Poor,Queens,-73.711882,40.736566,unknown stump,unknown stump
 144-039 167 ST,Fair,Queens,-73.776146,40.665372,honeylocust,gleditsia triacanthos
 147-064 HUXLEY ST,Fair,Queens,-73.740525,40.655825,ginkgo,ginkgo biloba
 1606 2 AV,Fair,Manhattan,-73.953011,40.776139,"pear, callery",pyrus calleryana
@@ -832,7 +799,6 @@ address,status,borough,longitude,latitude,spc_common,spc_latin
 2047 CICERO AV,Good,Bronx,-73.852367,40.81701,ginkgo,ginkgo biloba
 84 ALMOND ST,Poor,Staten Island,-74.190517,40.550742,"maple, red",acer rubrum
 1090 NEW JERSEY AV,Fair,Brooklyn,-73.885686,40.653336,london planetree,platanus acerifolia
-33-027 212 ST,Poor,Queens,-73.776236,40.771432,unknown stump,unknown stump
 370 E 235 ST,Fair,Bronx,-73.864794,40.897853,honeylocust,gleditsia triacanthos
 2031 BAY RIDGE PKWY,Fair,Brooklyn,-73.991081,40.61043,"cherry, cornelian",cornus mas
 4042 BAYCHESTER AV,Fair,Bronx,-73.84306,40.891345,"maple, norway",acer platanoides
@@ -882,7 +848,6 @@ address,status,borough,longitude,latitude,spc_common,spc_latin
 71-038 70 ST,Poor,Queens,-73.881614,40.703436,"maple, norway",acer platanoides
 5922 BEVERLEY RD,Fair,Brooklyn,-73.920978,40.646856,"oak, pin",quercus palustris
 548 JACKSON AV,Fair,Bronx,-73.909067,40.813254,"maple, sugar",acer saccharum
-403 POWELL ST,Poor,Brooklyn,-73.902625,40.66442,unknown dead trees,unknown dead trees 
 64-029 71 ST,Fair,Queens,-73.884119,40.715757,"maple, red",acer rubrum
 209 W 116 ST,Fair,Manhattan,-73.95275,40.80336,ginkgo,ginkgo biloba
 147-021 256 ST,Fair,Queens,-73.732974,40.657494,"maple, sugar",acer saccharum
@@ -903,7 +868,6 @@ address,status,borough,longitude,latitude,spc_common,spc_latin
 303 E 83 ST,Good,Manhattan,-73.953086,40.775889,"pear, callery",pyrus calleryana
 1927 RADCLIFF AV,Fair,Bronx,-73.859026,40.850215,"maple, norway",acer platanoides
 89-028 211 ST,Fair,Queens,-73.75366,40.721688,"maple, norway",acer platanoides
-1050 RUTLAND RD,Poor,Brooklyn,-73.925015,40.663559,unknown dead trees,unknown dead trees 
 3017 RIVERDALE AV,Fair,Bronx,-73.910439,40.880492,eastern hop hornbeam,ostrya virginiana
 65-026 170 ST,Fair,Queens,-73.799255,40.736063,"maple, red",acer rubrum
 598 16 ST,Fair,Brooklyn,-73.974641,40.657633,honeylocust,gleditsia triacanthos
@@ -933,13 +897,10 @@ address,status,borough,longitude,latitude,spc_common,spc_latin
 1020 BAY ST,Fair,Staten Island,-74.068924,40.617881,"oak, pin",quercus palustris
 820 E 168 ST,Fair,Bronx,-73.8983,40.828608,"linden, little leaf",tilia cordata
 58-060 206 ST,Good,Queens,-73.770864,40.745987,"maple, silver",acer saccharinum
-3315 Avenue T,Poor,Brooklyn,-73.931585,40.606785,unknown live trees,unknown live trees 
 375 VANDERBILT AV,Fair,Brooklyn,-73.968589,40.686898,honeylocust,gleditsia triacanthos
 134-011 HILLSIDE AV,Fair,Queens,-73.812679,40.704904,"maple, norway",acer platanoides
 305 PARK ST,Good,Staten Island,-74.135601,40.569553,sweetgum,liquidambar styraciflua
 120 INDIA ST,Good,Brooklyn,-73.955399,40.732249,"linden, little leaf",tilia cordata
-190-011 DORMANS RD,Poor,Queens,-73.762905,40.696045,unknown stump,unknown stump
-2134 COLONIAL AV,Poor,Bronx,-73.829122,40.854851,unknown stump,unknown stump 
 20 JOYCE ST,Good,Staten Island,-74.095609,40.584676,"maple, red",acer rubrum
 237 E 20 ST,Fair,Manhattan,-73.983678,40.736612,london planetree,platanus acerifolia
 12E DELMAR AV,Fair,Staten Island,-74.195262,40.546888,"pear, callery",pyrus calleryana
@@ -997,7 +958,6 @@ address,status,borough,longitude,latitude,spc_common,spc_latin
 206-010 RICHLAND AV,Poor,Queens,-73.764562,40.734128,"maple, norway",acer platanoides
 203 W 94 ST,Fair,Manhattan,-73.971428,40.7928,honeylocust,gleditsia triacanthos
 80-021 PENELOPE AV,Fair,Queens,-73.874527,40.71948,london planetree,platanus acerifolia
-2625 E 63 ST,Fair,Brooklyn,-73.911207,40.608853,unknown live trees,unknown live trees 
 1471 VYSE AV,Fair,Bronx,-73.888756,40.832097,"linden, little leaf",tilia cordata
 301 BERTRAM AV,Good,Staten Island,-74.177689,40.528088,"maple, red",acer rubrum
 69-086 73 AV,Fair,Queens,-73.877393,40.707132,"maple, japanese",acer palmatum
@@ -1005,7 +965,6 @@ address,status,borough,longitude,latitude,spc_common,spc_latin
 222 E 8 ST,Fair,Brooklyn,-73.971873,40.644769,london planetree,platanus acerifolia
 244-006 138 AV,Fair,Queens,-73.733376,40.66713,london planetree,platanus acerifolia
 31-026 80 ST,Fair,Queens,-73.887818,40.758614,"maple, norway",acer platanoides
-224-023 144 AV,Fair,Queens,-73.753755,40.664934,unknown live trees,unknown live trees 
 102-047 65 RD,Fair,Queens,-73.851706,40.730016,"maple, norway",acer platanoides
 7260 AMBOY RD,Fair,Staten Island,-74.239887,40.51185,london planetree,platanus acerifolia
 221-005 KINGSBURY AV,Fair,Queens,-73.750579,40.737075,"maple, norway",acer platanoides
@@ -1019,14 +978,11 @@ address,status,borough,longitude,latitude,spc_common,spc_latin
 161 NEVADA AV,Good,Staten Island,-74.125888,40.583105,"spruce, other",picea species
 541 S PROSPECT AV,Fair,Bronx,-73.904462,40.812295,"maple, norway",acer platanoides
 111 E 56 ST,Fair,Manhattan,-73.970781,40.760742,hackberry,celtis occidentalis
-563 PARK AV,Good,Manhattan,-73.968375,40.764864,unknown live trees,unknown live trees 
 151-011 32 AV,Fair,Queens,-73.813016,40.770146,"maple, norway",acer platanoides
 1-002 26 AV,Fair,Queens,-73.935369,40.777047,london planetree,platanus acerifolia
-37-037 WARREN ST,Poor,Queens,-73.871236,40.750456,unknown dead trees,unknown dead trees 
 7610 3 AV,Fair,Brooklyn,-74.028114,40.63067,london planetree,platanus acerifolia
 505 E 14 ST,Fair,Manhattan,-73.980211,40.730392,honeylocust,gleditsia triacanthos
 1070 83 ST,Fair,Brooklyn,-74.017175,40.618836,london planetree,platanus acerifolia
-40 PILCHER ST,Poor,Staten Island,-74.141685,40.594576,unknown stump,unknown stump
 817 SINCLAIR AV,Fair,Staten Island,-74.203108,40.540078,"pear, callery",pyrus calleryana
 310 E 12 ST,Fair,Manhattan,-73.985641,40.730906,honeylocust,gleditsia triacanthos
 84-044 118 ST,Fair,Queens,-73.833402,40.703438,"maple, norway",acer platanoides
@@ -1052,7 +1008,6 @@ address,status,borough,longitude,latitude,spc_common,spc_latin
 177-033 105 AV,Poor,Queens,-73.780716,40.703758,"maple, norway",acer platanoides
 270 HENRY ST,Fair,Brooklyn,-73.995579,40.692114,"ash, green",fraxinus pennsylvanica
 3 JACKSON CT,Good,Brooklyn,-74.033067,40.611523,london planetree,platanus acerifolia
-1020 RENSSELAER AV,Good,Staten Island,-74.20857,40.53703,unknown live trees,unknown live trees 
 83-015 118 ST,Fair,Queens,-73.834927,40.706984,honeylocust,gleditsia triacanthos
 672 92 ST,Good,Brooklyn,-74.023891,40.615128,london planetree,platanus acerifolia
 101 E 69 ST,Fair,Manhattan,-73.965213,40.76916,ginkgo,ginkgo biloba
@@ -1124,7 +1079,6 @@ address,status,borough,longitude,latitude,spc_common,spc_latin
 812 PARK AV,Fair,Manhattan,-73.962458,40.772975,"cherry, cornelian",cornus mas
 339 E 57 ST,Fair,Manhattan,-73.964017,40.75877,honeylocust,gleditsia triacanthos
 83-024 125 ST,Good,Queens,-73.8264,40.705027,"maple, sycamore",acer pseudoplatanus
-154-026 28 AV,Poor,Queens,-73.809414,40.772468,unknown stump,unknown stump
 320 E 46 ST,Fair,Manhattan,-73.96982,40.752157,honeylocust,gleditsia triacanthos
 10111 Avenue K,Fair,Brooklyn,-73.89388,40.642396,london planetree,platanus acerifolia
 104-011 48 AV,Good,Queens,-73.858884,40.745161,"pear, callery",pyrus calleryana
@@ -1138,7 +1092,6 @@ address,status,borough,longitude,latitude,spc_common,spc_latin
 370 MANHATTAN AV,Poor,Manhattan,-73.957068,40.804694,planting site,planting site
 52 ROLLING HILL GREEN,Poor,Staten Island,-74.191286,40.551291,sweetgum,liquidambar styraciflua
 2822 Avenue L,Fair,Brooklyn,-73.947679,40.621807,"maple, norway",acer platanoides
-145-022 230 PL,Poor,Queens,-73.749176,40.660695,unknown dead trees,unknown dead trees 
 80-010 255 ST,Good,Queens,-73.715548,40.743676,"maple, norway",acer platanoides
 45-018 82 ST,Fair,Queens,-73.882858,40.741473,"linden, little leaf",tilia cordata
 163 PEMBROOK LA,Poor,Staten Island,-74.21966,40.535388,"pear, callery",pyrus calleryana
@@ -1171,7 +1124,6 @@ address,status,borough,longitude,latitude,spc_common,spc_latin
 60-070 CATALPA AV,Fair,Queens,-73.896876,40.703629,"linden, little leaf",tilia cordata
 33-032 110 ST,Fair,Queens,-73.8592,40.757399,"maple, norway",acer platanoides
 154-054 POWELL COVE BLVD,Good,Queens,-73.805153,40.794591,"linden, little leaf",tilia cordata
-1801 OCEAN AV,Fair,Brooklyn,-73.954946,40.618068,unknown live trees,unknown live trees 
 14-056 139 ST,Fair,Queens,-73.829766,40.785379,"maple, norway",acer platanoides
 2295 E 29 ST,Fair,Brooklyn,-73.942055,40.59594,london planetree,platanus acerifolia
 357 W 12 ST,Good,Manhattan,-74.007567,40.737552,"pear, callery",pyrus calleryana
@@ -1190,7 +1142,6 @@ address,status,borough,longitude,latitude,spc_common,spc_latin
 93-015 68 AV,Fair,Queens,-73.855125,40.716404,"oak, pin",quercus palustris
 42-048 147 ST,Good,Queens,-73.816689,40.758486,"oak, pin",quercus palustris
 100 GOLD ST,Fair,Manhattan,-74.003833,40.710495,honeylocust,gleditsia triacanthos
-18-063 TROUTMAN ST,Poor,Queens,-73.91833,40.711013,unknown stump,unknown stump
 1155 PARK AV,Good,Manhattan,-73.954425,40.783984,"cherry, black",prunus serotina
 29 E 4 ST,Good,Manhattan,-73.992605,40.727604,"oak, willow",quercus phellos
 69-064 228 ST,Fair,Queens,-73.7471,40.743871,london planetree,platanus acerifolia
@@ -1212,7 +1163,6 @@ address,status,borough,longitude,latitude,spc_common,spc_latin
 229-014 114 TER,Fair,Queens,-73.728661,40.699387,"maple, norway",acer platanoides
 314 CARROLL ST,Fair,Brooklyn,-73.992352,40.679371,london planetree,platanus acerifolia
 94-011 149 AV,Fair,Queens,-73.841612,40.670775,london planetree,platanus acerifolia
-1850 UNIVERSITY AVE,Fair,Bronx,-73.914407,40.851532,unknown live trees,unknown live trees 
 116-002 91 AV,Fair,Queens,-73.831365,40.695157,london planetree,platanus acerifolia
 2443 E 19 ST,Fair,Brooklyn,-73.951176,40.591707,london planetree,platanus acerifolia
 102-023 183 PL,Fair,Queens,-73.774065,40.706377,"maple, norway",acer platanoides
@@ -1226,7 +1176,6 @@ address,status,borough,longitude,latitude,spc_common,spc_latin
 745 AMSTERDAM AV,Poor,Manhattan,-73.970253,40.79421,london planetree,platanus acerifolia
 24 CLETUS ST,Good,Staten Island,-74.097922,40.585925,"oak, pin",quercus palustris
 280 JOLINE AV,Fair,Staten Island,-74.234783,40.505872,"linden, little leaf",tilia cordata
-3047 Avenue T,Fair,Brooklyn,-73.937591,40.603202,unknown live trees,unknown live trees 
 80A ST MARKS PL,Fair,Manhattan,-73.985711,40.727769,honeylocust,gleditsia triacanthos
 14 SANFORD PL,Fair,Staten Island,-74.11468,40.61513,"maple, norway",acer platanoides
 48-038 42 ST,Fair,Queens,-73.923309,40.739008,"maple, norway",acer platanoides
@@ -1270,8 +1219,6 @@ address,status,borough,longitude,latitude,spc_common,spc_latin
 67-030 164 ST,Fair,Queens,-73.804898,40.734367,"maple, norway",acer platanoides
 56-042 BELL BLVD,Fair,Queens,-73.762769,40.750434,"maple, norway",acer platanoides
 346 RAMONA AV,Good,Staten Island,-74.196789,40.538791,"maple, red",acer rubrum
-4326 GUNTHER AV,Fair,Bronx,-73.850656,40.896195,unknown live trees,unknown live trees 
-295 PARK AV,Poor,Manhattan,-73.974572,40.756374,unknown stump,unknown stump 
 1160 FIFTH AV,Fair,Manhattan,-73.955268,40.788592,"elm, american",ulmus americana
 1845 52 ST,Fair,Brooklyn,-73.981617,40.62596,honeylocust,gleditsia triacanthos
 5025 GOODRIDGE AV,Fair,Bronx,-73.903682,40.896833,"oak, pin",quercus palustris
@@ -1280,7 +1227,6 @@ address,status,borough,longitude,latitude,spc_common,spc_latin
 21-020 BROADWAY,Fair,Queens,-73.931409,40.765068,honeylocust,gleditsia triacanthos
 42-053 156 ST,Fair,Queens,-73.809705,40.759878,"maple, norway",acer platanoides
 1349 E 49 ST,Fair,Brooklyn,-73.928877,40.628193,honeylocust,gleditsia triacanthos
-545 MARLBOROUGH RD,Fair,Brooklyn,-73.963539,40.636684,unknown live trees,unknown live trees 
 116-003 111 AV,Poor,Queens,-73.823842,40.679789,"maple, norway",acer platanoides
 124-001 95 AV,Good,Queens,-73.823013,40.693562,"linden, little leaf",tilia cordata
 34-006 255 ST,Fair,Queens,-73.742687,40.777496,"maple, silver",acer saccharinum
@@ -1325,7 +1271,6 @@ address,status,borough,longitude,latitude,spc_common,spc_latin
 164-018 92 ST,Fair,Queens,-73.83871,40.650341,"oak, pin",quercus palustris
 1739 DECATUR ST,Fair,Queens,-73.899373,40.696695,london planetree,platanus acerifolia
 1357 COLLEGE AV,Fair,Bronx,-73.91117,40.836526,japanese pagoda tree,sophora japonica
-2506 GERRITSEN AV,Good,Brooklyn,-73.929372,40.596647,unknown live trees,unknown live trees 
 65-016 THURSBY AV,Fair,Queens,-73.794565,40.595048,"maple, norway",acer platanoides
 80 VANCORTLANDT PK E,Fair,Bronx,-73.886803,40.877201,"linden, little leaf",tilia cordata
 30-002 48 AV,Poor,Queens,-73.937939,40.741447,"ash, green",fraxinus pennsylvanica
@@ -1358,7 +1303,6 @@ address,status,borough,longitude,latitude,spc_common,spc_latin
 10 OVERLOOK DR,Good,Staten Island,-74.094638,40.607969,"pine, other",pinus species
 43 CRANFORD ST,Fair,Staten Island,-74.140136,40.552698,"maple, red",acer rubrum
 166-016 71 AV,Fair,Queens,-73.803079,40.730488,"maple, sycamore",acer pseudoplatanus
-34-012 35 AV,Good,Queens,-73.925995,40.756953,unknown live trees,unknown live trees 
 160-057 20 RD,Fair,Queens,-73.801356,40.779558,"maple, silver",acer saccharinum
 47-027 LITTLE NK PKWY,Fair,Queens,-73.733172,40.769952,"maple, norway",acer platanoides
 1523 CROSBY AV,Poor,Bronx,-73.830192,40.842819,london planetree,platanus acerifolia
@@ -1384,7 +1328,6 @@ address,status,borough,longitude,latitude,spc_common,spc_latin
 1973 GERRITSEN AV,Poor,Brooklyn,-73.938911,40.605219,stump,stump 
 41-020 GLENWOOD AV,Fair,Queens,-73.737541,40.774188,"maple, silver",acer saccharinum
 75 TIER ST,Fair,Bronx,-73.788961,40.848121,tulip tree,liriodendron tulipifera
-29-021 162 ST,Poor,Queens,-73.802554,40.77082,unknown dead trees,unknown dead trees 
 201 RYDER AV,Fair,Brooklyn,-73.972659,40.612942,"maple, other",acer species
 21 E 107 ST,Good,Manhattan,-73.949726,40.794586,honeylocust,gleditsia triacanthos
 4504 RICHARDSON AV,Fair,Bronx,-73.854018,40.900598,"maple, sugar",acer saccharum
@@ -1402,10 +1345,8 @@ address,status,borough,longitude,latitude,spc_common,spc_latin
 105-020 91 ST,Fair,Queens,-73.847662,40.67971,"maple, norway",acer platanoides
 514 SENECA AV,Fair,Queens,-73.911924,40.705313,honeylocust,gleditsia triacanthos
 100 LINDEN BLVD,Fair,Brooklyn,-73.95511,40.652361,"linden, little leaf",tilia cordata
-32-006 100 ST,Poor,Queens,-73.868793,40.759047,unknown dead trees,unknown dead trees 
 147-033 COOLIDGE AV,Fair,Queens,-73.812003,40.71498,"maple, norway",acer platanoides
 87 COLLFIELD AV,Fair,Staten Island,-74.142827,40.619887,"maple, red",acer rubrum
-180 WARWICK ST,Poor,Brooklyn,-73.887452,40.679675,unknown dead trees,unknown dead trees 
 2180 WHITE PLAINS RD W,Fair,Bronx,-73.867664,40.85595,honeylocust,gleditsia triacanthos
 85-040 169 ST,Poor,Queens,-73.794393,40.713363,"maple, norway",acer platanoides
 5012 8 AV,Fair,Brooklyn,-74.003789,40.641041,"ash, green",fraxinus pennsylvanica
@@ -1426,7 +1367,6 @@ address,status,borough,longitude,latitude,spc_common,spc_latin
 3835 10 AV,Fair,Manhattan,-73.919988,40.863174,london planetree,platanus acerifolia
 1800 W 6 ST,Poor,Brooklyn,-73.978833,40.603498,planting site,planting site
 311 WILLARD AV,Good,Staten Island,-74.134787,40.615782,"oak, pin",quercus palustris
-95 ESSEX DR,Poor,Staten Island,-74.158235,40.581445,unknown stump,unknown stump
 231 OTIS AV,Good,Staten Island,-74.109713,40.574667,"ash, green",fraxinus pennsylvanica
 97-032 133 AV,Good,Queens,-73.839292,40.676331,"ash, green",fraxinus pennsylvanica
 12 MASSACHUSETTS ST S,Fair,Staten Island,-74.250537,40.503286,sweetgum,liquidambar styraciflua
@@ -1437,14 +1377,12 @@ address,status,borough,longitude,latitude,spc_common,spc_latin
 996 4 AV,Fair,Brooklyn,-74.005979,40.652818,london planetree,platanus acerifolia
 351 W 17 ST,Good,Manhattan,-74.002577,40.742277,honeylocust,gleditsia triacanthos
 158 LUQUER ST,Fair,Brooklyn,-73.999064,40.677314,london planetree,platanus acerifolia
-3478 FENTON AV,Fair,Bronx,-73.848754,40.877434,unknown live trees,unknown live trees 
 4 E 76 ST,Fair,Manhattan,-73.965004,40.774983,honeylocust,gleditsia triacanthos
 33-010 JUNCTION BLVD,Fair,Queens,-73.873546,40.756602,"oak, pin",quercus palustris
 1800 HERING AV,Fair,Bronx,-73.849695,40.851067,"maple, norway",acer platanoides
 114-012 142 ST,Fair,Queens,-73.801571,40.683859,"maple, norway",acer platanoides
 49-022 WEEKS LA,Good,Queens,-73.781351,40.750389,sweetgum,liquidambar styraciflua
 2110 E 21 ST,Fair,Brooklyn,-73.950691,40.60117,london planetree,platanus acerifolia
-189-022 114 DR,Poor,Queens,-73.763889,40.69688,unknown stump,unknown stump
 83-030 SMEDLEY ST,Good,Queens,-73.812892,40.714903,"maple, norway",acer platanoides
 2051 E 37 ST,Fair,Brooklyn,-73.929675,40.609395,"maple, silver",acer saccharinum
 702 Avenue P,Fair,Brooklyn,-73.966263,40.60956,"maple, silver",acer saccharinum
@@ -1468,7 +1406,6 @@ address,status,borough,longitude,latitude,spc_common,spc_latin
 1352 42 ST,Fair,Brooklyn,-73.986872,40.638241,london planetree,platanus acerifolia
 36 CENTRAL PARK SOUTH,Good,Manhattan,-73.974568,40.764966,ginkgo,ginkgo biloba
 77-093 LANGDALE ST,Good,Queens,-73.701923,40.750774,"maple, norway",acer platanoides
-27-037 BAYSIDE LA,Fair,Queens,-73.801288,40.771926,unknown live trees,unknown live trees 
 2012 MADISON ST,Fair,Queens,-73.903046,40.705031,london planetree,platanus acerifolia
 460 BALCOM AV,Good,Bronx,-73.824907,40.819498,"pear, callery",pyrus calleryana
 91-043 108 ST,Fair,Queens,-73.838021,40.692322,"maple, norway",acer platanoides
@@ -1532,7 +1469,6 @@ address,status,borough,longitude,latitude,spc_common,spc_latin
 1515 EMMONS AV,Fair,Brooklyn,-73.953381,40.583224,london planetree,platanus acerifolia
 811 NOBLE AV,Poor,Bronx,-73.86773,40.821049,london planetree,platanus acerifolia
 460 STATE ST,Fair,Brooklyn,-73.98193,40.686604,"oak, pin",quercus palustris
-74-003 37 AV,Poor,Queens,-73.891545,40.748974,unknown dead trees,unknown dead trees 
 198-002 115 AV,Fair,Queens,-73.755526,40.697527,london planetree,platanus acerifolia
 155 BOYD ST,Good,Staten Island,-74.080738,40.626057,japanese pagoda tree,sophora japonica
 330 B 146 ST,Fair,Queens,-73.821375,40.745178,honeylocust,gleditsia triacanthos
@@ -1558,7 +1494,6 @@ address,status,borough,longitude,latitude,spc_common,spc_latin
 504 E 81 ST,Poor,Manhattan,-73.949347,40.772653,london planetree,platanus acerifolia
 463 HOYT AV,Good,Staten Island,-74.10487,40.631519,"maple, norway",acer platanoides
 146-050 25 RD,Fair,Queens,-73.820681,40.775973,"linden, little leaf",tilia cordata
-71-020 68 ST,Poor,Queens,-73.885258,40.703191,unknown dead trees,unknown dead trees 
 2410 ELY AV,Good,Bronx,-73.830987,40.861072,"maple, sugar",acer saccharum
 11 GAYLORD DR N,Fair,Brooklyn,-73.906455,40.610276,london planetree,platanus acerifolia
 716 OCEAN PKWY,Poor,Brooklyn,-73.971739,40.631003,stump,stump 
@@ -1598,7 +1533,6 @@ address,status,borough,longitude,latitude,spc_common,spc_latin
 1055 GREENE AV,Fair,Brooklyn,-73.925125,40.691963,honeylocust,gleditsia triacanthos
 1360 ROSEDALE AV,Fair,Bronx,-73.869763,40.833869,ginkgo,ginkgo biloba
 134-013 91 AV,Fair,Queens,-73.816829,40.698983,"maple, sycamore",acer pseudoplatanus
-115-042 223 ST,Poor,Queens,-73.735485,40.698213,unknown stump,unknown stump
 163-050 LIBERTY AV,Fair,Queens,-73.793966,40.701451,"linden, little leaf",tilia cordata
 82-020 101 AV,Fair,Queens,-73.856861,40.681178,"oak, pin",quercus palustris
 94 WIELAND AV,Fair,Staten Island,-74.207498,40.541127,"pear, callery",pyrus calleryana
@@ -1608,7 +1542,6 @@ address,status,borough,longitude,latitude,spc_common,spc_latin
 531 CLOVE RD,Fair,Staten Island,-74.121213,40.627766,"oak, pin",quercus palustris
 348 CLASSON AV,Fair,Brooklyn,-73.959962,40.688667,"linden, little leaf",tilia cordata
 2206 Avenue T,Fair,Brooklyn,-73.949807,40.601861,"linden, little leaf",tilia cordata
-166-003 WILLETS PT BLVD,Poor,Queens,-73.796753,40.784962,unknown dead trees,unknown dead trees 
 43 MORSE AV,Fair,Staten Island,-74.118238,40.599014,"oak, pin",quercus palustris
 137-029 95 ST,Fair,Queens,-73.84107,40.671979,"maple, silver",acer saccharinum
 91-018 112 ST,Poor,Queens,-73.834782,40.694173,planting site,planting site
@@ -1638,7 +1571,6 @@ address,status,borough,longitude,latitude,spc_common,spc_latin
 84-004 MANTON ST,Good,Queens,-73.818924,40.710114,japanese pagoda tree,sophora japonica
 1415 GLENWOOD RD,Poor,Brooklyn,-73.963462,40.63227,london planetree,platanus acerifolia
 1937 E 14 ST,Fair,Brooklyn,-73.958044,40.602487,"maple, japanese",acer palmatum
-1909 AMSTERDAM AV,Poor,Manhattan,-73.943227,40.831229,unknown stump,unknown stump 
 131 W 110 ST,Fair,Manhattan,-73.944936,40.795022,ginkgo,ginkgo biloba
 49-064 HORATIO PKWY,Fair,Queens,-73.753914,40.758435,london planetree,platanus acerifolia
 73-018 75 AV,Fair,Queens,-73.796457,40.727693,london planetree,platanus acerifolia
@@ -1672,9 +1604,7 @@ address,status,borough,longitude,latitude,spc_common,spc_latin
 1230 Avenue X,Fair,Brooklyn,-73.957695,40.591927,"oak, pin",quercus palustris
 37-020 24 ST,Fair,Queens,-73.935702,40.757141,london planetree,platanus acerifolia
 132-040 159 ST,Fair,Queens,-73.779494,40.673776,"oak, pin",quercus palustris
-48-025 64 ST,Poor,Queens,-73.901757,40.738057,unknown stump,unknown stump
 87-002 23 AV,Poor,Queens,-73.882738,40.767318,"maple, norway",acer platanoides
-293 TRAVIS AV,Poor,Staten Island,-74.152693,40.58763,unknown live trees,unknown live trees 
 60-008 69 AV,Fair,Queens,-73.898881,40.702294,london planetree,platanus acerifolia
 130-019 122 ST,Fair,Queens,-73.817083,40.673325,"oak, pin",quercus palustris
 25-039 125 ST,Fair,Queens,-73.843558,40.775557,"maple, norway",acer platanoides
@@ -1701,7 +1631,6 @@ address,status,borough,longitude,latitude,spc_common,spc_latin
 17-013 SUYDAM ST,Fair,Queens,-73.918514,40.707406,"ash, green",fraxinus pennsylvanica
 45 W 86 ST,Poor,Manhattan,-73.970613,40.785831,london planetree,platanus acerifolia
 60-025 WOODBINE ST,Poor,Queens,-73.899878,40.707202,planting site,planting site
-203 E 80 ST,Fair,Manhattan,-73.95672,40.774934,unknown live trees,unknown live trees 
 674 BARBEY ST,Fair,Brooklyn,-73.885775,40.665923,london planetree,platanus acerifolia
 119 HERKIMER ST,Fair,Brooklyn,-73.949345,40.679623,honeylocust,gleditsia triacanthos
 332 AMBER ST,Good,Staten Island,-74.137926,40.566743,"oak, pin",quercus palustris
@@ -1719,7 +1648,6 @@ address,status,borough,longitude,latitude,spc_common,spc_latin
 177 NEW YORK AV,Poor,Brooklyn,-73.94732,40.674077,"maple, norway",acer platanoides
 32-031 165 ST,Fair,Queens,-73.800021,40.768688,"pine, eastern white",pinus strobus
 23-009 29 AV,Fair,Queens,-73.92583,40.769843,"oak, pin",quercus palustris
-29-060 170 ST,Poor,Queens,-73.795192,40.769478,unknown live trees,unknown live trees 
 27-014 157 ST,Fair,Queens,-73.806995,40.772884,"oak, pin",quercus palustris
 5751 MOSHOLU AV,Good,Bronx,-73.898955,40.905645,ginkgo,ginkgo biloba
 49-003 KISSENA BLVD,Good,Queens,-73.816535,40.748219,"oak, pin",quercus palustris
@@ -1752,7 +1680,6 @@ address,status,borough,longitude,latitude,spc_common,spc_latin
 6 TREMONT AV,Good,Staten Island,-74.149897,40.617238,honeylocust,gleditsia triacanthos
 1401 36 ST,Fair,Brooklyn,-73.982304,40.640956,"pine, other",pinus species
 150 E 61 ST,Fair,Manhattan,-73.967076,40.763398,"elm, american",ulmus americana
-21-014 23 TER,Poor,Queens,-73.920707,40.777046,unknown live trees,unknown live trees 
 639 E 32 ST,Fair,Brooklyn,-73.946015,40.635499,"ash, green",fraxinus pennsylvanica
 444 B 126 ST,Fair,Queens,-73.845696,40.760202,ginkgo,ginkgo biloba
 242-007 133 AV,Poor,Queens,-73.74491,40.679039,planting site,planting site
@@ -1771,7 +1698,6 @@ address,status,borough,longitude,latitude,spc_common,spc_latin
 1600 BEVERLEY RD,Poor,Brooklyn,-73.964074,40.644408,"maple, norway",acer platanoides
 117 W 95 ST,Fair,Manhattan,-73.968509,40.792392,eastern hop hornbeam,ostrya virginiana
 10101 Avenue D,Fair,Brooklyn,-73.904508,40.651905,london planetree,platanus acerifolia
-38-023 216 ST,Poor,Queens,-73.767488,40.767085,unknown dead trees,unknown dead trees 
 20 DINSMORE ST,Fair,Staten Island,-74.169934,40.604353,london planetree,platanus acerifolia
 168-004 65 AV,Fair,Queens,-73.800971,40.73663,"oak, northern red",quercus rubra
 3-041 127 ST,Fair,Queens,-73.840698,40.793227,"maple, norway",acer platanoides
@@ -1779,7 +1705,6 @@ address,status,borough,longitude,latitude,spc_common,spc_latin
 71-044 JUNO ST,Fair,Queens,-73.847733,40.713583,"maple, norway",acer platanoides
 770 ARMSTRONG AV,Fair,Staten Island,-74.160159,40.553264,"linden, little leaf",tilia cordata
 222-021 143 RD,Fair,Queens,-73.754056,40.667608,"maple, norway",acer platanoides
-403 POWELL ST,Poor,Brooklyn,-73.902625,40.66442,unknown dead trees,unknown dead trees 
 2041 PACIFIC ST,Fair,Brooklyn,-73.920246,40.676029,"maple, norway",acer platanoides
 355 1 AV,Poor,Manhattan,-73.979561,40.735385,planting site,planting site
 1176 E 223 ST,Fair,Bronx,-73.847534,40.881798,"maple, norway",acer platanoides
@@ -1821,7 +1746,6 @@ address,status,borough,longitude,latitude,spc_common,spc_latin
 114 MAC CLEAN AV,Good,Staten Island,-74.065728,40.598283,"pear, callery",pyrus calleryana
 114-032 MERRICK BLVD,Fair,Queens,-73.778764,40.691076,"oak, northern red",quercus rubra
 165-026 146 AV,Fair,Queens,-73.77497,40.661425,"linden, little leaf",tilia cordata
-20 LAGUARDIA AV,Fair,Staten Island,-74.118294,40.608462,unknown live trees,unknown live trees 
 720 E 32 ST,Good,Brooklyn,-73.945813,40.633619,honeylocust,gleditsia triacanthos
 131 RADCLIFFE RD,Fair,Staten Island,-74.076566,40.599363,"maple, norway",acer platanoides
 41-016 160 ST,Fair,Queens,-73.80571,40.761597,"maple, sugar",acer saccharum
@@ -1854,7 +1778,6 @@ address,status,borough,longitude,latitude,spc_common,spc_latin
 1565 WARING AV,Good,Bronx,-73.841231,40.860861,london planetree,platanus acerifolia
 230 ADAMS AV,Fair,Staten Island,-74.100171,40.580504,"maple, norway",acer platanoides
 45 HINSDALE ST,Fair,Brooklyn,-73.901315,40.674467,"ash, green",fraxinus pennsylvanica
-40-015 27 ST,Poor,Queens,-73.937348,40.752886,unknown dead trees,unknown dead trees 
 870 W 181 ST,Fair,Manhattan,-73.941268,40.851396,honeylocust,gleditsia triacanthos
 8812 GLENWOOD RD,Fair,Brooklyn,-73.909024,40.640831,london planetree,platanus acerifolia
 502 W 192 ST,Poor,Manhattan,-73.927367,40.855617,"pear, callery",pyrus calleryana
@@ -1862,7 +1785,6 @@ address,status,borough,longitude,latitude,spc_common,spc_latin
 38-005 CRESCENT ST,Fair,Queens,-73.935852,40.755739,"ash, green",fraxinus pennsylvanica
 11 PATCHEN AV,Fair,Brooklyn,-73.927926,40.692269,"cherry, other",prunus species
 58 RUTH PL,Good,Staten Island,-74.082242,40.591862,"oak, pin",quercus palustris
-56-049 199 ST,Poor,Queens,-73.778509,40.746198,unknown stump,unknown stump
 43-005 47 ST,Fair,Queens,-73.917445,40.744696,"oak, pin",quercus palustris
 42-052 KISSENA BLVD,Fair,Queens,-73.825682,40.756274,london planetree,platanus acerifolia
 982 E 43 ST,Fair,Brooklyn,-73.934976,40.631112,"maple, silver",acer saccharinum
@@ -1898,7 +1820,6 @@ address,status,borough,longitude,latitude,spc_common,spc_latin
 9-097 COLLEGE PL,Fair,Queens,-73.845919,40.787746,london planetree,platanus acerifolia
 88-010 215 PL,Fair,Queens,-73.749096,40.727088,london planetree,platanus acerifolia
 87-010 248 ST,Fair,Queens,-73.717745,40.73016,"pear, callery",pyrus calleryana
-666 GREENWICH ST,Good,Manhattan,-74.007697,40.732199,unknown live trees,unknown live trees 
 293 THOMAS ST,Good,Staten Island,-74.138012,40.568569,"maple, silver",acer saccharinum
 212 WIELAND AV,Good,Staten Island,-74.211216,40.540403,"maple, silver",acer saccharinum
 224 LINCOLN PL,Fair,Brooklyn,-73.97296,40.675095,london planetree,platanus acerifolia
@@ -1906,13 +1827,11 @@ address,status,borough,longitude,latitude,spc_common,spc_latin
 608 POWELL ST,Fair,Brooklyn,-73.901258,40.659194,london planetree,platanus acerifolia
 81-024 260 ST,Fair,Queens,-73.710245,40.742522,"maple, norway",acer platanoides
 91-028 112 ST,Fair,Queens,-73.83464,40.693892,"maple, silver",acer saccharinum
-2080 STUART ST,Good,Brooklyn,-73.936209,40.603974,unknown live trees,unknown live trees 
 187-009 HILLBURN AV,Fair,Queens,-73.768218,40.701611,london planetree,platanus acerifolia
 74 ELDER AV,Good,Staten Island,-74.209739,40.519015,sweetgum,liquidambar styraciflua
 27-067 80 AV,Fair,Queens,-73.701079,40.746888,"maple, norway",acer platanoides
 180-022 144 AV,Fair,Queens,-73.764209,40.668118,"maple, norway",acer platanoides
 89-036 98 ST,Poor,Queens,-73.846376,40.692001,"maple, norway",acer platanoides
-180 WATER ST,Poor,Manhattan,-74.005013,40.706845,unknown dead trees,unknown dead trees 
 118-079 129 ST,Fair,Queens,-73.809598,40.672614,"maple, norway",acer platanoides
 138-016 56 AV,Fair,Queens,-73.826755,40.748375,"maple, silver",acer saccharinum
 88-048 186 ST,Poor,Queens,-73.775733,40.713793,"maple, sycamore",acer pseudoplatanus
@@ -1920,7 +1839,6 @@ address,status,borough,longitude,latitude,spc_common,spc_latin
 4801 15 AV,Poor,Brooklyn,-73.987139,40.632919,"ash, green",fraxinus pennsylvanica
 119-011 199 ST,Fair,Queens,-73.752024,40.691288,"oak, pin",quercus palustris
 65-038 167 ST,Fair,Queens,-73.801971,40.735948,"maple, sugar",acer saccharum
-46-024 195 ST,Poor,Queens,-73.786156,40.753464,unknown stump,unknown stump
 84-009 35 AV,Good,Queens,-73.882734,40.751992,london planetree,platanus acerifolia
 83 72 ST,Fair,Brooklyn,-74.034041,40.635199,"maple, japanese",acer palmatum
 86-088 102 ST,Good,Queens,-73.845077,40.694498,ginkgo,ginkgo biloba
@@ -1944,7 +1862,6 @@ address,status,borough,longitude,latitude,spc_common,spc_latin
 2586 POPLAR ST,Good,Bronx,-73.846769,40.844881,"oak, pin",quercus palustris
 256-020 E WILLISTON AV,Fair,Queens,-73.7108,40.734077,"maple, norway",acer platanoides
 28-010 MOTT AV,Fair,Queens,-73.765242,40.608891,"maple, silver",acer saccharinum
-111-049 166 ST,Fair,Queens,-73.784385,40.691642,unknown live trees,unknown live trees 
 42-042 235 ST,Fair,Queens,-73.747342,40.767705,"oak, pin",quercus palustris
 78-009 101 AV,Fair,Queens,-73.859669,40.680438,"oak, pin",quercus palustris
 109-001 200 ST,Fair,Queens,-73.758094,40.707299,"oak, pin",quercus palustris
@@ -2028,8 +1945,6 @@ address,status,borough,longitude,latitude,spc_common,spc_latin
 117-039 230 ST,Fair,Queens,-73.731739,40.691817,"linden, little leaf",tilia cordata
 311 POMPEY AV,Good,Staten Island,-74.171702,40.54822,"oak, pin",quercus palustris
 331 PACIFIC ST,Good,Brooklyn,-73.987463,40.687152,crabapple,malus species
-390 JACKSON AV,Fair,Bronx,-73.910634,40.808958,unknown live trees,unknown live trees 
-52 PENTON ST,Poor,Staten Island,-74.215892,40.522373,unknown stump,unknown stump
 119-034 7 AV,Fair,Queens,-73.849045,40.79077,"maple, norway",acer platanoides
 640 68 ST,Fair,Brooklyn,-74.017003,40.63252,"linden, little leaf",tilia cordata
 66-071 71 ST,Fair,Queens,-73.884299,40.712854,london planetree,platanus acerifolia
@@ -2078,7 +1993,6 @@ address,status,borough,longitude,latitude,spc_common,spc_latin
 146-014 29 AV,Fair,Queens,-73.821523,40.772353,"maple, norway",acer platanoides
 111-047 141 ST,Fair,Queens,-73.802947,40.684821,"oak, pin",quercus palustris
 87-035 88 ST,Fair,Queens,-73.856184,40.692212,"maple, silver",acer saccharinum
-138-048 ELDER AV,Poor,Queens,-73.823102,40.752499,unknown stump,unknown stump
 154 EAST END AV,Good,Manhattan,-73.944333,40.775531,"pear, callery",pyrus calleryana
 2101 Avenue X,Fair,Brooklyn,-73.949102,40.592869,"elm, american",ulmus americana
 532 B 67 ST,Fair,Queens,-73.897783,40.744378,"elm, chinese",ulmus parvifolia
@@ -2160,7 +2074,6 @@ address,status,borough,longitude,latitude,spc_common,spc_latin
 826 MADISON ST,Fair,Brooklyn,-73.924773,40.687688,london planetree,platanus acerifolia
 418 QUENTIN RD,Fair,Brooklyn,-73.970472,40.606907,london planetree,platanus acerifolia
 210 E 75 ST,Good,Manhattan,-73.958926,40.771588,"elm, american",ulmus americana
-81-025 249 ST,Fair,Queens,-73.72027,40.740369,unknown live trees,unknown live trees 
 3605 CORLEAR AV,Fair,Bronx,-73.903164,40.884436,"maple, sycamore",acer pseudoplatanus
 43 MONTEREY AV,Fair,Staten Island,-74.175061,40.555696,"maple, silver",acer saccharinum
 1382 E 26 ST,Fair,Brooklyn,-73.948923,40.617212,london planetree,platanus acerifolia
@@ -2193,13 +2106,11 @@ address,status,borough,longitude,latitude,spc_common,spc_latin
 1254 E 103 ST,Fair,Brooklyn,-73.889687,40.640757,london planetree,platanus acerifolia
 35-033 168 ST,Fair,Queens,-73.797794,40.764253,"linden, little leaf",tilia cordata
 1836 CATON AV,Fair,Brooklyn,-73.962461,40.651794,honeylocust,gleditsia triacanthos
-31-041 23 ST,Poor,Queens,-73.929381,40.765701,unknown dead trees,unknown dead trees 
 1315 E 100 ST,Fair,Brooklyn,-73.890762,40.638367,london planetree,platanus acerifolia
 65 DE KALB AV,Fair,Brooklyn,-73.980771,40.689941,ginkgo,ginkgo biloba
 62 E 92 ST,Good,Brooklyn,-73.928595,40.662837,london planetree,platanus acerifolia
 173 BAINBRIDGE ST,Fair,Brooklyn,-73.930303,40.68105,"maple, sugar",acer saccharum
 82-016 217 ST,Fair,Queens,-73.753276,40.732523,"maple, norway",acer platanoides
-248 DEAN ST,Fair,Brooklyn,-73.983626,40.684857,unknown live trees,unknown live trees 
 2448 BRIGHAM ST,Fair,Brooklyn,-73.933809,40.593486,london planetree,platanus acerifolia
 20 BLEECKER ST,Fair,Brooklyn,-73.923152,40.693157,"maple, norway",acer platanoides
 510 E 13 ST,Fair,Manhattan,-73.980595,40.729614,"ash, green",fraxinus pennsylvanica
@@ -2234,7 +2145,6 @@ address,status,borough,longitude,latitude,spc_common,spc_latin
 147-011 110 RD,Fair,Queens,-73.797612,40.688647,"maple, norway",acer platanoides
 1154 LELAND AV,Fair,Bronx,-73.862913,40.829343,"maple, norway",acer platanoides
 137-002 132 AV,Fair,Queens,-73.800593,40.669854,"maple, norway",acer platanoides
-80 DINSMORE ST,Poor,Staten Island,-74.169625,40.60309,unknown stump,unknown stump
 182-017 144 AV,Fair,Queens,-73.761509,40.66768,"maple, norway",acer platanoides
 400 PENNYFIELD AV,Fair,Bronx,-73.810058,40.818547,honeylocust,gleditsia triacanthos
 599 FOSTER RD,Fair,Staten Island,-74.206788,40.540761,"maple, silver",acer saccharinum
@@ -2280,7 +2190,6 @@ address,status,borough,longitude,latitude,spc_common,spc_latin
 85-016 55 AV,Good,Queens,-73.879432,40.733109,"linden, little leaf",tilia cordata
 450 50 ST,Poor,Brooklyn,-74.011427,40.645775,stump,stump 
 33-082 35 AV,Poor,Queens,-73.926241,40.757068,"maple, norway",acer platanoides
-671 RIVER AV,Poor,Bronx,-73.928597,40.823109,unknown live trees,unknown live trees 
 596 E 39 ST,Fair,Manhattan,-73.999598,40.758874,ginkgo,ginkgo biloba
 200 CROWN ST,Fair,Brooklyn,-73.954017,40.666463,london planetree,platanus acerifolia
 520 CARLTON BLVD,Fair,Staten Island,-74.183393,40.550578,"pear, callery",pyrus calleryana
@@ -2315,7 +2224,6 @@ address,status,borough,longitude,latitude,spc_common,spc_latin
 1000 ST JOHNS PL,Fair,Brooklyn,-73.945164,40.671359,london planetree,platanus acerifolia
 117-061 126 ST,Fair,Queens,-73.812099,40.673793,"cherry, cornelian",cornus mas
 59 KERMIT PL,Fair,Brooklyn,-73.972941,40.648764,"maple, red",acer rubrum
-360 GATES AV,Fair,Brooklyn,-73.952156,40.686038,unknown live trees,unknown live trees 
 109 HENDERSON AV,Fair,Staten Island,-74.095215,40.6407,"oak, pin",quercus palustris
 32 ASPINWALL ST,Good,Staten Island,-74.24905,40.507193,"pear, callery",pyrus calleryana
 85-023 90 ST,Fair,Queens,-73.855306,40.695512,"maple, norway",acer platanoides
@@ -2329,7 +2237,6 @@ address,status,borough,longitude,latitude,spc_common,spc_latin
 102-043 90 AV,Fair,Queens,-73.843328,40.692652,"maple, sugar",acer saccharum
 2700 BRAGG ST,Good,Brooklyn,-73.933701,40.587912,london planetree,platanus acerifolia
 17 HENNING ST,Fair,Staten Island,-74.117648,40.611627,london planetree,platanus acerifolia
-174 BEARD ST,Good,Brooklyn,-74.016446,40.675891,unknown live trees,unknown live trees 
 256-018 83 AV,Fair,Queens,-73.712427,40.738404,"maple, norway",acer platanoides
 1803 RYDER ST,Fair,Brooklyn,-73.932753,40.614358,"pine, other",pinus species
 110-018 223 ST,Fair,Queens,-73.733603,40.706649,"oak, northern red",quercus rubra
@@ -2350,7 +2257,6 @@ address,status,borough,longitude,latitude,spc_common,spc_latin
 84-037 102 RD,Good,Queens,-73.854077,40.680461,"ash, green",fraxinus pennsylvanica
 120-033 230 ST,Good,Queens,-73.73425,40.687014,"pear, callery",pyrus calleryana
 104-037 116 ST,Poor,Queens,-73.82645,40.685032,"maple, norway",acer platanoides
-35-038 208 ST,Fair,Queens,-73.779829,40.766944,unknown live trees,unknown live trees 
 159 E 69 ST,Fair,Manhattan,-73.962952,40.768207,ginkgo,ginkgo biloba
 428 NECKAR AV,Fair,Staten Island,-74.084603,40.60799,"maple, silver",acer saccharinum
 4624 17 AV,Fair,Brooklyn,-73.981456,40.631091,honeylocust,gleditsia triacanthos
@@ -2363,9 +2269,7 @@ address,status,borough,longitude,latitude,spc_common,spc_latin
 357 CLERMONT AV,Fair,Brooklyn,-73.96958,40.686741,london planetree,platanus acerifolia
 2079 58 ST,Fair,Brooklyn,-73.979963,40.619477,"maple, norway",acer platanoides
 228 MAC CLEAN AV,Good,Staten Island,-74.069215,40.597136,"pear, callery",pyrus calleryana
-25-020 73 ST,Poor,Queens,-73.895015,40.761773,unknown stump,unknown stump
 244-028 86 AV,Good,Queens,-73.722325,40.731633,"ash, green",fraxinus pennsylvanica
-390 JACKSON AV,Fair,Bronx,-73.910634,40.808958,unknown live trees,unknown live trees 
 37-042 95 ST,Fair,Queens,-73.872078,40.750162,honeylocust,gleditsia triacanthos
 84 MAPLE ST,Good,Brooklyn,-73.958123,40.660362,"ash, green",fraxinus pennsylvanica
 32-049 100 ST,Fair,Queens,-73.868653,40.758278,"maple, norway",acer platanoides
@@ -2404,7 +2308,6 @@ address,status,borough,longitude,latitude,spc_common,spc_latin
 94-020 25 AV,Fair,Queens,-73.87531,40.764254,"maple, norway",acer platanoides
 1053 E 21 ST,Poor,Brooklyn,-73.955787,40.627744,london planetree,platanus acerifolia
 153 E 53 ST,Fair,Manhattan,-73.970533,40.75818,honeylocust,gleditsia triacanthos
-720 ST MARYS ST,Fair,Bronx,-73.910679,40.808807,unknown live trees,unknown live trees 
 197-010 56 AV,Fair,Queens,-73.780126,40.746438,"zelkova, japanese",zelkova serrata
 956 IONA AV,Good,Staten Island,-74.204915,40.535005,"maple, red",acer rubrum
 170 HUNTINGTON ST,Fair,Brooklyn,-73.999408,40.675979,"pear, callery",pyrus calleryana
@@ -2418,9 +2321,7 @@ address,status,borough,longitude,latitude,spc_common,spc_latin
 46 BOYCE AV,Good,Staten Island,-74.137872,40.566094,"maple, norway",acer platanoides
 45-030 36 ST,Fair,Queens,-73.929023,40.74372,london planetree,platanus acerifolia
 141-033 11 AV,Fair,Queens,-73.828125,40.788691,"maple, norway",acer platanoides
-183 CARLTON AV,Good,Brooklyn,-73.972668,40.692177,unknown live trees,unknown live trees 
 1818 CATON AV,Fair,Brooklyn,-73.963014,40.651535,honeylocust,gleditsia triacanthos
-1373 E 59 ST,Poor,Brooklyn,-73.918334,40.62014,unknown dead trees,unknown dead trees 
 1521 DAHILL RD,Fair,Brooklyn,-73.974394,40.61059,london planetree,platanus acerifolia
 48-033 202 ST,Poor,Queens,-73.777728,40.75188,planting site,planting site
 39 BARBARA ST,Good,Staten Island,-74.129071,40.56869,london planetree,platanus acerifolia
@@ -2456,16 +2357,13 @@ address,status,borough,longitude,latitude,spc_common,spc_latin
 160-020 92 ST,Fair,Queens,-73.840363,40.657005,"maple, red",acer rubrum
 150-042 25 AV,Fair,Queens,-73.814014,40.775751,"maple, norway",acer platanoides
 939 RAMONA AV,Good,Staten Island,-74.216068,40.534883,sweetgum,liquidambar styraciflua
-495 Avenue of the Amer,Good,Manhattan,-73.997599,40.736316,unknown live trees,unknown live trees 
 4229 DEREIMER AV,Fair,Bronx,-73.843984,40.896285,"maple, norway",acer platanoides
 882 LAMONT AV,Good,Staten Island,-74.203304,40.536219,"ash, green",fraxinus pennsylvanica
 61 NICHOLS AV,Poor,Brooklyn,-73.869779,40.689247,"maple, norway",acer platanoides
 24-018 21 AV,Fair,Queens,-73.912766,40.780996,"maple, silver",acer saccharinum
 1123 WILLOW BROOK RD,Good,Staten Island,-74.136236,40.603423,london planetree,platanus acerifolia
-2275 BROADWAY,Fair,Manhattan,-73.978644,40.785642,unknown live trees,unknown live trees 
 67 8 ST,Good,Staten Island,-74.116846,40.572198,london planetree,platanus acerifolia
 103-004 37 AV,Poor,Queens,-73.864237,40.753268,planting site,planting site
-38 E 3 ST,Good,Manhattan,-73.989898,40.725595,unknown live trees,unknown live trees 
 52-086 72 ST,Fair,Queens,-73.892296,40.731506,"maple, silver",acer saccharinum
 215 W 95 ST,Fair,Manhattan,-73.971449,40.793629,"maple, red",acer rubrum
 145-058 226 ST,Fair,Queens,-73.754246,40.661001,"maple, silver",acer saccharinum
@@ -2474,10 +2372,8 @@ address,status,borough,longitude,latitude,spc_common,spc_latin
 802 BROADWAY,Good,Manhattan,-73.991304,40.732351,"elm, other",ulmus species
 184-020 89 AV,Fair,Queens,-73.776859,40.712692,london planetree,platanus acerifolia
 140-018 116 AV,Fair,Queens,-73.8016,40.680134,"maple, sugar",acer saccharum
-200-021 39 AV,Fair,Queens,-73.784679,40.762314,unknown live trees,unknown live trees 
 169 HICKS ST,Poor,Brooklyn,-73.995235,40.69657,london planetree,platanus acerifolia
 1926 BROADWAY,Fair,Manhattan,-73.982187,40.772475,london planetree,platanus acerifolia
-75 E 56 ST,Poor,Brooklyn,-73.924955,40.655441,unknown dead trees,unknown dead trees 
 351 BOSCOMBE AV,Fair,Staten Island,-74.226884,40.524284,"cherry, other",prunus species
 23-015 21 ST,Fair,Queens,-73.919406,40.778346,"maple, norway",acer platanoides
 163-027 24 RD,Fair,Queens,-73.800294,40.775341,"maple, norway",acer platanoides
@@ -2490,7 +2386,6 @@ address,status,borough,longitude,latitude,spc_common,spc_latin
 4308 OCEAN AV,Good,Brooklyn,-73.947043,40.576296,london planetree,platanus acerifolia
 220-028 HARTLAND AV,Fair,Queens,-73.74955,40.733908,sweetgum,liquidambar styraciflua
 49 DONALD PL,Fair,Staten Island,-74.106548,40.639641,london planetree,platanus acerifolia
-157-015 19 AV,Poor,Queens,-73.805455,40.781292,unknown live trees,unknown live trees 
 2372 LINDEN BLVD,Fair,Brooklyn,-73.87593,40.6649,london planetree,platanus acerifolia
 799 UNION ST,Fair,Brooklyn,-73.977759,40.675359,"pear, callery",pyrus calleryana
 115-058 MAYFAIR RD,Fair,Queens,-73.836886,40.705869,"oak, pin",quercus palustris
@@ -2514,7 +2409,6 @@ address,status,borough,longitude,latitude,spc_common,spc_latin
 157-004 22 AV,Fair,Queens,-73.806111,40.778222,"maple, norway",acer platanoides
 224 SCHMIDTS LA,Fair,Staten Island,-74.11988,40.608975,"maple, red",acer rubrum
 1308 E 7 ST,Fair,Brooklyn,-73.968093,40.619021,"maple, sugar",acer saccharum
-142-028 230 PL,Fair,Queens,-73.74619,40.665102,unknown live trees,unknown live trees 
 351 E 84 ST,Fair,Manhattan,-73.951498,40.776053,"pear, callery",pyrus calleryana
 88-038 78 AV,Fair,Queens,-73.860059,40.706357,"linden, little leaf",tilia cordata
 26 DUNCAN AV,Good,Staten Island,-74.096994,40.601219,"maple, silver",acer saccharinum
@@ -2536,7 +2430,6 @@ address,status,borough,longitude,latitude,spc_common,spc_latin
 78-048 266 ST,Fair,Queens,-73.70665,40.748743,ginkgo,ginkgo biloba
 25-012 HUMPHREY ST,Fair,Queens,-73.868819,40.764746,ginkgo,ginkgo biloba
 1614 EDISON AV,Fair,Bronx,-73.832864,40.843791,"pear, callery",pyrus calleryana
-601 COLUMBIA ST,Fair,Brooklyn,-74.008521,40.671689,unknown live trees,unknown live trees 
 310 W 14 ST,Fair,Manhattan,-74.002823,40.739877,"pear, callery",pyrus calleryana
 1521 PRESIDENT ST,Fair,Brooklyn,-73.938018,40.667382,london planetree,platanus acerifolia
 16-042 163 ST,Good,Queens,-73.800061,40.783609,"oak, pin",quercus palustris
@@ -2545,8 +2438,6 @@ address,status,borough,longitude,latitude,spc_common,spc_latin
 1629 E 51 ST,Poor,Brooklyn,-73.926047,40.620639,planting site,planting site
 3242 FISH AV,Fair,Bronx,-73.848149,40.872664,ginkgo,ginkgo biloba
 187-018 FOCH BLVD,Poor,Queens,-73.763865,40.690847,"maple, norway",acer platanoides
-158-032 75 RD,Poor,Queens,-73.809968,40.72587,unknown dead trees,unknown dead trees 
-45-064 171 PL,Fair,Queens,-73.795365,40.75437,unknown live trees,unknown live trees 
 72-030 67 ST,Fair,Queens,-73.885944,40.701043,"maple, norway",acer platanoides
 95-001 125 ST,Good,Queens,-73.822101,40.6938,london planetree,platanus acerifolia
 82-009 214 ST,Fair,Queens,-73.756138,40.73192,london planetree,platanus acerifolia
@@ -2566,7 +2457,6 @@ address,status,borough,longitude,latitude,spc_common,spc_latin
 2524 Avenue Y,Good,Brooklyn,-73.94473,40.591187,london planetree,platanus acerifolia
 61-030 231 ST,Poor,Queens,-73.747317,40.750703,london planetree,platanus acerifolia
 60 MADISON AV,Fair,Manhattan,-73.986153,40.743381,"pear, callery",pyrus calleryana
-141-049 COOLIDGE AV,Poor,Queens,-73.816256,40.714936,unknown live trees,unknown live trees 
 39-032 51 ST,Good,Queens,-73.912997,40.747892,london planetree,platanus acerifolia
 135-007 78 DR,Fair,Queens,-73.825326,40.718012,"maple, other",acer species
 281 AMHERST ST,Poor,Brooklyn,-73.951494,40.575043,japanese pagoda tree,sophora japonica
@@ -2577,7 +2467,6 @@ address,status,borough,longitude,latitude,spc_common,spc_latin
 184-006 144 RD,Fair,Queens,-73.760519,40.665542,"linden, little leaf",tilia cordata
 25-028 99 ST,Fair,Queens,-73.870727,40.763982,london planetree,platanus acerifolia
 43-044 168 ST,Good,Queens,-73.798752,40.757249,"oak, pin",quercus palustris
-520 COURTLAND AV,Fair,Bronx,-73.919854,40.815876,unknown live trees,unknown live trees 
 2620 DOUGLASS BLVD,Fair,Manhattan,-73.944414,40.819421,"pear, callery",pyrus calleryana
 81-012 LANGDALE ST,Fair,Queens,-73.70124,40.744693,london planetree,platanus acerifolia
 700 W 175 ST,Good,Manhattan,-73.938475,40.846197,black locust,robinia pseudoacacia
@@ -2630,7 +2519,6 @@ address,status,borough,longitude,latitude,spc_common,spc_latin
 117-016 229 ST,Fair,Queens,-73.732431,40.692425,"maple, norway",acer platanoides
 13-018 154 ST,Fair,Queens,-73.807542,40.790031,"maple, norway",acer platanoides
 42 WOEHRLE AV,Fair,Staten Island,-74.180905,40.556194,"oak, northern red",quercus rubra
-76-023 HEWLETT AV,Fair,Queens,-73.704878,40.753926,unknown live trees,unknown live trees 
 115-004 155 ST,Fair,Queens,-73.790967,40.685477,"maple, norway",acer platanoides
 905 ST MARKS AV,Fair,Brooklyn,-73.941736,40.674751,london planetree,platanus acerifolia
 47-039 168 ST,Fair,Queens,-73.799785,40.749674,"maple, silver",acer saccharinum
@@ -2660,7 +2548,6 @@ address,status,borough,longitude,latitude,spc_common,spc_latin
 4211 BARNS AV,Fair,Bronx,-73.85428,40.892863,"oak, pin",quercus palustris
 155-046 COHANCEY ST,Fair,Queens,-73.835442,40.664591,"maple, norway",acer platanoides
 147-003 10 AV,Fair,Queens,-73.820165,40.79131,"linden, little leaf",tilia cordata
-41-014 66 ST,Fair,Queens,-73.897836,40.744203,unknown live trees,unknown live trees 
 93 PENN AV,Good,Staten Island,-74.12092,40.565716,london planetree,platanus acerifolia
 18-051 MOTT AV,Poor,Queens,-73.751437,40.603456,london planetree,platanus acerifolia
 157-038 86 ST,Good,Queens,-73.847058,40.660932,hackberry,celtis occidentalis
@@ -2677,7 +2564,6 @@ address,status,borough,longitude,latitude,spc_common,spc_latin
 77-018 PARSONS BLVD,Fair,Queens,-73.810297,40.723461,honeylocust,gleditsia triacanthos
 473 DECATUR ST,Poor,Brooklyn,-73.924384,40.682485,honeylocust,gleditsia triacanthos
 696 MINIEFORD AV,Fair,Bronx,-73.790445,40.857246,london planetree,platanus acerifolia
-10 SEELEY ST,Fair,Brooklyn,-73.981018,40.652745,unknown live trees,unknown live trees 
 253-030 NORTHERN BLVD,Fair,Queens,-73.735288,40.770916,"linden, little leaf",tilia cordata
 1195 E 15 ST,Fair,Brooklyn,-73.960509,40.620533,ginkgo,ginkgo biloba
 1114 E 27 ST,Fair,Brooklyn,-73.949205,40.623705,"maple, norway",acer platanoides
@@ -2691,7 +2577,6 @@ address,status,borough,longitude,latitude,spc_common,spc_latin
 117-011 234 ST,Fair,Queens,-73.72824,40.690799,"pear, callery",pyrus calleryana
 68-016 65 ST,Fair,Queens,-73.892603,40.705946,"maple, silver",acer saccharinum
 2661 DECATUR AV,Poor,Bronx,-73.889529,40.864114,"ash, green",fraxinus pennsylvanica
-133 HIGHVIEW AV,Fair,Staten Island,-74.088307,40.641656,unknown live trees,unknown live trees 
 15 W 76 ST,Fair,Manhattan,-73.974503,40.778989,"ash, green",fraxinus pennsylvanica
 13-052 146 ST,Fair,Queens,-73.820849,40.787988,"maple, norway",acer platanoides
 27-017 154 ST,Poor,Queens,-73.809859,40.773095,"maple, norway",acer platanoides
@@ -2712,7 +2597,6 @@ address,status,borough,longitude,latitude,spc_common,spc_latin
 57-028 157 ST,Fair,Queens,-73.811129,40.741917,"linden, little leaf",tilia cordata
 14-030 BROADWAY,Poor,Queens,-73.933057,40.765979,honeylocust,gleditsia triacanthos
 137-043 224 ST,Fair,Queens,-73.74815,40.673959,"maple, norway",acer platanoides
-197-007 116 AV,Poor,Queens,-73.755466,40.695274,unknown live trees,unknown live trees 
 1468 77 ST,Good,Brooklyn,-74.004919,40.616897,london planetree,platanus acerifolia
 33-095 92 ST,Fair,Queens,-73.875757,40.754809,london planetree,platanus acerifolia
 80-037 90 RD,Fair,Queens,-73.860027,40.687518,"maple, norway",acer platanoides
@@ -2727,7 +2611,6 @@ address,status,borough,longitude,latitude,spc_common,spc_latin
 78 DUNCAN AV,Good,Staten Island,-74.09773,40.600068,"oak, pin",quercus palustris
 95-011 111 ST,Poor,Queens,-73.833896,40.690267,"maple, norway",acer platanoides
 151 DICKIE AV,Fair,Staten Island,-74.137133,40.620262,london planetree,platanus acerifolia
-110-054 68 RD,Fair,Queens,-73.842716,40.727328,unknown live trees,unknown live trees 
 267 RICHMOND AV,Fair,Staten Island,-74.075272,40.642218,"maple, norway",acer platanoides
 55-010 137 ST,Fair,Queens,-73.827678,40.749701,"maple, norway",acer platanoides
 320 EDGEGROVE AV,Good,Staten Island,-74.182772,40.54119,"maple, norway",acer platanoides
@@ -2741,7 +2624,6 @@ address,status,borough,longitude,latitude,spc_common,spc_latin
 114-002 118 ST,Fair,Queens,-73.821332,40.678443,london planetree,platanus acerifolia
 131-014 CRONSTON AV,Fair,Queens,-73.851943,40.579101,london planetree,platanus acerifolia
 163-037 96 ST,Fair,Queens,-73.83523,40.65227,"maple, norway",acer platanoides
-80-014 168 ST,Poor,Queens,-73.800107,40.722732,unknown stump,unknown stump
 1713 E 16 ST,Poor,Brooklyn,-73.957195,40.608033,"maple, norway",acer platanoides
 377 CROMWELL AV,Good,Staten Island,-74.089499,40.586805,sweetgum,liquidambar styraciflua
 1722 GEORGE ST,Fair,Queens,-73.902383,40.698281,honeylocust,gleditsia triacanthos
@@ -2749,7 +2631,6 @@ address,status,borough,longitude,latitude,spc_common,spc_latin
 4403 Avenue D,Fair,Brooklyn,-73.935107,40.641788,honeylocust,gleditsia triacanthos
 1701 E 33 ST,Fair,Brooklyn,-73.938944,40.613215,"maple, norway",acer platanoides
 139-037 PERSHING CRES,Poor,Queens,-73.818182,40.71027,"maple, norway",acer platanoides
-145-050 223 ST,Fair,Queens,-73.756569,40.662058,unknown live trees,unknown live trees 
 235 NOEL ST,Fair,Staten Island,-74.168624,40.530185,"ash, green",fraxinus pennsylvanica
 247-018 139 AV,Fair,Queens,-73.732267,40.664544,"oak, pin",quercus palustris
 355 BELMONT AV,Fair,Brooklyn,-73.896692,40.670456,"oak, pin",quercus palustris
@@ -2811,7 +2692,6 @@ address,status,borough,longitude,latitude,spc_common,spc_latin
 843 SINCLAIR AV,Good,Staten Island,-74.204104,40.539802,"maple, silver",acer saccharinum
 101-058 102 ST,Poor,Queens,-73.84019,40.684575,"maple, norway",acer platanoides
 48-004 59 PL,Fair,Queens,-73.905535,40.738511,"maple, other",acer species
-809 ADEE AV,Poor,Bronx,-73.86304,40.869634,unknown dead trees,unknown dead trees 
 117-075 126 ST,Fair,Queens,-73.812211,40.673459,london planetree,platanus acerifolia
 61-045 71 ST,Good,Queens,-73.886561,40.720419,"oak, willow",quercus phellos
 16 MAPLE CT,Fair,Staten Island,-74.197854,40.551485,sweetgum,liquidambar styraciflua
@@ -2827,7 +2707,6 @@ address,status,borough,longitude,latitude,spc_common,spc_latin
 485 STATE ST,Fair,Brooklyn,-73.979662,40.685725,honeylocust,gleditsia triacanthos
 115-020 134 ST,Fair,Queens,-73.806987,40.68017,"maple, sugar",acer saccharum
 86-021 102 RD,Poor,Queens,-73.852654,40.680865,"linden, little leaf",tilia cordata
-36-043 29 ST,Poor,Queens,-73.93188,40.756681,unknown dead trees,unknown dead trees 
 64-070 214 ST,Fair,Queens,-73.761874,40.744015,"zelkova, japanese",zelkova serrata
 40-042 192 ST,Fair,Queens,-73.789764,40.760362,"maple, silver",acer saccharinum
 146-047 59 AV,Fair,Queens,-73.820827,40.74261,"maple, norway",acer platanoides
@@ -2898,8 +2777,6 @@ address,status,borough,longitude,latitude,spc_common,spc_latin
 62-001 37 AV,Fair,Queens,-73.90057,40.749183,"maple, norway",acer platanoides
 58-011 138 ST,Poor,Queens,-73.827341,40.745164,"ash, green",fraxinus pennsylvanica
 56-058 217 ST,Poor,Queens,-73.761786,40.750466,"maple, norway",acer platanoides
-157-003 23 AV,Poor,Queens,-73.806301,40.777252,unknown stump,unknown stump
-243-008 147 AV,Poor,Queens,-73.741179,40.657368,unknown stump,unknown stump
 65-015 38 AV,Fair,Queens,-73.898295,40.746945,"maple, norway",acer platanoides
 16 SLOCUM PL,Fair,Brooklyn,-73.968905,40.641755,"maple, norway",acer platanoides
 131 PRALL AV,Good,Staten Island,-74.190294,40.528341,"maple, silver",acer saccharinum
@@ -2977,7 +2854,6 @@ address,status,borough,longitude,latitude,spc_common,spc_latin
 132-011 97 AV,Fair,Queens,-73.815868,40.694225,"oak, pin",quercus palustris
 710 E 37 ST,Fair,Brooklyn,-73.941599,40.639653,"maple, norway",acer platanoides
 136-016 ROCKAWAY BEACH AV,Poor,Queens,-73.853712,40.573614,london planetree,platanus acerifolia
-101-013 101 AV,Fair,Queens,-73.841501,40.685545,unknown live trees,unknown live trees 
 177 MORRISON AV,Good,Staten Island,-74.111988,40.628702,"pear, callery",pyrus calleryana
 67 LEWIS AV,Fair,Brooklyn,-73.937506,40.69533,"maple, norway",acer platanoides
 50-030 185 ST,Fair,Queens,-73.791447,40.744496,"maple, silver",acer saccharinum
@@ -3007,7 +2883,6 @@ address,status,borough,longitude,latitude,spc_common,spc_latin
 156-028 99 ST,Fair,Queens,-73.834991,40.662835,"oak, pin",quercus palustris
 99 ST GEORGE RD,Good,Staten Island,-74.130561,40.576482,"maple, norway",acer platanoides
 47-002 69 ST,Fair,Queens,-73.895872,40.739043,london planetree,platanus acerifolia
-74 FREMONT AV,Fair,Staten Island,-74.110796,40.57964,unknown live trees,unknown live trees 
 66-012 CENTRAL AV,Fair,Queens,-73.888522,40.702859,london planetree,platanus acerifolia
 1370 E 21 ST,Fair,Brooklyn,-73.954234,40.619893,"maple, norway",acer platanoides
 386 CHELSEA ST,Good,Staten Island,-74.242588,40.499227,"maple, norway",acer platanoides
@@ -3118,7 +2993,6 @@ address,status,borough,longitude,latitude,spc_common,spc_latin
 34-001 36 AV,Poor,Queens,-73.927341,40.755456,planting site,planting site
 66 VANCORTLANDT PK S,Good,Bronx,-73.888368,40.884477,"elm, american",ulmus americana
 31-019 101 ST,Good,Queens,-73.868068,40.760762,"maple, sugar",acer saccharum
-26-015 ULMER ST,Fair,Queens,-73.837114,40.772344,unknown live trees,unknown live trees 
 47-060 47 AV,Fair,Queens,-73.917609,40.740983,"maple, sugar",acer saccharum
 17-037 WILLOUGHBY AV,Fair,Queens,-73.918901,40.708153,london planetree,platanus acerifolia
 64-039 98 ST,Fair,Queens,-73.858099,40.729518,honeylocust,gleditsia triacanthos
@@ -3148,7 +3022,6 @@ address,status,borough,longitude,latitude,spc_common,spc_latin
 81-031 169 ST,Poor,Queens,-73.798559,40.721384,"maple, norway",acer platanoides
 5012 9 AV,Fair,Brooklyn,-74.001584,40.639709,london planetree,platanus acerifolia
 57-029 CATALPA AV,Fair,Queens,-73.903827,40.700949,"maple, norway",acer platanoides
-1619 ORIENTAL BLVD,Poor,Brooklyn,-73.938691,40.578397,unknown dead trees,unknown dead trees 
 1612 65 ST,Fair,Brooklyn,-73.994594,40.621797,"maple, norway",acer platanoides
 1305 E 102 ST,Fair,Brooklyn,-73.889513,40.639452,london planetree,platanus acerifolia
 890 1 AV,Good,Manhattan,-73.966109,40.753946,"ash, green",fraxinus pennsylvanica
@@ -3231,7 +3104,6 @@ address,status,borough,longitude,latitude,spc_common,spc_latin
 11-085 VIRGINIA ST,Fair,Queens,-73.745185,40.608994,"oak, other",quercus species
 142-015 NEPONSIT AV,Fair,Queens,-73.859045,40.572534,london planetree,platanus acerifolia
 223-048 113 DR,Fair,Queens,-73.733348,40.702449,london planetree,platanus acerifolia
-1991 BROADWAY,Good,Manhattan,-73.982184,40.775128,unknown live trees,unknown live trees 
 561 GREELEY AV,Good,Staten Island,-74.095458,40.570744,"pear, callery",pyrus calleryana
 12 DAKOTA PL,Good,Staten Island,-74.131778,40.616432,"pear, callery",pyrus calleryana
 820 5 AV,Good,Manhattan,-73.971181,40.766776,"elm, american",ulmus americana
@@ -3241,7 +3113,6 @@ address,status,borough,longitude,latitude,spc_common,spc_latin
 567 BAINBRIDGE ST,Fair,Brooklyn,-73.914218,40.682904,"oak, pin",quercus palustris
 1603 SHEEPSHEAD BAY RD,Fair,Brooklyn,-73.953229,40.58718,honeylocust,gleditsia triacanthos
 1940 LINDEN BLVD,Poor,Brooklyn,-73.890611,40.658583,"ash, green",fraxinus pennsylvanica
-97-029 124 ST,Poor,Queens,-73.822256,40.692,unknown stump,unknown stump
 142-009 POPLAR ST,Fair,Queens,-73.81345,40.748387,sweetgum,liquidambar styraciflua
 409 E 8 ST,Fair,Brooklyn,-73.970961,40.639964,"pear, callery",pyrus calleryana
 16-053 STEPHEN ST,Fair,Queens,-73.902878,40.696621,"maple, norway",acer platanoides
@@ -3270,7 +3141,6 @@ address,status,borough,longitude,latitude,spc_common,spc_latin
 116-031 166 ST,Fair,Queens,-73.781072,40.686246,"oak, pin",quercus palustris
 42-005 AUBURNDALE LA,Poor,Queens,-73.795017,40.758985,"maple, norway",acer platanoides
 77 LINDEN BLVD,Poor,Brooklyn,-73.955961,40.652317,"maple, norway",acer platanoides
-142-026 32 AV,Poor,Queens,-73.825738,40.769101,unknown stump,unknown stump
 188-023 NASHVILLE BLVD,Fair,Queens,-73.75649,40.682633,"maple, norway",acer platanoides
 336 E 13 ST,Fair,Brooklyn,-73.985756,40.665537,"maple, silver",acer saccharinum
 1511 E 5 ST,Fair,Brooklyn,-73.969897,40.613773,"maple, norway",acer platanoides
@@ -3360,7 +3230,6 @@ address,status,borough,longitude,latitude,spc_common,spc_latin
 106-011 77 ST,Fair,Queens,-73.860071,40.677698,"ash, green",fraxinus pennsylvanica
 149 MANHATTAN AV,Good,Manhattan,-73.961112,40.799155,"pear, callery",pyrus calleryana
 74-019 CALDWELL AV,Fair,Queens,-73.886893,40.724617,"maple, norway",acer platanoides
-160-006 84 RD,Poor,Queens,-73.805192,40.71404,unknown dead trees,unknown dead trees 
 748 LAMONT AV,Poor,Staten Island,-74.197879,40.537714,"oak, pin",quercus palustris
 39-002 51 ST,Good,Queens,-73.912831,40.748721,"linden, little leaf",tilia cordata
 2022 OCEAN PKWY,Fair,Brooklyn,-73.965806,40.599565,"ash, green",fraxinus pennsylvanica
@@ -3395,7 +3264,6 @@ address,status,borough,longitude,latitude,spc_common,spc_latin
 1544 55 ST,Fair,Brooklyn,-73.990218,40.628406,london planetree,platanus acerifolia
 250-023 40 AV,Fair,Queens,-73.74114,40.773382,"maple, silver",acer saccharinum
 121-064 237 ST,Fair,Queens,-73.729295,40.682822,"maple, norway",acer platanoides
-113-005 221 ST,Fair,Queens,-73.736175,40.703889,unknown live trees,unknown live trees 
 2416 CROTONA AV,Good,Bronx,-73.883312,40.854436,honeylocust,gleditsia triacanthos
 44-009 244 ST,Good,Queens,-73.742369,40.766649,apple,malus pumila
 223-014 139 AV,Fair,Queens,-73.750515,40.67161,"oak, pin",quercus palustris
@@ -3407,7 +3275,6 @@ address,status,borough,longitude,latitude,spc_common,spc_latin
 97-002 133 AV,Good,Queens,-73.839956,40.676212,"ash, green",fraxinus pennsylvanica
 28-047 HOBART ST,Good,Queens,-73.905905,40.760704,"maple, norway",acer platanoides
 7611 86 ST,Fair,Queens,-73.883732,40.767473,"maple, norway",acer platanoides
-333 E 93 ST,Poor,Manhattan,-73.9477,40.781988,unknown stump,unknown stump 
 346 BALTIC ST,Fair,Brooklyn,-73.991346,40.68465,london planetree,platanus acerifolia
 32-014 31 AV,Fair,Queens,-73.922544,40.763907,"oak, pin",quercus palustris
 435 RIVERSIDE DRIVE,Fair,Manhattan,-73.966059,40.808657,"elm, american",ulmus americana
@@ -3419,7 +3286,6 @@ address,status,borough,longitude,latitude,spc_common,spc_latin
 81-010 262 ST,Fair,Queens,-73.708538,40.743159,honeylocust,gleditsia triacanthos
 185 W HOUSTON ST,Fair,Manhattan,-74.003223,40.728401,honeylocust,gleditsia triacanthos
 656 W 239 ST,Fair,Bronx,-73.913268,40.889774,"maple, norway",acer platanoides
-163-071 MATHIAS AV,Fair,Queens,-73.785457,40.692112,unknown live trees,unknown live trees 
 282 IONA AV,Fair,Staten Island,-74.182834,40.542455,"maple, red",acer rubrum
 71-017 WOODSIDE AV,Fair,Queens,-73.893622,40.742637,london planetree,platanus acerifolia
 40-038 70 ST,Poor,Queens,-73.895292,40.745741,honeylocust,gleditsia triacanthos
@@ -3671,7 +3537,6 @@ address,status,borough,longitude,latitude,spc_common,spc_latin
 914 Avenue K,Fair,Brooklyn,-73.966504,40.622179,"oak, pin",quercus palustris
 84-002 106 AV,Good,Queens,-73.852946,40.678271,"maple, norway",acer platanoides
 156-004 89 ST,Fair,Queens,-73.844848,40.663564,london planetree,platanus acerifolia
-368 LINDEN BLVD,Poor,Brooklyn,-73.945664,40.652871,unknown live trees,unknown live trees 
 5117 Avenue J,Poor,Brooklyn,-73.926699,40.628238,"maple, norway",acer platanoides
 64-031 CATALPA AV,Fair,Queens,-73.89296,40.704636,honeylocust,gleditsia triacanthos
 58-032 CLEARVIEW EXWY,Fair,Queens,-73.772993,40.745973,london planetree,platanus acerifolia
@@ -3728,7 +3593,6 @@ address,status,borough,longitude,latitude,spc_common,spc_latin
 1466 E 70 ST,Fair,Brooklyn,-73.910221,40.621224,"maple, norway",acer platanoides
 27 JARDINE AV,Fair,Staten Island,-74.160978,40.610865,"oak, pin",quercus palustris
 113 RIDGEWOOD AV,Fair,Brooklyn,-73.884719,40.682825,"maple, silver",acer saccharinum
-114 E 104 ST,Poor,Manhattan,-73.948384,40.791426,unknown dead trees,unknown dead trees 
 1818 Avenue L,Fair,Brooklyn,-73.957449,40.620734,"maple, norway",acer platanoides
 30-053 43 ST,Fair,Queens,-73.913702,40.761399,"linden, little leaf",tilia cordata
 47-011 DOUGLASTON BLVD,Fair,Queens,-73.742918,40.762307,"maple, red",acer rubrum
@@ -3748,9 +3612,7 @@ address,status,borough,longitude,latitude,spc_common,spc_latin
 722 CAULDWELL AV,Fair,Bronx,-73.908926,40.81831,"pear, callery",pyrus calleryana
 27 W 44 ST,Good,Manhattan,-73.980815,40.755152,"linden, little leaf",tilia cordata
 4566 BROADWAY,Fair,Manhattan,-73.931298,40.859349,london planetree,platanus acerifolia
-209-051 33 RD,Fair,Queens,-73.779215,40.770758,unknown live trees,unknown live trees 
 48-004 201 ST,Poor,Queens,-73.778815,40.752071,"maple, norway",acer platanoides
-120-048 224 ST,Poor,Queens,-73.739617,40.688335,unknown dead trees,unknown dead trees 
 159 DIVISION AV,Fair,Brooklyn,-73.962045,40.707567,"ash, green",fraxinus pennsylvanica
 164 KIRSHON AV,Fair,Staten Island,-74.164009,40.614641,"maple, red",acer rubrum
 91-015 LAMONT AV,Poor,Queens,-73.874418,40.7437,ginkgo,ginkgo biloba
@@ -3770,7 +3632,6 @@ address,status,borough,longitude,latitude,spc_common,spc_latin
 25 BURCHARD CT,Fair,Staten Island,-74.178976,40.541509,"elm, american",ulmus americana
 307 CITY ISLAND AV,Poor,Bronx,-73.786467,40.847181,"elm, american",ulmus americana
 40-009 23 AV,Fair,Queens,-73.90815,40.771036,"maple, norway",acer platanoides
-535 FALCON AV,Poor,Staten Island,-74.117175,40.55978,unknown stump,unknown stump
 18-006 125 ST,Fair,Queens,-73.843132,40.783112,"maple, sycamore",acer pseudoplatanus
 5802 AV O,Fair,Brooklyn,-73.918916,40.617091,"pine, other",pinus species
 173-002 UNION TPKE,Fair,Queens,-73.795776,40.724415,"ash, green",fraxinus pennsylvanica
@@ -3784,7 +3645,6 @@ address,status,borough,longitude,latitude,spc_common,spc_latin
 162-011 86 ST,Fair,Queens,-73.845108,40.653069,"oak, pin",quercus palustris
 794 QUINCY ST,Fair,Brooklyn,-73.927976,40.689566,"elm, american",ulmus americana
 143 E FIGUERA AV,Fair,Staten Island,-74.161354,40.552175,london planetree,platanus acerifolia
-128-002 236 ST,Fair,Queens,-73.730488,40.6823,unknown live trees,unknown live trees 
 84-033 57 AV,Fair,Queens,-73.878476,40.730893,japanese pagoda tree,sophora japonica
 20 SYCAMORE ST,Good,Staten Island,-74.152444,40.544832,"maple, sycamore",acer pseudoplatanus
 138 11 ST,Good,Brooklyn,-73.992947,40.670721,honeylocust,gleditsia triacanthos
@@ -3797,10 +3657,8 @@ address,status,borough,longitude,latitude,spc_common,spc_latin
 1633 RADCLIFF AV,Fair,Bronx,-73.855096,40.845182,"oak, pin",quercus palustris
 344 KELL AV,Good,Staten Island,-74.134836,40.60421,honeylocust,gleditsia triacanthos
 9601 Avenue B,Fair,Brooklyn,-73.911805,40.652444,london planetree,platanus acerifolia
-54 S 9 ST,Poor,Brooklyn,-73.966756,40.708992,unknown dead trees,unknown dead trees 
 702 MARCY AV,Fair,Staten Island,-74.201013,40.539814,sassafras,sassafras albidum
 37-016 84 ST,Fair,Queens,-73.882384,40.749575,"linden, little leaf",tilia cordata
-56 BAMBERGER LA,Fair,Staten Island,-74.166981,40.541269,unknown live trees,unknown live trees 
 1745 85 ST,Fair,Brooklyn,-74.003032,40.608472,"oak, willow",quercus phellos
 546 GATES AV,Fair,Brooklyn,-73.943793,40.686999,"maple, norway",acer platanoides
 351 B 12 ST,Good,Queens,-73.923419,40.560739,honeylocust,gleditsia triacanthos
@@ -3828,7 +3686,6 @@ address,status,borough,longitude,latitude,spc_common,spc_latin
 500 MIDWOOD ST,Fair,Brooklyn,-73.944078,40.66052,"maple, red",acer rubrum
 241-002 147 DR,Fair,Queens,-73.743246,40.655423,"maple, norway",acer platanoides
 38 GERVIL ST,Poor,Staten Island,-74.212271,40.547509,"maple, norway",acer platanoides
-696 GRAND ST,Poor,Brooklyn,-73.944814,40.711556,unknown dead trees,unknown dead trees 
 939 E 5 ST,Poor,Brooklyn,-73.972697,40.628547,"maple, norway",acer platanoides
 46 3 ST,Fair,Brooklyn,-73.994293,40.678113,"maple, norway",acer platanoides
 501 W 192 ST,Poor,Manhattan,-73.92734,40.855606,"zelkova, japanese",zelkova serrata
@@ -3859,7 +3716,6 @@ address,status,borough,longitude,latitude,spc_common,spc_latin
 43-059 160 ST,Fair,Queens,-73.806261,40.757511,"maple, silver",acer saccharinum
 74-012 35 AV,Fair,Queens,-73.891996,40.751017,honeylocust,gleditsia triacanthos
 1025 MORRISON AV,Fair,Bronx,-73.873548,40.825081,"oak, pin",quercus palustris
-415 W 201 ST,Poor,Manhattan,-73.920421,40.860151,unknown stump,unknown stump 
 74 NELSON AV,Fair,Staten Island,-74.15013,40.547836,"maple, norway",acer platanoides
 33-058 171 ST,Fair,Queens,-73.79475,40.76581,"zelkova, japanese",zelkova serrata
 15 MELISSA ST,Poor,Staten Island,-74.153595,40.619689,london planetree,platanus acerifolia
@@ -3868,7 +3724,6 @@ address,status,borough,longitude,latitude,spc_common,spc_latin
 58-061 44 AV,Fair,Queens,-73.905445,40.74225,"maple, sugar",acer saccharum
 86-055 RANGE ST,Fair,Queens,-73.733656,40.731936,"maple, norway",acer platanoides
 262 BANCROFT AV,Fair,Staten Island,-74.107027,40.575011,london planetree,platanus acerifolia
-103-010 114 ST,Poor,Queens,-73.829118,40.686644,unknown dead trees,unknown dead trees 
 355 E 149 ST,Fair,Bronx,-73.919442,40.816529,honeylocust,gleditsia triacanthos
 53-002 62 ST,Fair,Queens,-73.901829,40.731641,london planetree,platanus acerifolia
 27 JOSEPH LA,Good,Staten Island,-74.072264,40.603601,honeylocust,gleditsia triacanthos
@@ -3878,7 +3733,6 @@ address,status,borough,longitude,latitude,spc_common,spc_latin
 9138 BEDELL LA,Fair,Brooklyn,-73.909756,40.644375,london planetree,platanus acerifolia
 588 TARGEE ST,Fair,Staten Island,-74.085152,40.612354,sweetgum,liquidambar styraciflua
 101 Avenue of the Amer,Good,Manhattan,-74.004904,40.723235,"pear, callery",pyrus calleryana
-64-014 CLINTON AV,Poor,Queens,-73.901636,40.72436,unknown dead trees,unknown dead trees 
 7123 NARROWS AV,Good,Brooklyn,-74.034786,40.635948,"maple, norway",acer platanoides
 196 E 39 ST,Fair,Manhattan,-73.975904,40.748894,"pear, callery",pyrus calleryana
 103 HARTFORD AV,Fair,Staten Island,-74.10962,40.623254,"elm, american",ulmus americana
@@ -3928,7 +3782,6 @@ address,status,borough,longitude,latitude,spc_common,spc_latin
 674 ALABAMA AV,Fair,Brooklyn,-73.894629,40.659593,london planetree,platanus acerifolia
 140-065 BEECH AV,Fair,Queens,-73.821757,40.755444,london planetree,platanus acerifolia
 9-028 118 ST,Fair,Queens,-73.849718,40.78882,london planetree,platanus acerifolia
-152-034 JEWELL AV,Fair,Queens,-73.81661,40.73187,unknown live trees,unknown live trees 
 171-020 109 AV,Fair,Queens,-73.783686,40.697694,"oak, pin",quercus palustris
 5110 Avenue K,Fair,Brooklyn,-73.926501,40.625901,ginkgo,ginkgo biloba
 60-036 MYRTLE AV,Poor,Queens,-73.896805,40.70061,"maple, norway",acer platanoides
@@ -3947,12 +3800,10 @@ address,status,borough,longitude,latitude,spc_common,spc_latin
 42-034 209 ST,Good,Queens,-73.775702,40.761105,"linden, little leaf",tilia cordata
 50 LEGION ST,Fair,Brooklyn,-73.91803,40.667668,london planetree,platanus acerifolia
 21 FINGAL ST,Fair,Staten Island,-74.168615,40.537859,"maple, norway",acer platanoides
-51-019 JACOBUS ST,Poor,Queens,-73.887548,40.736638,unknown dead trees,unknown dead trees 
 30 W 75 ST,Fair,Manhattan,-73.975379,40.778524,"linden, little leaf",tilia cordata
 60-091 70 AV,Fair,Queens,-73.895544,40.702493,"maple, sugar",acer saccharum
 152-049 11 AV,Fair,Queens,-73.808757,40.792417,"oak, northern red",quercus rubra
 67-025 CLOVERDALE BLVD,Fair,Queens,-73.749093,40.745953,"maple, red",acer rubrum
-26-026 JACKSON AV,Fair,Queens,-73.941346,40.747499,unknown live trees,unknown live trees 
 47-001 210 ST,Fair,Queens,-73.771821,40.755858,london planetree,platanus acerifolia
 1431 E 9 ST,Fair,Brooklyn,-73.965128,40.614163,"maple, norway",acer platanoides
 147 WEIRFIELD ST,Fair,Brooklyn,-73.912398,40.689791,honeylocust,gleditsia triacanthos
@@ -4016,7 +3867,6 @@ address,status,borough,longitude,latitude,spc_common,spc_latin
 114-045 122 ST,Fair,Queens,-73.817409,40.678705,"maple, silver",acer saccharinum
 762 E 105 ST,Fair,Brooklyn,-73.895297,40.648084,london planetree,platanus acerifolia
 148 STECHER ST,Good,Staten Island,-74.187081,40.529942,"maple, red",acer rubrum
-151 S PORTLAND AV,Fair,Brooklyn,-73.974121,40.68471,unknown live trees,unknown live trees 
 260 61 ST,Fair,Brooklyn,-74.022167,40.642186,honeylocust,gleditsia triacanthos
 2556 YOUNG AV,Fair,Bronx,-73.848179,40.863564,london planetree,platanus acerifolia
 1064 HUGUENOT ST,Good,Staten Island,-74.189135,40.528305,"maple, silver",acer saccharinum
@@ -4060,7 +3910,6 @@ address,status,borough,longitude,latitude,spc_common,spc_latin
 66-084 FRESH POND RD,Fair,Queens,-73.896768,40.706214,"maple, sugar",acer saccharum
 114-118 E 3 ST,Poor,Manhattan,-73.986841,40.724305,london planetree,platanus acerifolia
 2750 OLINVILLE AV,Fair,Bronx,-73.868348,40.86601,london planetree,platanus acerifolia
-83-026 247 ST,Poor,Queens,-73.72064,40.736108,unknown dead trees,unknown dead trees 
 64-022 80 AV,Good,Queens,-73.890236,40.69587,"linden, little leaf",tilia cordata
 160-007 86 ST,Fair,Queens,-73.845944,40.656443,london planetree,platanus acerifolia
 7 E 235 ST,Fair,Bronx,-73.876135,40.896865,"oak, pin",quercus palustris
@@ -4134,7 +3983,6 @@ address,status,borough,longitude,latitude,spc_common,spc_latin
 146-001 119 AV,Good,Queens,-73.79398,40.678752,"maple, sycamore",acer pseudoplatanus
 715 OCEAN PKWY,Fair,Brooklyn,-73.971228,40.631184,"maple, norway",acer platanoides
 521 W 185 ST,Fair,Manhattan,-73.929901,40.850816,"oak, pin",quercus palustris
-48-053 44 ST,Poor,Queens,-73.921518,40.738547,unknown dead trees,unknown dead trees 
 1518 E 14 ST,Good,Brooklyn,-73.959919,40.612412,"pear, callery",pyrus calleryana
 639 FOSTER AV,Fair,Brooklyn,-73.970272,40.630612,"maple, norway",acer platanoides
 72-017 34 AV,Good,Queens,-73.894169,40.752773,"elm, american",ulmus americana
@@ -4155,7 +4003,6 @@ address,status,borough,longitude,latitude,spc_common,spc_latin
 1070 E 5 ST,Fair,Brooklyn,-73.972076,40.625273,"maple, norway",acer platanoides
 362 LEONARD ST,Fair,Brooklyn,-73.948182,40.717038,"linden, little leaf",tilia cordata
 68-029 DARTMOUTH ST,Poor,Queens,-73.852124,40.719935,planting site,planting site
-217-020 109 AV,Poor,Queens,-73.739383,40.709355,unknown stump,unknown stump
 106-026 50 AV,Good,Queens,-73.856875,40.74416,"maple, sycamore",acer pseudoplatanus
 2 W 120 ST,Fair,Manhattan,-73.944621,40.803239,"pear, callery",pyrus calleryana
 316 PARK PL,Poor,Brooklyn,-73.967379,40.676408,planting site,planting site
@@ -4164,7 +4011,6 @@ address,status,borough,longitude,latitude,spc_common,spc_latin
 138-019 WHITELAW AV,Fair,Queens,-73.846662,40.67173,"ash, green",fraxinus pennsylvanica
 50 E 162 ST,Fair,Bronx,-73.925189,40.829923,"oak, pin",quercus palustris
 57-069 79 ST,Good,Queens,-73.882246,40.727427,"maple, red",acer rubrum
-202-027 45 RD,Poor,Queens,-73.780142,40.756629,unknown dead trees,unknown dead trees 
 86-021 RANGE ST,Good,Queens,-73.733383,40.732649,"ash, green",fraxinus pennsylvanica
 29 72 ST,Good,Brooklyn,-74.036153,40.6357,"maple, norway",acer platanoides
 33-021 75 ST,Fair,Queens,-73.891808,40.754485,"maple, sugar",acer saccharum
@@ -4232,14 +4078,12 @@ address,status,borough,longitude,latitude,spc_common,spc_latin
 91-040 LAMONT AV,Fair,Queens,-73.874105,40.74411,"pear, callery",pyrus calleryana
 33 8 AV,Good,Brooklyn,-73.972217,40.67458,"oak, pin",quercus palustris
 1842 MATTHEWS AV,Fair,Bronx,-73.862199,40.847506,"maple, sugar",acer saccharum
-272 HALL ST,Poor,Brooklyn,-73.965239,40.69004,unknown dead trees,unknown dead trees 
 349 EUCLID AV,Fair,Brooklyn,-73.873143,40.679361,"maple, norway",acer platanoides
 2644 E 64 ST,Fair,Brooklyn,-73.910922,40.608078,"pine, other",pinus species
 16 W 87 ST,Good,Manhattan,-73.969288,40.786156,honeylocust,gleditsia triacanthos
 86-032 55 RD,Good,Queens,-73.877268,40.733749,"maple, norway",acer platanoides
 48-047 OCEANIA ST,Fair,Queens,-73.771455,40.753578,"maple, norway",acer platanoides
 193 10 ST,Good,Staten Island,-74.118064,40.568558,"maple, norway",acer platanoides
-10 VANSICLEN AV,Poor,Brooklyn,-73.892262,40.680339,unknown live trees,unknown live trees 
 1185 MORRISON AV,Good,Bronx,-73.874483,40.829236,"oak, pin",quercus palustris
 82-080 161 ST,Fair,Queens,-73.804804,40.716375,london planetree,platanus acerifolia
 1252 DEAN ST,Fair,Brooklyn,-73.947695,40.676756,japanese pagoda tree,sophora japonica
@@ -4267,7 +4111,6 @@ address,status,borough,longitude,latitude,spc_common,spc_latin
 140-016 130 AV,Good,Queens,-73.799206,40.671393,"maple, red",acer rubrum
 244-040 89 AV,Fair,Queens,-73.72259,40.727487,"maple, norway",acer platanoides
 1953 53 ST,Fair,Brooklyn,-73.979818,40.623947,london planetree,platanus acerifolia
-55 W 94 ST,Good,Manhattan,-73.96719,40.791023,unknown live trees,unknown live trees 
 80-037 KENT ST,Fair,Queens,-73.785656,40.72659,"maple, norway",acer platanoides
 85-010 67 AV,Fair,Queens,-73.862053,40.71729,"maple, norway",acer platanoides
 131 MARION AV,Fair,Staten Island,-74.085173,40.628588,"maple, norway",acer platanoides
@@ -4296,9 +4139,7 @@ address,status,borough,longitude,latitude,spc_common,spc_latin
 853 CARROLL ST,Fair,Brooklyn,-73.972038,40.671539,"elm, september (red)",ulmus serotina
 89 ALEXANDER PL,Fair,Staten Island,-74.17919,40.556188,"maple, silver",acer saccharinum
 2882 BAILEY AV,Fair,Bronx,-73.904191,40.875488,"maple, red",acer rubrum
-214 E 89 ST,Poor,Manhattan,-73.952231,40.780609,unknown stump,unknown stump 
 713 HENDRIX ST,Fair,Brooklyn,-73.887065,40.663914,london planetree,platanus acerifolia
-731 ADEE AV,Poor,Bronx,-73.866007,40.869658,unknown dead trees,unknown dead trees 
 130-028 230 ST,Fair,Queens,-73.737738,40.681074,"maple, norway",acer platanoides
 82-071 167 ST,Fair,Queens,-73.799383,40.717981,"maple, silver",acer saccharinum
 16 STERLING PL,Fair,Brooklyn,-73.978125,40.678824,london planetree,platanus acerifolia
@@ -4320,7 +4161,6 @@ address,status,borough,longitude,latitude,spc_common,spc_latin
 52 SPERRY ST,Good,Staten Island,-74.194544,40.546409,"pear, callery",pyrus calleryana
 249 B 12 ST,Fair,Queens,-73.923419,40.560739,"maple, silver",acer saccharinum
 231 BEACH RD,Fair,Staten Island,-74.154446,40.539263,"maple, silver",acer saccharinum
-830 BRADEY AV,Poor,Bronx,-73.862838,40.852325,unknown live trees,unknown live trees 
 168-018 144 TER,Fair,Queens,-73.771534,40.669095,"maple, norway",acer platanoides
 720 Mother Gaston Blvd,Fair,Brooklyn,-73.904658,40.661084,london planetree,platanus acerifolia
 2034 CROPSEY AV,Fair,Brooklyn,-74.001964,40.599624,london planetree,platanus acerifolia
@@ -4347,7 +4187,6 @@ address,status,borough,longitude,latitude,spc_common,spc_latin
 218-010 43 AV,Fair,Queens,-73.76412,40.762416,"oak, pin",quercus palustris
 112-033 68 RD,Good,Queens,-73.841099,40.727809,"maple, red",acer rubrum
 10423 Avenue K,Fair,Brooklyn,-73.891589,40.643877,mimosa,albizia julibrissin
-106-019 78 ST,Fair,Queens,-73.859144,40.677814,unknown live trees,unknown live trees 
 139-018 182 ST,Poor,Queens,-73.763696,40.672668,honeylocust,gleditsia triacanthos
 192-016 50 AV,Fair,Queens,-73.786862,40.74798,"maple, silver",acer saccharinum
 53-052 OCEANIA ST,Fair,Queens,-73.769795,40.750123,"pear, callery",pyrus calleryana
@@ -4399,7 +4238,6 @@ address,status,borough,longitude,latitude,spc_common,spc_latin
 104-019 122 ST,Fair,Queens,-73.821418,40.686823,"ash, green",fraxinus pennsylvanica
 40-038 UTOPIA PKWY,Fair,Queens,-73.793352,40.760132,honeylocust,gleditsia triacanthos
 630 E 24 ST,Fair,Brooklyn,-73.954245,40.634965,"maple, norway",acer platanoides
-4413 Avenue L,Good,Brooklyn,-73.933024,40.623211,unknown live trees,unknown live trees 
 1930 FULTON ST,Fair,Brooklyn,-73.921738,40.67887,honeylocust,gleditsia triacanthos
 83-004 258 ST,Good,Queens,-73.710759,40.738655,"pear, callery",pyrus calleryana
 1112 E 72 ST,Fair,Brooklyn,-73.916373,40.627212,"maple, norway",acer platanoides
@@ -4424,7 +4262,6 @@ address,status,borough,longitude,latitude,spc_common,spc_latin
 156-028 102 ST,Poor,Queens,-73.832255,40.663201,planting site,planting site
 34-019 97 ST,Fair,Queens,-73.870937,40.754891,"linden, little leaf",tilia cordata
 2035 E 9 ST,Fair,Brooklyn,-73.962383,40.599668,london planetree,platanus acerifolia
-37-025 58 ST,Fair,Queens,-73.904566,40.749714,unknown live trees,unknown live trees 
 50-029 63 ST,Fair,Queens,-73.90279,40.736671,"maple, norway",acer platanoides
 6623 19 AV,Fair,Brooklyn,-73.988822,40.617119,london planetree,platanus acerifolia
 1550 UNION ST,Poor,Brooklyn,-73.937923,40.668194,"maple, norway",acer platanoides
@@ -4450,12 +4287,10 @@ address,status,borough,longitude,latitude,spc_common,spc_latin
 227 E 59 ST,Fair,Manhattan,-73.96598,40.761298,"zelkova, japanese",zelkova serrata
 104-011 197 ST,Fair,Queens,-73.761304,40.707964,"maple, silver",acer saccharinum
 7 E 15 ST,Good,Manhattan,-73.99297,40.736634,"pear, callery",pyrus calleryana
-2215 E 70 ST,Fair,Brooklyn,-73.906062,40.61749,unknown live trees,unknown live trees 
 348 CLIFTON PL,Poor,Brooklyn,-73.950553,40.689221,planting site,planting site
 39 GREENWICH AV,Fair,Manhattan,-74.000366,40.735317,japanese pagoda tree,sophora japonica
 693 VANSICLEN AV,Fair,Brooklyn,-73.887242,40.66262,london planetree,platanus acerifolia
 1620 SEDGEWICK AV,Fair,Bronx,-73.923666,40.848275,"maple, red",acer rubrum
-132-002 FOCH BLVD,Poor,Queens,-73.807165,40.676538,unknown dead trees,unknown dead trees 
 38 MILDRED AV,Fair,Staten Island,-74.187026,40.591564,"maple, silver",acer saccharinum
 923 MACE AV,Fair,Bronx,-73.860616,40.863089,"maple, sugar",acer saccharum
 207-001 116 AV,Fair,Queens,-73.745845,40.697781,"oak, northern red",quercus rubra
@@ -4464,7 +4299,6 @@ address,status,borough,longitude,latitude,spc_common,spc_latin
 223 PROSPECT AV,Fair,Brooklyn,-73.991225,40.664563,"maple, sycamore",acer pseudoplatanus
 440 W 24 ST,Fair,Manhattan,-74.002013,40.747643,"zelkova, japanese",zelkova serrata
 400 PENNYFIELD AV,Fair,Bronx,-73.810058,40.818547,"maple, sugar",acer saccharum
-101-011 85 RD,Poor,Queens,-73.847192,40.697286,unknown stump,unknown stump
 7 RICE AV,Fair,Staten Island,-74.114986,40.618056,"maple, norway",acer platanoides
 220 WARWICK AV,Fair,Staten Island,-74.13695,40.605847,"maple, silver",acer saccharinum
 415 BAY RIDGE PKWY,Good,Brooklyn,-74.024612,40.630573,"maple, norway",acer platanoides
@@ -4498,7 +4332,6 @@ address,status,borough,longitude,latitude,spc_common,spc_latin
 78-002 NORTHERN BLVD,Fair,Queens,-73.889057,40.755173,"ash, green",fraxinus pennsylvanica
 2572 TIEMAN AV,Good,Bronx,-73.837976,40.863558,"maple, sugar",acer saccharum
 1545 E 21 ST,Fair,Brooklyn,-73.953415,40.615521,"maple, norway",acer platanoides
-44-008 76 ST,Fair,Queens,-73.888538,40.741675,unknown live trees,unknown live trees 
 1175 PARK AV,Good,Manhattan,-73.954047,40.784497,"pear, callery",pyrus calleryana
 20-020 38 ST,Fair,Queens,-73.903118,40.77637,tree of heaven,ailanthus altissima
 28 HAMPTON PL,Good,Staten Island,-74.214838,40.54994,honeylocust,gleditsia triacanthos
@@ -4513,13 +4346,11 @@ address,status,borough,longitude,latitude,spc_common,spc_latin
 149-038 LEFFERTS BLVD,Poor,Queens,-73.821664,40.668016,"ash, green",fraxinus pennsylvanica
 168-018 JEWELL AV,Fair,Queens,-73.801109,40.731535,"maple, norway",acer platanoides
 200 LEXINGTON AVE,Fair,Manhattan,-73.980609,40.745185,"linden, little leaf",tilia cordata
-89-040 239 ST,Good,Queens,-73.728764,40.727652,unknown live trees,unknown live trees 
 367 MYRTLE AV,Fair,Brooklyn,-73.97141,40.693193,honeylocust,gleditsia triacanthos
 2607 Avenue X,Fair,Brooklyn,-73.94434,40.593394,london planetree,platanus acerifolia
 2545 HYLAN BLVD,Good,Staten Island,-74.110745,40.569492,london planetree,platanus acerifolia
 225-005 113 AV,Fair,Queens,-73.732167,40.703895,"maple, norway",acer platanoides
 135 NELSON ST,Fair,Brooklyn,-74.000437,40.676966,"oak, pin",quercus palustris
-1550 CROTONA AV,Poor,Bronx,-73.897674,40.836565,unknown live trees,unknown live trees 
 6908 13 AV,Fair,Brooklyn,-74.003946,40.62365,"pear, callery",pyrus calleryana
 171-042 108 AV,Fair,Queens,-73.78438,40.699243,"maple, norway",acer platanoides
 302 WEST END AVE,Good,Manhattan,-73.983456,40.781202,"oak, pin",quercus palustris
@@ -4567,12 +4398,10 @@ address,status,borough,longitude,latitude,spc_common,spc_latin
 89-002 107 ST,Fair,Queens,-73.840054,40.694291,"maple, sugar",acer saccharum
 14 PAERDEGAT 13 ST,Poor,Brooklyn,-73.903053,40.627758,planting site,planting site
 94-018 23 AV,Fair,Queens,-73.876039,40.768155,"oak, pin",quercus palustris
-85-015 150 ST,Fair,Queens,-73.809082,40.711301,unknown live trees,unknown live trees 
 1310 INTERVALE AV,Good,Bronx,-73.893276,40.830406,"linden, little leaf",tilia cordata
 2125 NEREID AV,Good,Bronx,-73.841559,40.900239,"maple, norway",acer platanoides
 133-002 227 ST,Poor,Queens,-73.742405,40.678185,planting site,planting site
 2160 TURNBULL AV,Good,Bronx,-73.850391,40.823857,"oak, northern red",quercus rubra
-1290 OCEAN AV,Poor,Brooklyn,-73.957354,40.630794,unknown dead trees,unknown dead trees 
 749 E 21 ST,Fair,Brooklyn,-73.957152,40.635319,london planetree,platanus acerifolia
 28 ORIENT AV,Fair,Brooklyn,-73.938951,40.715274,"maple, norway",acer platanoides
 1854 83 ST,Poor,Brooklyn,-73.999563,40.608199,"maple, norway",acer platanoides
@@ -4581,8 +4410,6 @@ address,status,borough,longitude,latitude,spc_common,spc_latin
 87-047A MYRTLE AV,Poor,Queens,-73.861675,40.703285,"maple, norway",acer platanoides
 6615 OVINGTON CT,Fair,Brooklyn,-73.995047,40.620885,london planetree,platanus acerifolia
 109-020 116 ST,Fair,Queens,-73.824543,40.681154,london planetree,platanus acerifolia
-89-023 QUEENS BLVD,Poor,Queens,-73.873884,40.734454,unknown dead trees,unknown dead trees 
-2633 E 65 ST,Fair,Brooklyn,-73.909975,40.60779,unknown live trees,unknown live trees 
 30-048 84 ST,Fair,Queens,-73.884361,40.76044,london planetree,platanus acerifolia
 81-010 35 AV,Fair,Queens,-73.885506,40.7517,"maple, silver",acer saccharinum
 50 E 162 ST,Fair,Bronx,-73.925189,40.829923,"oak, pin",quercus palustris
@@ -4619,7 +4446,6 @@ address,status,borough,longitude,latitude,spc_common,spc_latin
 174 GURLEY AV,Fair,Staten Island,-74.155088,40.561373,"maple, silver",acer saccharinum
 644 E NEW YORK AV,Fair,Brooklyn,-73.941466,40.66214,london planetree,platanus acerifolia
 1180 E 19 ST,Poor,Brooklyn,-73.956866,40.621742,stump,stump 
-43-031 157 ST,Fair,Queens,-73.808965,40.758382,unknown live trees,unknown live trees 
 130 BLYTHE PL,Good,Staten Island,-74.138669,40.563341,"maple, red",acer rubrum
 157-061 10 AV,Fair,Queens,-73.802705,40.792655,"linden, little leaf",tilia cordata
 60-036 70 ST,Poor,Queens,-73.889034,40.72215,planting site,planting site
@@ -4693,7 +4519,6 @@ address,status,borough,longitude,latitude,spc_common,spc_latin
 5547 WHITTY LA,Fair,Brooklyn,-73.924049,40.640456,london planetree,platanus acerifolia
 950 3 AV,Good,Manhattan,-73.967542,40.760245,ginkgo,ginkgo biloba
 154-048 9 AV,Fair,Queens,-73.805676,40.79361,"cherry, black",prunus serotina
-62-065 SAUNDERS ST,Poor,Queens,-73.865832,40.730419,unknown dead trees,unknown dead trees 
 5814 17 AV,Fair,Brooklyn,-73.988392,40.624428,london planetree,platanus acerifolia
 3455 3 AV,Fair,Bronx,-73.906559,40.829477,london planetree,platanus acerifolia
 669 E 38 ST,Fair,Brooklyn,-73.940595,40.639048,"linden, little leaf",tilia cordata
@@ -4739,7 +4564,6 @@ address,status,borough,longitude,latitude,spc_common,spc_latin
 1 MAC FARLAND AV,Good,Staten Island,-74.066909,40.598677,"maple, norway",acer platanoides
 2805 DOUGLASS BLVD,Fair,Manhattan,-73.939928,40.825536,"pear, callery",pyrus calleryana
 518 W 146 ST,Poor,Manhattan,-73.947666,40.826137,planting site,planting site
-880 COLGATE AV,Fair,Bronx,-73.880241,40.820888,unknown live trees,unknown live trees 
 239-035 148 AV,Poor,Queens,-73.744741,40.65472,"maple, norway",acer platanoides
 105-027 191 ST,Poor,Queens,-73.766043,40.705335,"maple, norway",acer platanoides
 730 COLUMBUS AV,Fair,Manhattan,-73.967667,40.792659,ginkgo,ginkgo biloba

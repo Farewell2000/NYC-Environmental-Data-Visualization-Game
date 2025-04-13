@@ -10,7 +10,6 @@ export class MapComponent {
         this.additionalData = {}; // Store different datasets
         this.activeDatasetType = 'tree'; // 'tree' or 'noise'
         this.onBoroughClickCallbacks = [];
-        this.onBoroughHoverCallbacks = [];
         this.onTreeClickCallbacks = []; // Added for tree clicks
         this.hoveredBoroughs = new Set();
         this.geoJsonLayer = null;
@@ -107,10 +106,6 @@ export class MapComponent {
                 }
                 this._updateTooltip(event, content);
                 d3.select(event.currentTarget).raise().style("stroke-width", 1.5).style("stroke", "black"); // Bring to front and highlight
-                if (boroughData) {
-                    this.onBoroughHoverCallbacks.forEach(callback =>
-                        callback(boroughName, boroughData)); // Pass data if available
-                }
             })
             .on("mouseout", (event, d) => {
                 this._hideTooltip();
@@ -286,27 +281,36 @@ export class MapComponent {
         console.log(`[MapComponent] Added ${circles.size()} tree points.`);
     }
 
-    updateNoiseChoropleth() {
+    updateNoiseChoropleth(selectedNoiseType) {
         // Ensure the interaction layer (for boroughs) is added when showing noise choropleth
         if (this.interactionLayer && !this.map.hasLayer(this.interactionLayer)) {
             this.interactionLayer.addTo(this.map);
             console.log('[MapComponent - updateNoiseChoropleth] Added interaction layer.');
         }
 
-        if (!this.filteredData || !this.mapGroup || !this.boroughData) return;
+        const fullNoiseData = this.additionalData['noise'];
+        if (!fullNoiseData || !this.mapGroup || !this.boroughData) {
+             console.warn("[MapComponent - updateNoiseChoropleth] Missing required data or elements (fullNoiseData, mapGroup, boroughData).");
+             return;
+        }
 
-        console.log("[MapComponent] Updating noise choropleth...");
+        console.log(`[MapComponent] Updating noise choropleth for type: ${selectedNoiseType || 'All'}...`);
 
-        // Aggregate noise complaints by borough
+        // Filter data based on the selected noise type
+        const dataToAggregate = (selectedNoiseType === 'All' || !selectedNoiseType)
+            ? fullNoiseData
+            : fullNoiseData.filter(item => item['Complaint Type'] === selectedNoiseType);
+
+        // Aggregate noise complaints by borough using the filtered data
         const noiseCounts = {};
-        this.filteredData.forEach(item => {
+        dataToAggregate.forEach(item => {
             const borough = item['Borough'];
             if (borough) {
                 noiseCounts[borough] = (noiseCounts[borough] || 0) + 1;
             }
         });
 
-        // Define a helper to get noise count for tooltip/hover
+        // Define a helper to get noise count for tooltip/hover (using the calculated counts)
         this.getNoiseCountForBorough = (boroughName) => noiseCounts[boroughName] || 0;
 
         // Find min/max counts for color scale domain
@@ -345,9 +349,6 @@ export class MapComponent {
                 const count = noiseCounts[boroughName] || 0;
                 this._updateTooltip(event, `<strong>${boroughName}</strong><br/>Noise Complaints: ${count}`);
                 d3.select(event.currentTarget).raise().style("stroke-width", 1.5).style("stroke", "black"); // Highlight
-                // Trigger hover callback (if needed, pass noise specific data)
-                this.onBoroughHoverCallbacks.forEach(callback =>
-                    callback(boroughName, { count: count }));
             })
             .on("mouseout.choropleth", (event, d) => {
                  this._hideTooltip();
@@ -394,9 +395,6 @@ export class MapComponent {
                     // Show only borough name on hover when no specific data layer is active
                     this._updateTooltip(event, `<strong>${boroughName}</strong>`);
                     d3.select(event.currentTarget).raise().style("stroke-width", 1.5).style("stroke", "black");
-                    // Optionally trigger hover callback with basic borough data
-                    this.onBoroughHoverCallbacks.forEach(callback =>
-                        callback(boroughName, this.boroughData[boroughName]));
                 })
                 .on("mouseout", (event, d) => {
                     this._hideTooltip();
@@ -417,11 +415,6 @@ export class MapComponent {
 
     onTreeClick(callback) {
         this.onTreeClickCallbacks.push(callback);
-        return this;
-    }
-
-    onBoroughHover(callback) {
-        this.onBoroughHoverCallbacks.push(callback);
         return this;
     }
 
