@@ -62,3 +62,26 @@
     color: var(--primary-color);
     text-align: right;
 }
+
+/* Styles for Checkbox Group */
+.checkbox-group {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping if space is limited */
+    gap: 10px; /* Space between checkbox items */
+}
+
+.checkbox-item {
+    display: flex;
+    align-items: center;
+    margin-right: 10px; /* Space between items */
+}
+
+.checkbox-item input[type="checkbox"] {
+    margin-right: 4px; /* Space between checkbox and label */
+}
+
+.checkbox-item label {
+    margin-bottom: 0; /* Override default block label margin */
+    font-weight: normal; /* Optional: Adjust label weight if needed */
+    white-space: nowrap; /* Prevent labels from wrapping */
+}

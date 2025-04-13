@@ -5,6 +5,7 @@ export class FilterPanel {
         this.onFilterChangeCallbacks = [];
         this.filterDefinitions = {}; // Store filter configs by name/type
         this.activeFilterSetName = null; // Track which set of filters is active
+        this.currentFilterValues = {}; // Store current values for the active set
     }
 
     initialize() {
@@ -64,6 +65,7 @@ export class FilterPanel {
     renderFilter(filterConfig, parentContainer) {
         const filterContainer = document.createElement('div');
         filterContainer.className = 'filter-item';
+        filterContainer.dataset.field = filterConfig.field; // Add data attribute for field
 
         const label = document.createElement('label');
         label.htmlFor = filterConfig.id;
@@ -74,6 +76,8 @@ export class FilterPanel {
 
         if (filterConfig.type === 'dropdown') {
             control = this.createDropdown(filterConfig);
+        } else if (filterConfig.type === 'checkbox-group') { // Add checkbox group support
+            control = this.createCheckboxGroup(filterConfig);
         } else {
             control = document.createElement('div');
             control.textContent = 'Unsupported filter type';
@@ -107,10 +111,48 @@ export class FilterPanel {
 
         select.addEventListener('change', () => {
             config.currentValue = select.value;
-            this.notifyFilterChange(config.field, select.value);
+            this.updateCurrentValue(config.field, select.value);
+            this.notifyFilterChange(); // Notify with all current values
         });
 
         return select;
+    }
+
+    // New method for creating checkbox groups
+    createCheckboxGroup(config) {
+        const groupContainer = document.createElement('div');
+        groupContainer.className = 'checkbox-group';
+        config.currentValue = config.currentValue || []; // Initialize as array if needed
+
+        config.options.forEach(option => {
+            const checkboxId = `${config.id}-${option.value}`;
+            const wrapper = document.createElement('div');
+            wrapper.className = 'checkbox-item';
+
+            const checkbox = document.createElement('input');
+            checkbox.type = 'checkbox';
+            checkbox.id = checkboxId;
+            checkbox.value = option.value;
+            checkbox.checked = config.currentValue.includes(option.value); // Check if value is in current selection
+
+            const label = document.createElement('label');
+            label.htmlFor = checkboxId;
+            label.textContent = option.label;
+
+            checkbox.addEventListener('change', () => {
+                const selectedValues = Array.from(groupContainer.querySelectorAll('input[type="checkbox"]:checked'))
+                                            .map(cb => cb.value);
+                config.currentValue = selectedValues; // Update the config's current value
+                this.updateCurrentValue(config.field, selectedValues);
+                this.notifyFilterChange(); // Notify with all current values
+            });
+
+            wrapper.appendChild(checkbox);
+            wrapper.appendChild(label);
+            groupContainer.appendChild(wrapper);
+        });
+
+        return groupContainer;
     }
 
     onFilterChange(callback) {
@@ -118,13 +160,37 @@ export class FilterPanel {
         return this;
     }
 
-    notifyFilterChange(field, value) {
-        console.log(`[FilterPanel] Notifying change: Set=${this.activeFilterSetName}, Field=${field}, Value=${value}`);
-        this.onFilterChangeCallbacks.forEach(callback => callback(this.activeFilterSetName, field, value));
+    notifyFilterChange() {
+        console.log(`[FilterPanel] Notifying change for set: ${this.activeFilterSetName}`, this.getCurrentFilterValues());
+        // Pass the set name and the complete set of current values
+        this.onFilterChangeCallbacks.forEach(callback => callback(this.activeFilterSetName, this.getCurrentFilterValues()));
     }
+
+    // Helper to get all current values for the active set
+    getCurrentFilterValues() {
+        const values = {};
+        if (this.filters) {
+            this.filters.forEach(filter => {
+                values[filter.field] = filter.currentValue;
+            });
+        }
+        return values;
+    }
+
+     // Helper to update internal state (optional but good practice)
+     updateCurrentValue(field, value) {
+        const filterConfig = this.filters.find(f => f.field === field);
+        if (filterConfig) {
+            filterConfig.currentValue = value;
+        }
+         // Optionally update this.currentFilterValues directly if needed elsewhere
+         // this.currentFilterValues[field] = value;
+     }
 
     resetFilters() {
         if (!this.filters) return; // Check if filters exist for the active set
+
+        let needsNotify = false;
 
         this.filters.forEach(filter => {
             const previousValue = filter.currentValue;
@@ -132,13 +198,27 @@ export class FilterPanel {
             filter.currentValue = resetValue;
 
             const element = document.getElementById(filter.id);
-            if (element && element.tagName === 'SELECT') {
-                element.value = filter.currentValue;
+            if (element) {
+                if (element.tagName === 'SELECT') {
+                    element.value = filter.currentValue;
+                } else if (filter.type === 'checkbox-group') { // Handle checkbox reset
+                    const groupContainer = element.closest('.filter-item')?.querySelector('.checkbox-group');
+                     if (groupContainer) {
+                         groupContainer.querySelectorAll('input[type="checkbox"]').forEach(cb => {
+                             cb.checked = filter.currentValue.includes(cb.value);
+                         });
+                     }
+                }
             }
 
-            if (previousValue !== resetValue) {
-                this.notifyFilterChange(filter.field, filter.currentValue);
+            if (JSON.stringify(previousValue) !== JSON.stringify(resetValue)) { // Use JSON.stringify for array comparison
+                 // Don't notify per filter, notify once after all resets
+                 needsNotify = true;
             }
         });
+
+        if (needsNotify) {
+             this.notifyFilterChange(); // Notify once after resetting all applicable filters
+        }
     }
 }

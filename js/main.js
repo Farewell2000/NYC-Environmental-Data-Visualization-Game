@@ -75,6 +75,20 @@ document.addEventListener('DOMContentLoaded', async () => {
             operator: '='
         });
 
+        // Tree Status Filter (Add this definition)
+        filterPanel.addFilterDefinition('tree', {
+            type: 'checkbox-group',
+            field: 'status',
+            label: 'Tree Health Status:',
+            options: [
+                { value: 'Good', label: 'Good' },
+                { value: 'Fair', label: 'Fair' },
+                { value: 'Poor', label: 'Poor' }
+            ],
+            defaultValue: ['Good', 'Fair', 'Poor'], // Default to all checked
+            operator: 'in' // Use 'in' operator for array matching
+        });
+
         // Noise Filter Set - Extract unique noise types from data
         const noiseTypes = [...new Set(noiseData.map(item => item['Complaint Type']))].filter(Boolean);
         filterPanel.addFilterDefinition('noise', {
@@ -294,21 +308,35 @@ document.addEventListener('DOMContentLoaded', async () => {
         });
 
         // Filter panel interactions
-        filterPanel.onFilterChange((filterSetName, field, value) => {
-            console.log(`[main] Filter changed: Set='${filterSetName}', Field='${field}', Value='${value}'`);
+        filterPanel.onFilterChange((filterSetName, currentFilters) => {
+            console.log(`[main] Filter changed: Set='${filterSetName}'`, currentFilters);
             const currentTask = gameState.getTaskById(gameState.getCurrentTaskId());
 
-            if (currentTask && filterSetName === 'tree' && field === 'year') {
-                const year = value;
-                const currentTreeData = treeDataByYear[year] || [];
-                gameState.updateState({ mapState: { selectedYear: year } });
-                map.setData('tree', currentTreeData); // Update map data
-                // map.setFilteredData(currentTreeData); // Update map visualization
-            } else if (currentTask && filterSetName === 'noise' && field === 'noiseType') {
-                const noiseType = value;
+            if (currentTask && filterSetName === 'tree') {
+                // Get current filter values from the received object
+                const year = currentFilters.year;
+                const statuses = currentFilters.status || []; // Ensure status is an array
+
+                // Update game state (optional, but good for tracking)
+                gameState.updateState({ mapState: { selectedYear: year, selectedStatuses: statuses } });
+
+                // Get the base data for the selected year
+                const baseTreeData = treeDataByYear[year] || [];
+
+                // Filter the base data by selected statuses
+                const filteredTreeData = baseTreeData.filter(tree => {
+                    return statuses.includes(tree.status);
+                });
+
+                console.log(`[main] Applying tree filters: Year=${year}, Statuses=${statuses.join(',') || 'None'}. Count: ${filteredTreeData.length}`);
+
+                map.setFilteredData(filteredTreeData); // Pass the pre-filtered data to the map
+                // No need to call map.setData or map.setActiveDataset again if data type hasn't changed
+
+            } else if (currentTask && filterSetName === 'noise') {
+                const noiseType = currentFilters.noiseType;
                 gameState.updateState({ mapState: { selectedNoiseType: noiseType } });
-                // The map component handles filtering noise data internally for choropleth based on type
-                // We just need to trigger an update
+                // Noise map update is handled internally by map.js based on type
                 map.updateNoiseChoropleth(noiseType);
             }
         });
