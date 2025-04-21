@@ -23,39 +23,45 @@ body {
     background-color: var(--light-bg);
     margin: 0;
     padding: 0;
+    height: 100vh;
+    overflow: hidden;
 }
 
 .game-container {
     display: flex;
-    max-width: 1800px;
-    margin: 20px auto;
-    min-height: 90vh;
-    max-height: 95vh;
-    border-radius: var(--border-radius);
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
     overflow: hidden;
-    box-shadow: var(--box-shadow);
     background-color: #f0f2f5;
-}
-
-.left-panel {
-    flex: 3;
-    display: flex;
-    flex-direction: column;
-    padding: 20px;
-    background-color: white;
     position: relative;
 }
 
-.right-panel {
+.left-panel {
     flex: 1;
-    min-width: 380px;
-    max-width: 450px;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    background-color: white;
+    position: relative;
+    height: 100%;
+}
+
+.right-panel {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 450px;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     padding: 20px;
-    background-color: var(--light-bg);
-    border-left: 1px solid #ddd;
+    background-color: rgba(236, 240, 241, 0.85);
+    border-left: 1px solid rgba(221, 221, 221, 0.5);
     overflow-y: auto;
+    z-index: 1000;
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
 }
 
 h2 {
@@ -81,15 +87,19 @@ button:hover {
 .map-container {
     position: relative;
     flex-grow: 1;
-    min-height: 500px;
+    height: 100%;
+    width: 100%;
     background-color: #eaf2f8;
-    border-radius: var(--border-radius);
 }
 
 #task-panel {
     flex-shrink: 0;
     overflow-y: auto;
     margin-bottom: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: var(--border-radius);
+    padding: 15px;
+    box-shadow: var(--box-shadow);
 }
 
 #chatbot-area {
@@ -97,7 +107,7 @@ button:hover {
     display: flex;
     flex-direction: column;
     min-height: 250px;
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.8);
     border-radius: var(--border-radius);
     padding: 15px;
     box-shadow: inset 0 1px 3px rgba(0,0,0,0.05);
@@ -156,25 +166,25 @@ button:hover {
 /* Highlight animation for map - Cyberpunk Style */
 @keyframes mapPulseHighlight {
     0% {
-        box-shadow: 0 0 8px rgba(255, 0, 255, 0.6), /* Inner magenta */
-                    0 0 15px rgba(232, 62, 140, 0.5), /* Outer pink */
-                    inset 0 0 4px rgba(255, 0, 255, 0.4);
+        box-shadow: 0 0 10px rgba(255, 0, 100, 0.7), /* Brighter Inner magenta/pink */
+                    0 0 20px rgba(255, 60, 150, 0.6), /* Brighter Outer pink */
+                    inset 0 0 6px rgba(255, 0, 100, 0.5);
     }
     70% {
-        box-shadow: 0 0 15px rgba(255, 0, 255, 0.9),
-                    0 0 30px rgba(232, 62, 140, 0.7),
-                    inset 0 0 6px rgba(255, 0, 255, 0.6);
+        box-shadow: 0 0 25px rgba(255, 0, 100, 1.0), /* Increased spread and opacity */
+                    0 0 50px rgba(255, 60, 150, 0.8), /* Increased spread and opacity */
+                    inset 0 0 10px rgba(255, 0, 100, 0.8); /* Increased inner glow */
     }
     100% {
-         box-shadow: 0 0 8px rgba(255, 0, 255, 0.6),
-                    0 0 15px rgba(232, 62, 140, 0.5),
-                    inset 0 0 4px rgba(255, 0, 255, 0.4);
+         box-shadow: 0 0 10px rgba(255, 0, 100, 0.7),
+                    0 0 20px rgba(255, 60, 150, 0.6),
+                    inset 0 0 6px rgba(255, 0, 100, 0.5);
     }
 }
 
 .map-highlight {
-    animation: mapPulseHighlight 1.2s 2 ease-in-out; /* Faster pulse, twice */
-    border: 2px solid rgba(255, 0, 255, 0.4) !important; /* Neon pink border instead of outline, ADDED !important */
+    animation: mapPulseHighlight 1.5s 2 ease-in-out; /* Slightly longer duration per pulse, run twice */
+    border: 3px solid rgba(255, 0, 100, 0.6) !important; /* Thicker, brighter border */
     border-radius: var(--border-radius); /* Match map container border radius */
     outline: none !important; /* Explicitly remove outline, ADDED !important */
     /* outline: 3px solid rgba(255, 153, 0, 0.5); */ /* Removed old outline */

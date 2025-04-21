@@ -8,7 +8,6 @@ const BACKEND_URL = 'http://localhost:2600';
  * @returns {Promise<object>} - The response JSON { flag: boolean, message: string }.
  */
 export async function evaluateAnswer(question, correctAnswer, userAnswer) {
-    console.log(`[API Client] Calling /evaluate`);
     const response = await fetch(`${BACKEND_URL}/evaluate`, {
         method: 'POST',
         headers: {
@@ -36,15 +35,12 @@ export async function evaluateAnswer(question, correctAnswer, userAnswer) {
  * @returns {Promise<object>} - The response JSON { message: string }.
  */
 export async function getChatResponse(history, message, topic = 'general') {
-    console.log('[api-client] getChatResponse called with:', { history, message, topic });
     const endpoint = `${BACKEND_URL}/chat`;
     const bodyPayload = {
         history: history || [],
         message: message || '',
         topic: topic
     };
-    console.log('[api-client] Sending body payload to /chat:', bodyPayload);
-    console.log('[api-client] Sending stringified body to /chat:', JSON.stringify(bodyPayload));
 
     const response = await fetch(endpoint, {
         method: 'POST',
@@ -68,7 +64,6 @@ export async function getChatResponse(history, message, topic = 'general') {
  * @returns {Promise<object>} - The response JSON { message: string }.
  */
 export async function getCharacterDialogue(taskId, treeProperties) {
-    console.log(`[API Client] Calling /character`);
     const response = await fetch(`${BACKEND_URL}/character`, {
         method: 'POST',
         headers: {

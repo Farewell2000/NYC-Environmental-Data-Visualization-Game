@@ -13,12 +13,10 @@ export class FilterPanel {
         this.container.innerHTML = `
             <div class="filter-header">
                 <h3>Filter Data</h3>
-                <button id="reset-filters">Reset</button>
             </div>
             <div id="filter-controls"></div>
         `;
 
-        document.getElementById('reset-filters').addEventListener('click', () => this.resetFilters());
         return this;
     }
 
@@ -67,11 +65,7 @@ export class FilterPanel {
         filterContainer.className = 'filter-item';
         filterContainer.dataset.field = filterConfig.field; // Add data attribute for field
 
-        const label = document.createElement('label');
-        label.htmlFor = filterConfig.id;
-        label.textContent = filterConfig.label;
-        filterContainer.appendChild(label);
-
+        // Create the control element first before creating the label
         let control;
 
         if (filterConfig.type === 'dropdown') {
@@ -84,6 +78,13 @@ export class FilterPanel {
             console.warn("Unsupported filter type added:", filterConfig.type);
         }
 
+        // Now create the label and associate it with the control that already exists
+        const label = document.createElement('label');
+        label.htmlFor = filterConfig.id;
+        label.textContent = filterConfig.label;
+        
+        // Add elements to container in correct order
+        filterContainer.appendChild(label);
         filterContainer.appendChild(control);
         parentContainer.appendChild(filterContainer); // Append to the provided container
     }
@@ -129,12 +130,14 @@ export class FilterPanel {
             const wrapper = document.createElement('div');
             wrapper.className = 'checkbox-item';
 
+            // Create checkbox first
             const checkbox = document.createElement('input');
             checkbox.type = 'checkbox';
             checkbox.id = checkboxId;
             checkbox.value = option.value;
             checkbox.checked = config.currentValue.includes(option.value); // Check if value is in current selection
 
+            // Then create and associate the label
             const label = document.createElement('label');
             label.htmlFor = checkboxId;
             label.textContent = option.label;
@@ -147,6 +150,7 @@ export class FilterPanel {
                 this.notifyFilterChange(); // Notify with all current values
             });
 
+            // Append elements in the correct order
             wrapper.appendChild(checkbox);
             wrapper.appendChild(label);
             groupContainer.appendChild(wrapper);

@@ -1,8 +1,14 @@
 .filter-panel {
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.9);
     padding: 15px;
     border-radius: var(--border-radius);
     box-shadow: var(--box-shadow);
+    position: absolute;
+    top: 20px;
+    right: 470px;
+    z-index: 1000;
+    max-width: 250px;
+    width: auto;
 }
 
 .filter-header {
@@ -29,6 +35,10 @@
 
 .filter-item {
     margin-bottom: 15px;
+}
+
+.filter-item:last-child {
+    margin-bottom: 0;
 }
 
 .filter-item label {
@@ -84,4 +94,13 @@
     margin-bottom: 0; /* Override default block label margin */
     font-weight: normal; /* Optional: Adjust label weight if needed */
     white-space: nowrap; /* Prevent labels from wrapping */
+}
+
+.filter-toggle-icon {
+    margin-left: 5px;
+    transition: transform 0.3s ease;
+}
+
+.filter-panel.active .filter-toggle-icon {
+    transform: rotate(180deg);
 }

@@ -83,6 +83,7 @@ export class MapComponent {
 
         // Clear existing paths if any
         this.mapGroup.selectAll("path.borough").remove();
+        console.log('[MapComponent] Cleared existing borough paths');
 
         // Create borough paths within the mapGroup
         const feature = this.mapGroup.selectAll("path.borough")
@@ -94,23 +95,33 @@ export class MapComponent {
             .attr("stroke-width", 0.5) // Adjust stroke width if needed
             .attr("fill", d => {
                 const boroughName = d.properties.name;
-                return this.boroughData[boroughName]?.color || "#ccc";
+                const color = this.boroughData[boroughName]?.color || "#ccc";
+                console.log(`[MapComponent] Setting borough ${boroughName} fill to ${color}`);
+                return color;
             })
+            .style("fill-opacity", 0.65); // Set semi-transparency for all boroughs
+            /* Remove initial generic hover listeners
             .on("mouseover", (event, d) => {
                 const boroughName = d.properties.name;
                 const boroughData = this.boroughData[boroughName] || this.additionalData['noise']?.find(item => item.Borough === boroughName); // Find relevant data
                 let content = `<strong>${boroughName}</strong>`;
-                if (this.activeDatasetType === 'noise' && boroughData) {
+                 // Ensure getNoiseCountForBorough exists before calling
+                 if (this.activeDatasetType === 'noise' && typeof this.getNoiseCountForBorough === 'function') {
                     const count = this.getNoiseCountForBorough(boroughName);
                     content += `<br/>Noise Complaints: ${count}`;
+                } else if (this.activeDatasetType === 'noise') {
+                    console.warn("[MapComponent - loadGeoJson hover] getNoiseCountForBorough not defined yet.");
                 }
                 this._updateTooltip(event, content);
-                d3.select(event.currentTarget).raise().style("stroke-width", 1.5).style("stroke", "black"); // Bring to front and highlight
+                d3.select(event.currentTarget).raise().style("stroke-width", 1.5).style("stroke", "black").style("fill-opacity", 0.85); // Bring to front and highlight
             })
             .on("mouseout", (event, d) => {
                 this._hideTooltip();
-                 d3.select(event.currentTarget).style("stroke-width", 0.5).style("stroke", "#fff"); // Reset style
+                d3.select(event.currentTarget).style("stroke-width", 0.5).style("stroke", "#fff").style("fill-opacity", 0.65); // Reset style
             });
+            */
+
+        console.log(`[MapComponent] Created ${feature.size()} borough path elements with transparency`);
 
         // Create an invisible Leaflet layer for interactions
         if (this.interactionLayer) {
@@ -199,7 +210,44 @@ export class MapComponent {
                     return d3.select(this).attr("cx") !== null && d3.select(this).attr("cy") !== null;
                  });
         }
+
+        // Reposition borough labels (if active) and scale with zoom
+        if (this.activeDatasetType === 'noise') {
+            // Calculate font size based on zoom level
+            const currentZoom = this.map.getZoom();
+            // Base font size at zoom level 10
+            const baseFontSize = 10;
+            // Scale font size based on zoom level
+            const fontSize = this.calculateFontSizeByZoom(currentZoom);
+            
+            this.mapGroup.selectAll("text.borough-label")
+                .attr("transform", d => {
+                    const centroid = this.path.centroid(d); // Use the updated path
+                    if (isNaN(centroid[0]) || isNaN(centroid[1])) {
+                        return "translate(-9999, -9999)"; // Hide if centroid invalid
+                    }
+                    return `translate(${centroid[0]}, ${centroid[1]})`;
+                })
+                .style("font-size", `${fontSize}px`);
+        }
+        
         console.log("[MapComponent] D3 layer positions updated.");
+    }
+
+    // Helper method to calculate font size based on zoom level
+    calculateFontSizeByZoom(zoom) {
+        // Further increased base font size for better visibility
+        const baseFontSize = 14; 
+        // Adjusted scaling factors
+        if (zoom >= 12) {
+            // Slightly increase font size when zooming in
+            return baseFontSize + (zoom - 12) * 2.5; // Increased multiplier
+        } else if (zoom <= 9) {
+            // Decrease font size when zooming out, but ensure minimum size
+            return Math.max(9, baseFontSize - (9 - zoom) * 2); // Increased min size
+        }
+        // Default size for intermediate zoom levels (e.g., 10-11)
+        return baseFontSize; 
     }
 
     updateVisualization() {
@@ -218,6 +266,9 @@ export class MapComponent {
             this.map.removeLayer(this.interactionLayer);
             console.log('[MapComponent - updateTreePoints] Removed interaction layer.');
         }
+        // Remove borough labels if they exist
+        this.mapGroup.selectAll("text.borough-label").remove();
+        console.log('[MapComponent - updateTreePoints] Removed borough labels.');
 
         if (!this.filteredData || !this.map) return;
 
@@ -234,16 +285,24 @@ export class MapComponent {
 
         // Reset borough fills (ensure they are visible and have default colors)
         if (this.mapGroup && this.boroughData) {
+            console.log("[MapComponent - updateTreePoints] Resetting borough fills to original colors");
             this.mapGroup.selectAll("path.borough")
                 .interrupt()
+                // .each(function(d) { // Removed logging each borough fill
+                //     const boroughName = d.properties.name;
+                //     const color = d3.select(this).attr("fill"); 
+                //     console.log(`[MapComponent] Borough ${boroughName} current fill: ${color}`);
+                // })
                 .attr("fill", d => {
                     const boroughName = d.properties.name;
-                    return this.boroughData[boroughName]?.color || "#ccc";
+                    const color = this.boroughData[boroughName]?.color || "#ccc";
+                    // console.log(`[MapComponent] Resetting borough ${boroughName} fill to ${color}`); // Reduced verbosity
+                    return color;
                 })
-                .style("fill-opacity", null) // Reset fill-opacity (let CSS handle it)
+                .style("fill-opacity", 0.85) // MAKE BOROUGHS MORE TRANSPARENT FOR TREE TASKS
                 .style("opacity", 1) // Ensure main opacity is 1
                 .style("display", null);
-             console.log("[MapComponent - updateTreePoints] Reset borough fills.");
+            console.log("[MapComponent - updateTreePoints] Borough fills reset complete with reduced opacity");
         } else {
              console.warn("[MapComponent - updateTreePoints] Could not reset borough fills.");
         }
@@ -251,12 +310,30 @@ export class MapComponent {
         // Clear previous data points (circles)
         this.dataGroup.selectAll("circle").remove();
 
+        // Calculate radius based on zoom level
+        const calculateRadius = () => {
+            const currentZoom = this.map.getZoom();
+            // Base radius at zoom level 12
+            const baseRadius = 3;
+            // Scale up when zoomed in, scale down when zoomed out
+            if (currentZoom >= 12) {
+                // Gradually increase size when zooming in
+                return baseRadius * (1 + (currentZoom - 12) * 0.3);
+            } else {
+                // Gradually decrease size when zooming out
+                return Math.max(1, baseRadius * (1 - (12 - currentZoom) * 0.2));
+            }
+        };
+        
+        // Initial radius
+        let radius = calculateRadius();
+
         // Add data points using Leaflet's coordinate conversion
         const circles = this.dataGroup.selectAll("circle")
             .data(this.filteredData.filter(d => d.latitude && d.longitude)) // Filter data with valid coordinates
             .enter()
             .append("circle")
-            .attr("r", 3)
+            .attr("r", radius)
             .attr("fill", d => healthColorScale(d.status))
             .attr("opacity", 0.6)
             .on("mouseover", (event, d) => {
@@ -265,16 +342,23 @@ export class MapComponent {
                 const lat = d.latitude ? parseFloat(d.latitude).toFixed(4) : 'N/A';
                 const lon = d.longitude ? parseFloat(d.longitude).toFixed(4) : 'N/A';
                 this._updateTooltip(event, `<strong>${commonName}</strong><br/>Status: ${status}<br/>Coords: ${lat}, ${lon}`);
-                d3.select(event.currentTarget).raise().attr('r', 5).attr('opacity', 0.9);
+                d3.select(event.currentTarget).raise().attr('r', radius * 1.5).attr('opacity', 0.9);
             })
             .on("mouseout", (event, d) => {
                 this._hideTooltip();
-                d3.select(event.currentTarget).attr('r', 3).attr('opacity', 0.6);
+                d3.select(event.currentTarget).attr('r', radius).attr('opacity', 0.6);
             })
             .on("click", (event, d) => {
                 console.log("[MapComponent] Tree clicked:", d);
                 this.onTreeClickCallbacks.forEach(callback => callback(d));
             });
+
+        // Update circle radius on zoom
+        this.map.on("zoomend", () => {
+            radius = calculateRadius();
+            this.dataGroup.selectAll("circle")
+                .attr("r", radius);
+        });
 
         // Call updateD3LayerPositions to position the newly added circles correctly
         this.updateD3LayerPositions();
@@ -286,11 +370,13 @@ export class MapComponent {
         if (this.interactionLayer && !this.map.hasLayer(this.interactionLayer)) {
             this.interactionLayer.addTo(this.map);
             console.log('[MapComponent - updateNoiseChoropleth] Added interaction layer.');
+        } else if (!this.interactionLayer) {
+             console.warn('[MapComponent - updateNoiseChoropleth] Interaction layer not initialized.');
         }
 
         const fullNoiseData = this.additionalData['noise'];
-        if (!fullNoiseData || !this.mapGroup || !this.boroughData) {
-             console.warn("[MapComponent - updateNoiseChoropleth] Missing required data or elements (fullNoiseData, mapGroup, boroughData).");
+        if (!fullNoiseData || !this.mapGroup || !this.boroughData || !this.geoJsonData) { // Added geoJsonData check
+             console.warn("[MapComponent - updateNoiseChoropleth] Missing required data or elements.");
              return;
         }
 
@@ -303,80 +389,167 @@ export class MapComponent {
 
         // Aggregate noise complaints by borough using the filtered data
         const noiseCounts = {};
+        this.geoJsonData.features.forEach(feature => {
+            noiseCounts[feature.properties.name] = 0; // Initialize all boroughs with 0 count
+        });
         dataToAggregate.forEach(item => {
             const borough = item['Borough'];
-            if (borough) {
+            if (borough && noiseCounts.hasOwnProperty(borough)) { // Ensure borough exists in GeoJSON
                 noiseCounts[borough] = (noiseCounts[borough] || 0) + 1;
             }
         });
 
-        // Define a helper to get noise count for tooltip/hover (using the calculated counts)
-        this.getNoiseCountForBorough = (boroughName) => noiseCounts[boroughName] || 0;
-
         // Find min/max counts for color scale domain
         const counts = Object.values(noiseCounts);
-        const minCount = d3.min(counts) || 0;
-        const maxCount = d3.max(counts) || 1;
+        const minCount = d3.min(counts) ?? 0; // Use ?? for nullish coalescing
+        const maxCount = d3.max(counts) ?? 1; // Use ?? for nullish coalescing (ensure at least 1 for domain)
 
-        // Define a color scale
-        const colorScale = d3.scaleSequential(d3.interpolateYlOrRd)
-            .domain([minCount, maxCount]);
+        console.log(`[MapComponent] Noise counts - Min: ${minCount}, Max: ${maxCount}`);
 
-        // Update borough fills based on noise counts
-        this.mapGroup.selectAll("path.borough")
-            .transition()
-            .duration(500)
-            .attr("fill", d => {
-                const boroughName = d.properties.name;
-                const count = noiseCounts[boroughName] || 0;
-                return colorScale(count);
-            })
-            .style("fill-opacity", 0.7) // Reduce opacity for choropleth view
-            .style("opacity", 1); // Keep main opacity at 1
+        // Define a helper to get noise count for tooltip/hover
+        this.getNoiseCountForBorough = (boroughName) => noiseCounts[boroughName] || 0;
 
-        // Clear tree points if they exist
+        // Define choropleth colors (RED GRADIENT - consistent with legend)
+        // Use a sequential color scale
+        const redGradientColors = ['#FFEBEE', '#FFCDD2', '#EF9A9A', '#E57373', '#EF5350', '#F44336', '#E53935', '#D32F2F', '#C62828', '#B71C1C'];
+
+        // Create a color scale based on noise data values
+        // Use scaleSequential for a continuous mapping or scaleQuantile/Quantize for discrete buckets
+        const colorScale = d3.scaleSequential()
+            .domain([minCount, maxCount > minCount ? maxCount : minCount + 1]) // Ensure domain has range > 0
+            .interpolator(d3.interpolateRgbBasis(redGradientColors)); // Interpolate across the red gradient
+
+        // Clear tree points
         this.dataGroup.selectAll("circle").remove();
-         console.log("[MapComponent - updateNoiseChoropleth] Removed tree points.");
+        console.log("[MapComponent] Removed tree points for noise visualization");
 
+        // Apply choropleth colors based on noise data
+        this.mapGroup.selectAll("path.borough").each((d, i, nodes) => {
+            const boroughName = d.properties.name;
+            const element = nodes[i];
+            const count = noiseCounts[boroughName] || 0;
+            // Get color from the sequential scale
+            const color = (count > 0 || maxCount === 0) ? colorScale(count) : '#FFFFFF'; // Use white for 0 count if max > 0
 
-        // Update tooltip and hover behavior specifically for choropleth
-        this.mapGroup.selectAll("path.borough")
-             // Ensure existing listeners are removed before adding new ones to avoid conflicts
-            .on("mouseover", null) // Remove generic mouseover added in loadGeoJson
-            .on("mouseout", null)  // Remove generic mouseout
-            .on("mouseover.choropleth", (event, d) => {
-                const boroughName = d.properties.name;
-                const count = noiseCounts[boroughName] || 0;
-                this._updateTooltip(event, `<strong>${boroughName}</strong><br/>Noise Complaints: ${count}`);
-                d3.select(event.currentTarget).raise().style("stroke-width", 1.5).style("stroke", "black"); // Highlight
+            d3.select(element)
+                .transition() // Add a smooth transition
+                .duration(300)
+                .attr('fill', color)
+                .style('fill-opacity', 0.75) // Set desired opacity for noise
+                .style('opacity', 1); // Ensure path itself is opaque
+
+            // console.log(`[MapComponent] Borough ${boroughName}: ${count} complaints, color ${color}`); // Reduced verbosity
+        });
+
+        // Add/Update Borough Labels for Noise Task
+        this.mapGroup.selectAll("text.borough-label").remove(); // Clear existing labels first
+        // Calculate initial font size based on current zoom
+        const currentZoom = this.map.getZoom();
+        const fontSize = this.calculateFontSizeByZoom(currentZoom);
+        
+        this.mapGroup.selectAll("text.borough-label")
+            .data(this.geoJsonData.features)
+            .enter()
+            .append("text")
+            .attr("class", "borough-label")
+            .attr("transform", d => {
+                // Use centroid for label positioning
+                const centroid = this.path.centroid(d);
+                if (isNaN(centroid[0]) || isNaN(centroid[1])) {
+                    console.warn(`[MapComponent] Invalid centroid for ${d.properties.name}`);
+                    return "translate(-9999, -9999)"; // Move off-screen
+                }
+                return `translate(${centroid[0]}, ${centroid[1]})`;
             })
-            .on("mouseout.choropleth", (event, d) => {
-                 this._hideTooltip();
-                 d3.select(event.currentTarget).style("stroke-width", 0.5).style("stroke", "#fff"); // Reset style
+            .attr("text-anchor", "middle")
+            .attr("dy", ".35em") // Vertical alignment
+            .text(d => d.properties.name)
+            .style("font-size", `${fontSize}px`) // Set initial font size based on zoom
+            .style("fill", "#333")
+            .style("font-weight", "bold") // Make labels bold
+            .style("paint-order", "stroke") // Ensure stroke is drawn behind fill
+            .style("stroke", "#ffffff") // Add white stroke
+            .style("stroke-width", "0.5px") // Stroke width
+            .style("stroke-linecap", "butt")
+            .style("stroke-linejoin", "miter")
+            .style("pointer-events", "none") // Prevent labels from interfering with clicks
+            .style("opacity", 0);
+            
+        // Fade in labels
+        this.mapGroup.selectAll("text.borough-label")
+            .transition()
+            .duration(300)
+            .style("opacity", 1);
+
+        console.log("[MapComponent] Added/Updated borough labels for noise task.");
+
+        // Remove D3 hover listeners previously added to visual paths
+        this.mapGroup.selectAll("path.borough")
+            .on("mouseover", null)
+            .on("mouseout", null);
+
+        // Bind Leaflet tooltips to the invisible interaction layer
+        if (this.interactionLayer) {
+            this.interactionLayer.eachLayer(layer => {
+                const boroughName = layer.feature.properties.name;
+                // Define tooltip content function
+                const tooltipContentFn = () => {
+                    // Ensure getNoiseCountForBorough is accessible and updated
+                    const count = (typeof this.getNoiseCountForBorough === 'function') 
+                                    ? this.getNoiseCountForBorough(boroughName) 
+                                    : 0;
+                     console.log(`[MapComponent - Tooltip Fn] Borough: ${boroughName}, Count: ${count}`); // Debug log inside function
+                    return `<strong>${boroughName}</strong><br/>Noise Complaints: ${count}`;
+                };
+
+                // Unbind previous tooltip first, then bind new one
+                layer.unbindTooltip(); 
+                layer.bindTooltip(tooltipContentFn, { 
+                    sticky: true, // Tooltip follows the mouse
+                    direction: 'top', // Show above the cursor
+                    offset: L.point(0, -10) // Adjust position slightly
+                });
             });
-         console.log("[MapComponent] Updated borough interactions for choropleth.");
+            console.log("[MapComponent] Bound Leaflet tooltips to interaction layer.");
+        } else {
+            console.warn("[MapComponent] Cannot bind tooltips: interactionLayer is missing.");
+        }
+
+        console.log("[MapComponent] Noise choropleth update complete - data-driven colors applied");
     }
 
     clearAllLayers() {
         console.log("[MapComponent] Clearing dynamic layers...");
 
-        // Remove the interaction layer if it exists
-        if (this.interactionLayer && this.map.hasLayer(this.interactionLayer)) {
-            this.map.removeLayer(this.interactionLayer);
-            console.log('[MapComponent - clearAllLayers] Removed interaction layer.');
-        }
+        // Remove the interaction layer if it exists and unbind its tooltips
+        if (this.interactionLayer) {
+             if (this.map.hasLayer(this.interactionLayer)) {
+                 this.map.removeLayer(this.interactionLayer);
+                 console.log('[MapComponent - clearAllLayers] Removed interaction layer.');
+             }
+             // Ensure tooltips are unbound even if layer wasn't on map
+             this.interactionLayer.eachLayer(layer => layer.unbindTooltip());
+             console.log('[MapComponent - clearAllLayers] Unbound tooltips from interaction layer.');
+         }
 
         // Remove data points (e.g., tree circles)
         if (this.dataGroup) {
              this.dataGroup.selectAll("circle").remove();
              console.log("[MapComponent] Removed circles from dataGroup.");
         }
+        
+        // Remove borough labels
+        if (this.mapGroup) {
+            this.mapGroup.selectAll("text.borough-label").remove();
+            console.log("[MapComponent] Removed borough labels.");
+        }
 
         // Reset borough fills to their default colors and reset interaction events
         if (this.mapGroup && this.path && this.boroughData && this.geoJsonData) {
              // Remove choropleth-specific event listeners first
             this.mapGroup.selectAll("path.borough")
-                .on(".choropleth", null) // Remove listeners in .choropleth namespace
+                .on("mouseover", null)
+                .on("mouseout", null)
                 .interrupt() // Stop existing transitions (like fill transition)
                 .transition() // Use transition for smooth visual reset (optional)
                 .duration(100) // Short duration for reset
@@ -384,22 +557,25 @@ export class MapComponent {
                     const boroughName = d.properties.name;
                     return this.boroughData[boroughName]?.color || "#ccc"; // Use stored borough data color
                 })
-                .style("fill-opacity", null) // Reset fill-opacity (let CSS handle it)
+                .style("fill-opacity", 0.95) // RESET to default semi-transparency
                 .style("opacity", 1) // Reset main opacity
                 .style("display", null); // Ensure paths are visible if hidden before
 
-            // Re-attach generic hover/click listeners from loadGeoJson logic
-            this.mapGroup.selectAll("path.borough")
-                 .on("mouseover", (event, d) => {
-                    const boroughName = d.properties.name;
-                    // Show only borough name on hover when no specific data layer is active
-                    this._updateTooltip(event, `<strong>${boroughName}</strong>`);
-                    d3.select(event.currentTarget).raise().style("stroke-width", 1.5).style("stroke", "black");
-                })
-                .on("mouseout", (event, d) => {
-                    this._hideTooltip();
-                     d3.select(event.currentTarget).style("stroke-width", 0.5).style("stroke", "#fff"); // Reset style
-                });
+            // Remove the problematic re-attachment of generic listeners
+            /* 
+             // Re-attach generic hover/click listeners from loadGeoJson logic
+             this.mapGroup.selectAll("path.borough")
+                  .on("mouseover", (event, d) => {
+                     const boroughName = d.properties.name;
+                     // Show only borough name on hover when no specific data layer is active
+                     this._updateTooltip(event, `<strong>${boroughName}</strong>`);
+                     d3.select(event.currentTarget).raise().style("stroke-width", 1.5).style("stroke", "black");
+                 })
+                 .on("mouseout", (event, d) => {
+                     this._hideTooltip();
+                      d3.select(event.currentTarget).style("stroke-width", 0.5).style("stroke", "#fff"); // Reset style
+                 });
+            */
 
              console.log("[MapComponent] Reset borough path fills and interactions.");
         } else {
@@ -419,15 +595,18 @@ export class MapComponent {
     }
 
     _updateTooltip(event, content) {
+        console.log(`[MapComponent - _updateTooltip] Updating tooltip. Content: ${content}`); // DEBUG LOG
         this.tooltip.transition()
             .duration(200)
             .style("opacity", .9);
         this.tooltip.html(content)
             .style("left", (event.pageX + 10) + "px")
             .style("top", (event.pageY - 28) + "px");
+        console.log(`[MapComponent - _updateTooltip] Tooltip style applied:`, this.tooltip.node().style.cssText); // DEBUG LOG
     }
 
     _hideTooltip() {
+        console.log(`[MapComponent - _hideTooltip] Hiding tooltip.`); // DEBUG LOG
         this.tooltip.transition()
             .duration(500)
             .style("opacity", 0);

@@ -19,7 +19,6 @@ export class GameState {
     }
     
     initialize(tasks = []) {
-        console.log("Initializing GameState with tasks.");
         this.state.allTasks = tasks;
         this.state.completedTaskIds = new Set();
         this.state.currentTaskId = tasks.length > 0 ? tasks[0].id : null; // Start with the first task
@@ -39,8 +38,6 @@ export class GameState {
         tasks.forEach(task => {
             this.state.chatHistories[task.id] = [];
         });
-
-        console.log("GameState initialized. Current Task:", this.state.currentTaskId);
     }
     
     // Helper function for deep merging state objects
@@ -63,7 +60,6 @@ export class GameState {
 
     updateState(partialState) {
         this.state = this._deepMerge({ ...this.state }, partialState);
-        console.log("GameState updated:", this.state); // Add logging
     }
     
     getTaskById(taskId) {
@@ -80,8 +76,7 @@ export class GameState {
 
     setCurrentTask(taskId) {
         // Use the centralized isTaskSelectable method to check if the task can be set as current
-        if (this.isTaskSelectable(taskId)) { 
-            console.log(`[GameState] Setting current task to: ${taskId}`);
+        if (this.isTaskSelectable(taskId)) {
             this.state.currentTaskId = taskId;
             // Optionally reset map state related to the previous task if needed
             // this.state.mapState.selectedYear = null;
@@ -154,7 +149,6 @@ export class GameState {
         //     const task = this.state.availableTasks[taskIndex];
         const task = this.getTaskById(taskId);
          if (task && !this.isTaskCompleted(taskId)) { // Check if task exists and is not already completed
-            console.log(`[GameState] Completing task: ${taskId}`);
             this.state.completedTaskIds.add(taskId);
             // this.state.completedTasks.push(task); // Keep track via IDs is enough
             // this.state.availableTasks.splice(taskIndex, 1); // We keep all tasks now
@@ -163,7 +157,6 @@ export class GameState {
             // Do not automatically set the next task as current here.
             // Return the ID of the next task so the UI can enable it.
             const nextTaskId = this.getNextTaskId(taskId);
-            console.log(`[GameState] Task ${taskId} completed. Next task ID: ${nextTaskId}`);
             return { completed: true, nextTaskId: nextTaskId };
         }
         console.warn(`[GameState] Task ${taskId} could not be completed (already completed or not found).`);
@@ -179,7 +172,6 @@ export class GameState {
     addChatMessage(taskId, sender, text) {
         if (this.state.chatHistories[taskId]) {
             this.state.chatHistories[taskId].push({ sender, text });
-            console.log(`[GameState] Added chat message for task ${taskId}:`, { sender, text });
         } else {
             console.warn(`[GameState] Attempted to add chat message for non-existent task history: ${taskId}`);
         }
@@ -201,7 +193,6 @@ export class GameState {
     clearChatHistoryForTask(taskId) {
         if (this.state.chatHistories.hasOwnProperty(taskId)) {
             this.state.chatHistories[taskId] = [];
-            console.log(`[GameState] Cleared chat history for task ${taskId}.`);
         } else {
             console.warn(`[GameState] Attempted to clear chat history for non-existent task ID: ${taskId}`);
         }

@@ -10,7 +10,6 @@ export class TaskPanel {
 
     renderTasks() {
         if (!this.container) return;
-        console.log("[TaskPanel] Rendering tasks...");
         this.container.innerHTML = ''; // Clear existing content
 
         const allTasks = this.gameState.getAllTasks();
@@ -34,9 +33,9 @@ export class TaskPanel {
 
             taskCard.innerHTML = `
                 <h4>${task.title || 'Untitled Task'}</h4>
+                <p class="task-description">${task.description || 'No description available.'}</p>
                 <p class="task-card-status"></p> 
-            `; // Keep it simple
-            // Removed description and progress bar for simplified view
+            `;
 
             const statusElement = taskCard.querySelector('.task-card-status');
 
@@ -62,7 +61,6 @@ export class TaskPanel {
                     taskCard.removeEventListener('click', taskCard.clickHandler);
                 }
                 const newListener = () => {
-                    console.log(`[TaskPanel] Task card clicked: ${task.id}`);
                     if (this.onTaskSelectCallback) {
                         this.onTaskSelectCallback(task.id);
                     }
@@ -84,7 +82,6 @@ export class TaskPanel {
 
             this.container.appendChild(taskCard);
         });
-         console.log("[TaskPanel] Finished rendering tasks.");
     }
 
     // Set the callback function to be called when a task is selected
@@ -131,7 +128,6 @@ export class TaskPanel {
 
         if (isSelectable) {
              const newListener = () => {
-                console.log(`[TaskPanel] Task card clicked: ${taskId}`);
                 if (this.onTaskSelectCallback) {
                     this.onTaskSelectCallback(taskId);
                 }

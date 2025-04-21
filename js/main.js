@@ -13,7 +13,6 @@ import { getCharacterDialogue } from './utils/api-client.js';
 document.addEventListener('DOMContentLoaded', async () => {
     try {
         // Load data concurrently
-        console.log("Loading data...");
         const [boroughGeoJson, treeData1995, treeData2005, treeData2015, noiseData] = await Promise.all([
             loadData('data/new-york-city-boroughs.json'),
             loadData('data/tree/1995_Street_Tree.csv'),
@@ -34,15 +33,13 @@ document.addEventListener('DOMContentLoaded', async () => {
             throw new Error("Failed to load one or more required data files");
         }
 
-        console.log("Data loaded successfully");
-
-        // Basic borough data 
+        // Basic borough data with very light pastel colors
         const boroughData = {
-            "Bronx": { color: "#b3e2cd" },
-            "Brooklyn": { color: "#fddaec" },
-            "Manhattan": { color: "#cbd5e8" },
-            "Queens": { color: "#f4cae4" },
-            "Staten Island": { color: "#e6f5c9" }
+            "Bronx": { color: "#E6DBFA" },      // Ultra Light Lavender
+            "Brooklyn": { color: "#FFE8EC" },   // Ultra Light Pink
+            "Manhattan": { color: "#D2F9F4" },  // Ultra Light Cyan
+            "Queens": { color: "#FFF5D1" },     // Ultra Light Gold
+            "Staten Island": { color: "#E7FCF0" } // Ultra Light Mint
         };
 
         // Initialize game state with all defined tasks
@@ -50,7 +47,6 @@ document.addEventListener('DOMContentLoaded', async () => {
         gameState.initialize(ALL_TASKS);
 
         // Initialize components
-        console.log("Initializing components...");
 
         // Initialize map (no width/height needed for Leaflet)
         const map = new MapComponent('map');
@@ -119,15 +115,15 @@ document.addEventListener('DOMContentLoaded', async () => {
                 { label: 'Poor', color: '#F44336' }
             ]
         };
-        const noiseLegend = {
-            'Boroughs': boroughLegendItems,
-            'Noise Level': [
-                // Placeholder: Legend will be dynamically generated based on scale in map.js
-                // Or we can define static bins here
-                { label: 'Low', color: '#ffffcc' }, // Example colors from YlOrRd
-                { label: 'Medium', color: '#fd8d3c' },
-                { label: 'High', color: '#bd0026' }
-            ]
+        // Define noise legend as a gradient (will be handled by legend.js)
+        const noiseLegendGradient = {
+            'Noise Level (Complaints)': {
+                type: 'gradient',
+                minLabel: 'Low',
+                maxLabel: 'High',
+                // Colors from light red/pink to dark red
+                colors: ['#FFEBEE', '#FFCDD2', '#EF9A9A', '#E57373', '#EF5350', '#F44336', '#E53935', '#D32F2F', '#C62828', '#B71C1C']
+            }
         };
 
         // Initialize dialogue window
@@ -141,10 +137,8 @@ document.addEventListener('DOMContentLoaded', async () => {
 
         // Function to apply timed highlight to map
         const applyMapHighlight = () => {
-            // const mapElement = document.getElementById('map');
             const mapContainerElement = document.querySelector('.map-container'); // Select container
             if (mapContainerElement) {
-                console.log("[main] Applying map highlight to .map-container"); // DEBUG
                 mapContainerElement.classList.add('map-highlight');
                 // Remove the class after the animation finishes (1.2s * 2 iterations = 2.4s)
                 setTimeout(() => {
@@ -155,7 +149,6 @@ document.addEventListener('DOMContentLoaded', async () => {
 
         // Function to activate a task
         async function activateTask(taskId) {
-            console.log(`[main] Activating task: ${taskId}`);
             const task = gameState.getTaskById(taskId);
             if (!task) {
                 console.error(`[main] Task ${taskId} not found!`);
@@ -165,8 +158,6 @@ document.addEventListener('DOMContentLoaded', async () => {
             // 1. Set current task in GameState (if not already set)
             const success = gameState.setCurrentTask(taskId);
             if (!success) {
-                 console.warn(`[main] Failed to set task ${taskId} as current. Aborting activation.`);
-                 // Maybe refresh task panel to show correct state?
                  taskPanel.refresh();
                  return;
             }
@@ -174,17 +165,15 @@ document.addEventListener('DOMContentLoaded', async () => {
             // 2. Update Task Panel UI (highlighting)
             taskPanel.refresh(); // Re-render to reflect new current task
 
-            // 3. Load Chat History
+            // 3 & 4. Load Chat History and Display Initial Instructions/Message
             const history = gameState.getChatHistory(taskId);
-            chatbot.loadHistory(history);
-
-            // 4. Display initial dialogue in Chatbot if it exists and history is empty
-            if (task.initialDialogue && (!history || history.length === 0)) {
-                // Add to display
-                chatbot.addMessage('bot', task.initialDialogue);
-                // Add to stored state
-                gameState.addChatMessageToCurrentTask('bot', task.initialDialogue);
+            
+            let initialText = task.instructions; // Prioritize instructions
+            if (!initialText && task.initialDialogue) { // Use initialDialogue as fallback
+                initialText = task.initialDialogue;
             }
+            // Pass the determined initial text (instructions or fallback) to loadHistory
+            chatbot.loadHistory(history, initialText);
 
             // 5. Update Map Visualization
             map.clearAllLayers(); // Clear previous task's layers
@@ -205,14 +194,13 @@ document.addEventListener('DOMContentLoaded', async () => {
                 map.setData('noise', noiseData); // Map needs the full data for choropleth calculation
                 map.setActiveDataset('noise'); // Set active type, triggers updateNoiseChoropleth
                 filterPanel.setActiveFilterSet('noise'); // Show correct filters (using setActiveFilterSet)
-                legend.update(noiseLegend);
+                // Pass the new gradient legend structure for noise tasks
+                legend.update(noiseLegendGradient);
                 gameState.updateState({ mapState: { selectedNoiseType: noiseType }});
             }
-             console.log(`[main] Task ${taskId} activated.`);
         }
 
         // Connect components
-        console.log("Connecting components...");
 
         // --- Initial Highlighting --- START
         const taskPanelElement = document.getElementById('task-panel');
@@ -220,12 +208,10 @@ document.addEventListener('DOMContentLoaded', async () => {
         const chatInputElement = document.getElementById('chat-input');
 
         if (taskPanelElement && chatbotAreaElement && chatInputElement) {
-            console.log("[main] Found elements for initial highlight:", { taskPanelElement, chatbotAreaElement }); // DEBUG
             taskPanelElement.classList.add('component-highlight');
             chatbotAreaElement.classList.add('component-highlight');
 
             const handleFirstInputFocus = () => {
-                console.log("[main] First chat input focus detected.");
                 taskPanelElement.classList.remove('component-highlight');
                 chatbotAreaElement.classList.remove('component-highlight');
                 applyMapHighlight(); // Apply the timed highlight to the map
@@ -235,21 +221,18 @@ document.addEventListener('DOMContentLoaded', async () => {
 
             chatInputElement.addEventListener('focus', handleFirstInputFocus);
         } else { // DEBUG
-            console.error("[main] Could not find one or more elements for initial highlight:", { // DEBUG
-                taskPanelExists: !!taskPanelElement, // DEBUG
-                chatbotAreaExists: !!chatbotAreaElement, // DEBUG
-                chatInputExists: !!chatInputElement // DEBUG
-            }); // DEBUG
+            console.error("[main] Could not find one or more elements for initial highlight:", {
+                taskPanelExists: !!taskPanelElement,
+                chatbotAreaExists: !!chatbotAreaElement,
+                chatInputExists: !!chatInputElement
+            });
         }
         // --- Initial Highlighting --- END
 
         // When a task is selected in the panel, activate it
         taskPanel.onTaskSelect(taskId => {
-            console.log(`[main] Task selection event received for task: ${taskId}`);
             if (taskId !== gameState.getCurrentTaskId()) {
                 activateTask(taskId);
-            } else {
-                console.log(`[main] Task ${taskId} is already the current task.`);
             }
         });
 
@@ -281,7 +264,6 @@ document.addEventListener('DOMContentLoaded', async () => {
                 try {
                     // Prepare data for the /character endpoint
                     const requestData = {
-                        //taskId: currentTaskId, // Backend seems to infer task based on properties?
                         treeProperties: {
                             status: treeData.status,
                             spc_common: treeData.spc_common,
@@ -309,7 +291,6 @@ document.addEventListener('DOMContentLoaded', async () => {
 
         // Filter panel interactions
         filterPanel.onFilterChange((filterSetName, currentFilters) => {
-            console.log(`[main] Filter changed: Set='${filterSetName}'`, currentFilters);
             const currentTask = gameState.getTaskById(gameState.getCurrentTaskId());
 
             if (currentTask && filterSetName === 'tree') {
@@ -343,7 +324,6 @@ document.addEventListener('DOMContentLoaded', async () => {
 
         // Chatbot interactions
         chatbot.registerTaskCompleteListener((completedTaskId, nextTaskId) => {
-            console.log(`[main] Task completion event received for task ${completedTaskId}. Next task: ${nextTaskId}`);
             taskPanel.updateTaskCard(completedTaskId); // Mark the completed task card
             if (nextTaskId) {
                 taskPanel.updateTaskCard(nextTaskId); // Make the next task card selectable
@@ -353,8 +333,6 @@ document.addEventListener('DOMContentLoaded', async () => {
         });
 
         // Final setup
-        console.log("Initializing first task...");
-        // Activate the initial task (first one in the list)
         const initialTaskId = gameState.getCurrentTaskId();
         if (initialTaskId) {
             activateTask(initialTaskId);
@@ -364,8 +342,6 @@ document.addEventListener('DOMContentLoaded', async () => {
 
         // Initial rendering of the task panel after gameState is initialized
         taskPanel.renderTasks(); // Ensure panel shows initial state correctly
-
-        console.log("Application setup complete.");
 
     } catch (error) {
         console.error("Error during application initialization:", error);

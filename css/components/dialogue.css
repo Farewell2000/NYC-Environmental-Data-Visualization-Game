@@ -1,32 +1,30 @@
 /* Dialogue window positioning and styling */
 .dialogue-window {
-    position: absolute; /* Position relative to its nearest positioned ancestor (map-container) */
-    bottom: 20px; /* Distance from the bottom edge of the map container */
-    left: 50%; /* Start at the horizontal center */
-    transform: translateX(-50%); /* Shift left by half its own width to truly center */
-    width: 60%; /* Adjust width as needed */
-    max-width: 500px; /* Maximum width */
-    background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent white background */
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60%;
+    max-width: 500px;
+    background-color: rgba(255, 255, 255, 0.8);
     border-radius: var(--border-radius);
     box-shadow: var(--box-shadow);
     padding: 15px;
     display: flex;
     align-items: flex-start;
-    z-index: 1001; /* Ensure it's above map layers but potentially below other controls */
-    opacity: 0; /* Start hidden */
-    visibility: hidden; /* Start hidden */
-    transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out, transform 0.3s ease-in-out;
-    /* Removed margin-bottom as positioning is now absolute */
-    /* min-height: 120px; -- let content define height */
+    min-height: 120px;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
 }
 
 /* Make visible and slide up slightly when active */
 .dialogue-window.active {
     opacity: 1;
     visibility: visible;
-    transform: translateX(-50%) translateY(-5px); /* Center and slight upward move */
+    transform: translateX(-50%) translateY(-5px);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
-    /* Removed transform: translateY(-3px); from original active style */
 }
 
 .avatar-container {
@@ -48,7 +46,7 @@
     line-height: 1.4;
     position: relative;
     padding: 10px;
-    background-color: var(--light-bg);
+    background-color: rgba(236, 240, 241, 0.7);
     border-radius: 10px;
     min-height: 60px; /* Adjust min-height */
 }
@@ -62,7 +60,7 @@
     height: 0;
     border-top: 8px solid transparent;
     border-bottom: 8px solid transparent;
-    border-right: 8px solid var(--light-bg);
+    border-right: 8px solid rgba(236, 240, 241, 0.7);
 }
 
 /* Animation for typing effect */

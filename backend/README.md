@@ -4,7 +4,7 @@ A local Express.js backend to evaluate user answers against correct insights usi
 ## APIs
 | Endpoint       | Purpose                                                                 | Notes                                  |
 |----------------|-------------------------------------------------------------------------|----------------------------------------|
-| `/evaluate`    | Judgement API to assess if a user’s insight matches the visualization  | Returns pass/fail flag with explanation |
+| `/evaluate`    | Judgement API to assess if a user's insight matches the visualization  | Returns pass/fail flag with explanation |
 | `/chat`        | Dialogue API for topic-aware reflective conversation                   | Encourages deeper exploration           |
 | `/character`   | Personified storytelling based on data points                          | Generates first-person data narratives  |
 
@@ -192,7 +192,7 @@ curl -X POST http://localhost:2600/chat -H "Content-Type: application/json" -d "
 
 ```json
 {
-  "message": "I stand firm in the Bronx, a Ginkgo with 19 inches of history in my trunk. Fair in health, but faithful to this block, I’ve seen the school bell ring through many seasons."
+  "message": "I stand firm in the Bronx, a Ginkgo with 19 inches of history in my trunk. Fair in health, but faithful to this block, I've seen the school bell ring through many seasons."
 }
 ```
 
@@ -210,7 +210,7 @@ curl -X POST http://localhost:2600/character -H "Content-Type: application/json"
 
 ```json
 {
-  "message": "I stand firm in the Bronx, a Ginkgo with 19 inches of history in my trunk. Fair in health, but faithful to this block, I’ve seen the school bell ring through many seasons."
+  "message": "I stand firm in the Bronx, a Ginkgo with 19 inches of history in my trunk. Fair in health, but faithful to this block, I've seen the school bell ring through many seasons."
 }
 ```
 
@@ -226,7 +226,7 @@ curl -X POST http://localhost:2600/character -H "Content-Type: application/json"
 
 ```json
 {
-  "message": "I bloom near the curb in Manhattan — a Callery pear, perhaps 14 inches wide if anyone’s counting. They never noted my health, but I’ve still got white petals dancing in spring breeze."
+  "message": "I bloom near the curb in Manhattan — a Callery pear, perhaps 14 inches wide if anyone's counting. They never noted my health, but I've still got white petals dancing in spring breeze."
 }
 ```
 
@@ -239,8 +239,32 @@ curl -X POST http://localhost:2600/character -H "Content-Type: application/json"
 | `trees`      | ✅ Active   | NYC Street Tree Census                 |
 | `water`      | 🚧 Planned | Water quality & turbidity              |
 | `air`        | 🚧 Planned | Air quality & pollution measures       |
-| `noise`      | 🚧 Planned | Noise complaints from 311 dataset(TODO)        |
+| `noise`      | ✅ Active   | Noise complaints from 311 dataset      |
 | `temperature`| 🚧 Planned | Local temperature and heat variation   |
+
+---
+
+## Tasks
+
+The application features several data visualization tasks based on NYC OpenData:
+
+### Tree Tasks (Tasks 1, 2, 3)
+-   **Visualization:** Point map showing individual trees. Point color represents tree health ("status": "Fair", "Good", "Poor").
+-   **Data:** `1995_Street_Tree.csv`, `2005_Street_Tree.csv`, `2015_Street_Tree.csv`.
+-   **Filtering:** Users can filter data by year using the Filtering Panel.
+-   **Interaction:** Clicking a tree point displays its common name ("spc_common"), latitude, and longitude.
+-   **Dialogue:** The Dialogue Window shows a specific message based on the clicked tree's "status", fetched using the `/character` API.
+-   **Goal:** Pass the task by providing correct insights evaluated by the `/evaluate` API (returns pass/fail).
+-   **Post-Completion:** After passing, user interactions in the Natural Language Interaction Area use the `/chat` API.
+
+### Noise Tasks (Tasks 1, 2, 3)
+-   **Visualization:** Choropleth map showing noise complaint data aggregated by borough.
+-   **Data:** `Noise_Complaints.csv`.
+-   **Filtering:** Users can filter data by noise complaint type using the Filtering Panel.
+-   **Interaction:** Clicking a borough displays information about noise complaints in that area.
+-   **Dialogue:** The Dialogue Window shows a specific message related to the clicked borough.
+-   **Goal:** Pass the task by providing correct insights evaluated by the `/evaluate` API (returns pass/fail).
+-   **Post-Completion:** After passing, user interactions in the Natural Language Interaction Area use the `/chat` API.
 
 ---
 

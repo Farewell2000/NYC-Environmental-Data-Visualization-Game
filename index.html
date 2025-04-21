@@ -24,22 +24,21 @@
     <div class="game-container">
         <!-- Left Side: Map & Controls -->
         <div class="left-panel">
-            <div class="filter-panel" id="filter-panel"></div>
             <div class="map-container">
                 <div id="map"></div>
                 <div id="legend" class="legend"></div>
+                <div class="filter-panel" id="filter-panel"></div>
+                <div class="dialogue-window" id="dialogue-window">
+                    <div class="avatar-container">
+                        <img src="assets/avatars/cartoon-avatar.png" alt="Game Avatar" id="game-avatar">
+                    </div>
+                    <div class="dialogue-text" id="dialogue-text"></div>
+                </div>
             </div>
         </div>
         
         <!-- Right Side: Game Elements -->
         <div class="right-panel">
-            <div class="dialogue-window" id="dialogue-window">
-                <div class="avatar-container">
-                    <img src="assets/avatars/cartoon-avatar.png" alt="Game Avatar" id="game-avatar">
-                </div>
-                <div class="dialogue-text" id="dialogue-text"></div>
-            </div>
-            
             <div class="task-panel" id="task-panel">
                 <h2>Current Task</h2>
                 <div id="task-description"></div>
